@@ -1,13 +1,9 @@
-import {createStore} from "redux";
-import {combineReducers} from "redux";
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
 
 import characterReducer from "./reducers/characterReducer";
 
-const rootReducer = combineReducers({
-    character: characterReducer
-})
-
 export default createStore(
-    rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    characterReducer,
+    applyMiddleware(thunk)
 )
