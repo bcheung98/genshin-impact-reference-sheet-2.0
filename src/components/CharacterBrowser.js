@@ -3,6 +3,8 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { fetchCharacters } from "../redux/actions/fetchCharacters";
 
+import CharacterCard from "./CharacterCard";
+
 const CharacterBrowser = (props) => {
 
     useEffect(() => {
@@ -13,7 +15,7 @@ const CharacterBrowser = (props) => {
 
     return (
         <div>
-            {console.log(characters)}
+            {characters.characters.length > 0 ? characters.characters.map(char => <CharacterCard key={char.id} character={char} />) : null}
         </div>
     )
 }

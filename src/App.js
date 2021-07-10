@@ -46,7 +46,7 @@ const App = () => {
 
             </Switch>
 
-            <AppBar position="fixed" className={classes.footerBar}>
+            <AppBar position="static" className={classes.footerBar}>
                 <Typography variant="subtitle2">Genshin Impact™ is a registered trademark of MiHoYo Co., Ltd.</Typography>
                 <Typography variant="subtitle2">Images and data ©MiHoYo Co., Ltd.</Typography>
                 <Typography variant="subtitle2">This website was made for my own education and research into making React applications.</Typography>

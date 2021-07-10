@@ -14,7 +14,7 @@ const characterReducer = (state = initialState, action) => {
         case "GET_CHARS":
             return {
                 ...state,
-                characters: action.characters,
+                characters: action.characters.sort((a, b) => a.name.localeCompare(b.name)),
                 requesting: false
             }
         default:
