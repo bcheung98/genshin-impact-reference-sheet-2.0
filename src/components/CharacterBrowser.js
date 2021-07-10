@@ -10,16 +10,10 @@ import CharacterCard from "./CharacterCard";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
-    },
-    paper: {
-      height: 140,
-      width: 100,
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-  }));
+        width: "100%",
+        margin: "auto"
+    }
+}));
 
 const CharacterBrowser = (props) => {
 
