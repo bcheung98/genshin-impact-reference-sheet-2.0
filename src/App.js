@@ -16,11 +16,13 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
     headerBar: {
         textAlign: "center",
-        padding: 10
+        padding: 10,
+        marginBottom: 10
     },
     footerBar: {
         top: "auto",
         bottom: 0,
+        marginTop: 10,
         padding: 10,
         textAlign: "center"
     }
