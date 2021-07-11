@@ -103,12 +103,12 @@ const CharCardSmall = (props) => {
                     </div>
                 </div>
                 <Grid container spacing={2}>
-                    <Grid item xs direction="column" spacing={2} className={classes.leftColumn}>
-                        <img className={classes.img} alt={name} src={require(`../assets/characters/icons/Character_${name.split(" ").join("_")}_Icon.png`).default} alt={name} />
+                    <Grid item xs className={classes.leftColumn}>
+                        <img className={classes.img} src={require(`../assets/characters/icons/Character_${name.split(" ").join("_")}_Icon.png`).default} alt={name} />
                         <img className={classes.stars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
                     </Grid>
                     <Grid item xs={12} sm container>
-                        <Grid item direction="row" spacing={2} className={classes.materialRow}>
+                        <Grid className={classes.materialRow}>
                             <MaterialTooltip title={talents} arrow placement="top">
                                 <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talents}.png`).default} alt={talents} />
                             </MaterialTooltip>
@@ -119,7 +119,7 @@ const CharCardSmall = (props) => {
                                 <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
                             </MaterialTooltip>
                         </Grid>
-                        <Grid item direction="row" spacing={2} className={classes.materialRow}>
+                        <Grid className={classes.materialRow}>
                             <MaterialTooltip title={localMat} arrow placement="top">
                                 <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
                             </MaterialTooltip>
