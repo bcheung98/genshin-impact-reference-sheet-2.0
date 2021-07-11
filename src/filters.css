@@ -1,0 +1,17 @@
+.filter-off, .filter-on {
+    width: 48px;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+.filter-off {
+    background-color: rgb(32, 32, 32);
+    opacity: 0.5;
+}
+
+.filter-off:hover, .filter-on:hover {
+    box-shadow: 0 0 15px 1px dodgerblue;
+    border: 2px solid dodgerblue;
+}
