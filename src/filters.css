@@ -1,7 +1,7 @@
 .filter-off, .filter-on {
     width: 48px;
     margin: 5px;
-    padding: 5px;
+    padding: 2px;
     border: 2px solid gray;
     border-radius: 5px;
 }
@@ -17,6 +17,6 @@
 }
 
 .filter-on {
-    background-color: rgb(23, 51, 134);
+    background-color: rgb(47, 103, 207);
     opacity: 1;
 }
