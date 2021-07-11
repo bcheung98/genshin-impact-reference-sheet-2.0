@@ -1,9 +1,10 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles({
     root: {
@@ -69,6 +70,17 @@ const useStyles = makeStyles({
         margin: "5px"
     }
 });
+
+const MaterialTooltip = withStyles((theme) => ({
+    arrow: {
+        color: theme.palette.common.black,
+    },
+    tooltip: {
+        backgroundColor: theme.palette.common.black,
+        fontSize: theme.typography.pxToRem(14),
+    },
+}))(Tooltip);
+
 const CharCardSmall = (props) => {
     const classes = useStyles();
     let { name, rarity, element, weapon } = props.character;
@@ -82,8 +94,12 @@ const CharCardSmall = (props) => {
                         {name}
                     </Typography>
                     <div className={classes.circleIcons}>
-                        <img className={classes.elementIcon} src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
-                        <img className={classes.weaponIcon} src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
+                        <MaterialTooltip title={element} arrow placement="top">
+                            <img className={classes.elementIcon} src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
+                        </MaterialTooltip>
+                        <MaterialTooltip title={weapon} arrow placement="top">
+                            <img className={classes.weaponIcon} src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
+                        </MaterialTooltip>
                     </div>
                 </div>
                 <Grid container spacing={2}>
@@ -93,19 +109,31 @@ const CharCardSmall = (props) => {
                     </Grid>
                     <Grid item xs={12} sm container>
                         <Grid item direction="row" spacing={2} className={classes.materialRow}>
-                            <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talents}.png`).default} alt={talents} />
-                            <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
-                            <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
+                            <MaterialTooltip title={talents} arrow placement="top">
+                                <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talents}.png`).default} alt={talents} />
+                            </MaterialTooltip>
+                            <MaterialTooltip title={ascensionMat} arrow placement="top">
+                                <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
+                            </MaterialTooltip>
+                            <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
+                                <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
+                            </MaterialTooltip>
                         </Grid>
                         <Grid item direction="row" spacing={2} className={classes.materialRow}>
-                            <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
-                            <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
-                            <img className={classes.materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
+                            <MaterialTooltip title={localMat} arrow placement="top">
+                                <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
+                            </MaterialTooltip>
+                            <MaterialTooltip title={commonMat} arrow placement="top">
+                                <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
+                            </MaterialTooltip>
+                            <MaterialTooltip title={bossMat} arrow placement="top">
+                                <img className={classes.materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
+                            </MaterialTooltip>
                         </Grid>
                     </Grid>
                 </Grid>
             </CardContent>
-        </Card>
+        </Card >
     )
 }
 
