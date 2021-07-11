@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { FilterTooltip } from "../../helpers/FilterTooltip";
 
 let pyroIcon = require("../../assets/elements/Element_Pyro.png").default;
@@ -8,29 +9,41 @@ let cryoIcon = require("../../assets/elements/Element_Cryo.png").default;
 let anemoIcon = require("../../assets/elements/Element_Anemo.png").default;
 let geoIcon = require("../../assets/elements/Element_Geo.png").default;
 
-const ElementFilter = () => {
+const ElementFilter = (props) => {
     return (
         <React.Fragment>
             <FilterTooltip title="Pyro" arrow placement="top">
-                <img className="filter-off" id="pyro-button" src={pyroIcon} alt="Pyro" />
+                <img className="filter-off" id="pyro-button" src={pyroIcon} alt="Pyro" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
             <FilterTooltip title="Hydro" arrow placement="top">
-                <img className="filter-off" id="hydro-button" src={hydroIcon} alt="Hydro" />
+                <img className="filter-off" id="hydro-button" src={hydroIcon} alt="Hydro" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
             <FilterTooltip title="Electro" arrow placement="top">
-                <img className="filter-off" id="electro-button" src={electroIcon} alt="Electro" />
+                <img className="filter-off" id="electro-button" src={electroIcon} alt="Electro" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
             <FilterTooltip title="Cryo" arrow placement="top">
-                <img className="filter-off" id="cryo-button" src={cryoIcon} alt="Cryo" />
+                <img className="filter-off" id="cryo-button" src={cryoIcon} alt="Cryo" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
             <FilterTooltip title="Anemo" arrow placement="top">
-                <img className="filter-off" id="anemo-button" src={anemoIcon} alt="Anemo" />
+                <img className="filter-off" id="anemo-button" src={anemoIcon} alt="Anemo" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
             <FilterTooltip title="Geo" arrow placement="top">
-                <img className="filter-off" id="geo-button" src={geoIcon} alt="Geo" />
+                <img className="filter-off" id="geo-button" src={geoIcon} alt="Geo" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
         </React.Fragment>
     )
 }
 
-export default ElementFilter;
+const mapStateToProps = (state) => {
+    return {
+        filter: state.filter
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setFilter: (target) => dispatch({ type: "SET_ELEMENT_FILTERS", target })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ElementFilter);

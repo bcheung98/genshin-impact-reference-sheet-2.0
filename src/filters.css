@@ -6,12 +6,17 @@
     border-radius: 5px;
 }
 
+.filter-off:hover, .filter-on:hover {
+    box-shadow: 0 0 15px 1px dodgerblue;
+    border: 2px solid dodgerblue;
+}
+
 .filter-off {
     background-color: rgb(32, 32, 32);
     opacity: 0.5;
 }
 
-.filter-off:hover, .filter-on:hover {
-    box-shadow: 0 0 15px 1px dodgerblue;
-    border: 2px solid dodgerblue;
+.filter-on {
+    background-color: rgb(23, 51, 134);
+    opacity: 1;
 }

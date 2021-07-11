@@ -16,6 +16,23 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+const filterCharacters = (characters, filters) => {
+    let chars = [...characters];
+    if (filters.element.length > 0) {
+        chars = chars.filter(char => filters.element.includes(char.element));
+    }
+    if (filters.weapon.length > 0) {
+        chars = chars.filter(char => filters.weapon.includes(char.weapon));
+    }
+    if (filters.talent.length > 0) {
+        chars = chars.filter(char => filters.talent.includes(char.materials.talents));
+    }
+    if (filters.bossMat.length > 0) {
+        chars = chars.filter(char => filters.bossMat.includes(char.materials.bossMat));
+    }
+    return chars
+}
+
 const CharacterBrowser = (props) => {
 
     const classes = useStyles();
@@ -24,13 +41,13 @@ const CharacterBrowser = (props) => {
         fetchCharacters();
     }, [])
 
-    let { characters, fetchCharacters } = props
+    let { characters, fetchCharacters, filters } = props
 
     return (
         <React.Fragment>
             <Filters />
             <Grid container className={classes.root} spacing={3}>
-                {characters.characters.length > 0 ? characters.characters.map(char => <CharacterCard key={char.id} character={char} />) : null}
+                {characters.characters.length > 0 ? filterCharacters(characters.characters, filters).map(char => <CharacterCard key={char.id} character={char} />) : null}
             </Grid>
         </React.Fragment>
     )
@@ -38,7 +55,8 @@ const CharacterBrowser = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        characters: state
+        characters: state.characters,
+        filters: state.filter
     }
 }
 
