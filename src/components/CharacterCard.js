@@ -1,4 +1,5 @@
 import React from "react";
+import { formatTalents } from "../helpers/formatTalents";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -109,7 +110,7 @@ const CharCardSmall = (props) => {
                     </Grid>
                     <Grid item xs={12} sm container>
                         <Grid className={classes.materialRow}>
-                            <MaterialTooltip title={talents} arrow placement="top">
+                            <MaterialTooltip title={formatTalents(talents)} arrow placement="top">
                                 <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talents}.png`).default} alt={talents} />
                             </MaterialTooltip>
                             <MaterialTooltip title={ascensionMat} arrow placement="top">
