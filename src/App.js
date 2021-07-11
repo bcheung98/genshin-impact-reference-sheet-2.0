@@ -15,16 +15,16 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     headerBar: {
-        textAlign: "center",
+        marginBottom: 10,
         padding: 10,
-        marginBottom: 10
+        textAlign: "center",
+        backgroundImage: "linear-gradient(to right, #2d388a, #0e789b, #2d388a)"
     },
     footerBar: {
-        top: "auto",
-        bottom: 0,
         marginTop: 10,
         padding: 10,
-        textAlign: "center"
+        textAlign: "center",
+        backgroundImage: "linear-gradient(to right, #2d388a, #0e789b, #2d388a)"
     }
 }))
 
@@ -35,7 +35,7 @@ const App = () => {
         <Router>
 
             <AppBar position="static" className={classes.headerBar}>
-                <Typography variant="h4">Genshin Impact Reference Sheet</Typography>
+                <Typography variant="h3">Genshin Impact Reference Sheet</Typography>
             </AppBar>
 
             <Switch>
