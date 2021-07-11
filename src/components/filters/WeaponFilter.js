@@ -30,16 +30,10 @@ const WeaponFilter = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        filter: state.filter
-    }
-}
-
 const mapDispatchToProps = (dispatch) => {
     return {
         setFilter: (target) => dispatch({ type: "SET_WEAPON_FILTERS", target })
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WeaponFilter);
+export default connect(null, mapDispatchToProps)(WeaponFilter);

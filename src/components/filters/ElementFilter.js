@@ -34,16 +34,10 @@ const ElementFilter = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        filter: state.filter
-    }
-}
-
 const mapDispatchToProps = (dispatch) => {
     return {
         setFilter: (target) => dispatch({ type: "SET_ELEMENT_FILTERS", target })
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ElementFilter);
+export default connect(null, mapDispatchToProps)(ElementFilter);

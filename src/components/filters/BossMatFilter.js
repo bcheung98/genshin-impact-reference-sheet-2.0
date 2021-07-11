@@ -58,16 +58,10 @@ const BossMatFilter = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        filter: state.filter
-    }
-}
-
 const mapDispatchToProps = (dispatch) => {
     return {
         setFilter: (target) => dispatch({ type: "SET_BOSS_MAT_FILTERS", target })
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BossMatFilter);
+export default connect(null, mapDispatchToProps)(BossMatFilter);

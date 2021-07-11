@@ -35,16 +35,10 @@ const TalentFilter = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        filter: state.filter
-    }
-}
-
 const mapDispatchToProps = (dispatch) => {
     return {
         setFilter: (target) => dispatch({ type: "SET_TALENT_FILTERS", target })
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TalentFilter);
+export default connect(null, mapDispatchToProps)(TalentFilter);
