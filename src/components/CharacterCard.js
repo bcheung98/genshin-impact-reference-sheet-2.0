@@ -6,6 +6,13 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles({
     root: {
@@ -28,7 +35,8 @@ const useStyles = makeStyles({
         color: "white",
         marginTop: "2px",
         marginBottom: "10px",
-        marginLeft: "-15px"
+        marginLeft: "-15px",
+        cursor: "pointer"
     },
     circleIcons: {
         position: "absolute",
@@ -69,7 +77,20 @@ const useStyles = makeStyles({
         border: "2px solid gray",
         borderRadius: "5px",
         margin: "5px"
+    },
+    dialogContent: {
+        backgroundColor: "rgb(32, 32, 32)",
+        border: "2px solid gray",
+        borderRadius: "5px",
+        color: "white"
+    },
+    dialogDescription: {
+        color: "white"
     }
+});
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
 });
 
 const MaterialTooltip = withStyles((theme) => ({
@@ -84,14 +105,24 @@ const MaterialTooltip = withStyles((theme) => ({
 
 const CharCardSmall = (props) => {
     const classes = useStyles();
-    let { name, rarity, element, weapon } = props.character;
+    let { name, rarity, element, weapon, title, description } = props.character;
     let { talents, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
         <Card className={classes.root} variant="outlined">
             <CardContent>
                 <div className={classes.topRow}>
-                    <Typography className={classes.name} variant="h5" component="h2">
+                    <Typography className={classes.name} variant="h5" component="h2" onClick={() => handleClickOpen()}>
                         {name}
                     </Typography>
                     <div className={classes.circleIcons}>
@@ -133,6 +164,29 @@ const CharCardSmall = (props) => {
                         </Grid>
                     </Grid>
                 </Grid>
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    TransitionComponent={Transition}
+                >
+                    <div className={classes.dialogContent}>
+                        <DialogTitle>
+                            <Typography variant="h5">{name}</Typography>
+                            <Typography variant="subtitle2">{title}</Typography>
+                        </DialogTitle>
+                        <DialogContent>
+                            <DialogContentText className={classes.dialogDescription}>
+                                <Typography>{description}</Typography>
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose} color="secondary">
+                                Close
+                            </Button>
+                        </DialogActions>
+                    </div>
+
+                </Dialog>
             </CardContent>
         </Card >
     )
