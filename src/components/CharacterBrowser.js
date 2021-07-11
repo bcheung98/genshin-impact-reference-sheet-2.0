@@ -66,4 +66,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CharacterBrowser));
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterBrowser);
