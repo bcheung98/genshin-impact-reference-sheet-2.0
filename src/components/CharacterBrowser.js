@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { fetchCharacters } from "../redux/actions/fetchCharacters";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-
 import Filters from "./Filters";
 import CharacterCard from "./CharacterCard";
 
@@ -34,7 +32,6 @@ const filterCharacters = (characters, filters) => {
 }
 
 const CharacterBrowser = (props) => {
-
     const classes = useStyles();
 
     useEffect(() => {
