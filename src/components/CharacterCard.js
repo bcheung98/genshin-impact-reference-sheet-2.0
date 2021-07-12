@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
     },
     dialogTitleRightColumn: {
-        textAlign: "right",
+        textAlign: "center",
     },
     dialogStars: {
         height: "25px",
@@ -136,7 +136,7 @@ const MaterialTooltip = withStyles((theme) => ({
 
 const CharacterCard = (props) => {
     const classes = useStyles();
-    let { name, title, rarity, element, weapon, description, constellation, birthday, nation } = props.character;
+    let { name, title, rarity, element, weapon, description, constellation, birthday, nation, voiceActors } = props.character;
     let { talents, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
 
     const [open, setOpen] = React.useState(false);
@@ -245,6 +245,10 @@ const CharacterCard = (props) => {
                                     <Grid item xs className={classes.dialogTitleRightColumn}>
                                         <Typography><b>Constellation:</b> {constellation}</Typography>
                                         <Typography><b>Birthday:</b> {birthday}</Typography>
+                                        <br />
+                                        <Typography><b>Voice Actors</b></Typography>
+                                        <Typography><b>EN:</b> {voiceActors["en"]}</Typography>
+                                        <Typography><b>JP:</b> {voiceActors["jp"]}</Typography>
                                     </Grid>
                                 </Grid>
                             </div>
