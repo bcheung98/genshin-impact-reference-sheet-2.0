@@ -217,7 +217,7 @@ TabPanelVertical.propTypes = {
 
 const CharacterCard = (props) => {
     const classes = useStyles();
-    let { name, title, rarity, element, weapon, description, constellation, birthday, nation, voiceActors } = props.character;
+    let { name, title, rarity, element, weapon, description, birthday, nation, voiceActors } = props.character;
     let { talents, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
 
     const [open, setOpen] = React.useState(false);
@@ -337,7 +337,7 @@ const CharacterCard = (props) => {
                                         </Grid>
                                     </Grid>
                                     <Grid item xs className={classes.dialogTitleRightColumn}>
-                                        <Typography><b>Constellation:</b> {constellation}</Typography>
+                                        {/* <Typography><b>Constellation:</b> {constellation}</Typography> */}
                                         <Typography><b>Birthday:</b> {birthday}</Typography>
                                         <br />
                                         <Typography><b>Voice Actors</b></Typography>
