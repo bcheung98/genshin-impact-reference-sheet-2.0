@@ -17,6 +17,7 @@ import PropTypes from 'prop-types';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import AppBar from '@material-ui/core/AppBar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -114,20 +115,27 @@ const useStyles = makeStyles((theme) => ({
         border: "2px solid gray",
         borderRadius: "5px",
     },
+    appBar: {
+        height: "48px",
+    },
     talentContainer: {
         border: "2px solid gray",
         borderRadius: "5px",
         height: "504px",
         marginTop: "8px",
-        padding: "0px !important"
+        overflowY: "hidden"
     },
     talentDisplay: {
         flexGrow: 1,
         display: 'flex',
-        height: "500px",
     },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
+        marginLeft: "-20px",
+        height: "425px"
+    },
+    verticalTabContent: {
+        height: "400px",
     },
     dialogDescription: {
         textAlign: "center",
@@ -157,7 +165,32 @@ const MaterialTooltip = withStyles((theme) => ({
     },
 }))(Tooltip);
 
-function TabPanel(props) {
+function TabPanelHorizontal(props) {
+    const { children, value, index, ...other } = props;
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box p={3}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
+
+TabPanelHorizontal.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
+};
+
+function TabPanelVertical(props) {
     const { children, value, index, ...other } = props;
 
     return (
@@ -176,7 +209,7 @@ function TabPanel(props) {
     );
 }
 
-TabPanel.propTypes = {
+TabPanelVertical.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired,
@@ -195,9 +228,19 @@ const CharacterCard = (props) => {
         setOpen(false);
     };
 
-    const [value, setValue] = React.useState(0);
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
+    const [valueHorizontal, setValueHorizontal] = React.useState(0);
+    const handleChangeHorizontal = (event, newValue) => {
+        setValueHorizontal(newValue);
+    };
+
+    const [valueVerticalTalent, setValueVerticalTalent] = React.useState(0);
+    const handleChangeVerticalTalent = (event, newValue) => {
+        setValueVerticalTalent(newValue);
+    };
+
+    const [valueVerticalConstellation, setValueVerticalConstellation] = React.useState(0);
+    const handleChangeVerticalConstellation = (event, newValue) => {
+        setValueVerticalConstellation(newValue);
     };
 
     return (
@@ -311,43 +354,98 @@ const CharacterCard = (props) => {
                                     <img src={require(`../assets/characters/cards/Character_${name.split(" ").join("_")}_Card.png`).default} alt={name} className={classes.characterCard} />
                                 </Grid>
                                 <Grid item xs className={classes.talentContainer}>
-                                    <div className={classes.talentDisplay}>
-                                        <Tabs
-                                            orientation="vertical"
-                                            variant="scrollable"
-                                            value={value}
-                                            onChange={handleChange}
-                                            className={classes.tabs}
-                                        >
-                                            <Tab label="Normal Attack" />
-                                            <Tab label="Elemental Skill" />
-                                            <Tab label="Elemental Burst" />
-                                            <Tab label="Alternate Sprint" />
-                                            <Tab label="1st Ascension Passive" />
-                                            <Tab label="4th Ascension Passive" />
-                                            <Tab label="Utility Passive" />
-                                        </Tabs>
-                                        <TabPanel value={value} index={0}>
-                                            Normal Attack
-                                        </TabPanel>
-                                        <TabPanel value={value} index={1}>
-                                            Elemental Skill
-                                        </TabPanel>
-                                        <TabPanel value={value} index={2}>
-                                            Elemental Burst
-                                        </TabPanel>
-                                        <TabPanel value={value} index={3}>
-                                            Alternate Sprint
-                                        </TabPanel>
-                                        <TabPanel value={value} index={4}>
-                                            1st Ascension Passive
-                                        </TabPanel>
-                                        <TabPanel value={value} index={5}>
-                                            4th Ascension Passive
-                                        </TabPanel>
-                                        <TabPanel value={value} index={6}>
-                                            Utility Passive
-                                        </TabPanel>
+                                    <div>
+                                        <AppBar position="static" className={classes.appBar}>
+                                            <Tabs value={valueHorizontal} onChange={handleChangeHorizontal} >
+                                                <Tab label="Talents" />
+                                                <Tab label="Constellation" />
+                                            </Tabs>
+                                        </AppBar>
+                                        <TabPanelHorizontal value={valueHorizontal} index={0}>
+                                            <div className={classes.talentDisplay}>
+                                                <Tabs
+                                                    orientation="vertical"
+                                                    variant="scrollable"
+                                                    value={valueVerticalTalent}
+                                                    onChange={handleChangeVerticalTalent}
+                                                    className={classes.tabs}
+                                                >
+                                                    <Tab label="Normal Attack" />
+                                                    <Tab label="Elemental Skill" />
+                                                    <Tab label="Elemental Burst" />
+                                                    <Tab label="1st Ascension Passive" />
+                                                    <Tab label="4th Ascension Passive" />
+                                                    <Tab label="Utility Passive" />
+                                                    <Tab label="Alternate Sprint" />
+                                                </Tabs>
+                                                {
+                                                    props.character.talents ?
+                                                        <React.Fragment>
+                                                            <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
+                                                                Normal Attack
+                                                            </TabPanelVertical>
+                                                            <TabPanelVertical value={valueVerticalTalent} index={1} className={classes.verticalTabContent}>
+                                                                Elemental Skill
+                                                            </TabPanelVertical>
+                                                            <TabPanelVertical value={valueVerticalTalent} index={2} className={classes.verticalTabContent}>
+                                                                Elemental Burst
+                                                            </TabPanelVertical>
+                                                            <TabPanelVertical value={valueVerticalTalent} index={3} className={classes.verticalTabContent}>
+                                                                1st Ascension Passive
+                                                            </TabPanelVertical>
+                                                            <TabPanelVertical value={valueVerticalTalent} index={4} className={classes.verticalTabContent}>
+                                                                4th Ascension Passive
+                                                            </TabPanelVertical>
+                                                            <TabPanelVertical value={valueVerticalTalent} index={5} className={classes.verticalTabContent}>
+                                                                Utility Passive
+                                                            </TabPanelVertical>
+                                                            <TabPanelVertical value={valueVerticalTalent} index={6} className={classes.verticalTabContent}>
+                                                                Alternate Sprint
+                                                            </TabPanelVertical>
+                                                        </React.Fragment>
+                                                        :
+                                                        null
+                                                }
+                                            </div>
+                                        </TabPanelHorizontal>
+                                        <TabPanelHorizontal value={valueHorizontal} index={1}>
+                                            <div className={classes.talentDisplay}>
+                                                <Tabs
+                                                    orientation="vertical"
+                                                    variant="scrollable"
+                                                    value={valueVerticalConstellation}
+                                                    onChange={handleChangeVerticalConstellation}
+                                                    className={classes.tabs}
+                                                >
+                                                    <Tab label="C1" />
+                                                    <Tab label="C2" />
+                                                    <Tab label="C3" />
+                                                    <Tab label="C4" />
+                                                    <Tab label="C5" />
+                                                    <Tab label="C6" />
+                                                </Tabs>
+                                                <div>
+                                                    <TabPanelVertical value={valueVerticalConstellation} index={0} className={classes.verticalTabContent}>
+                                                        C1
+                                                    </TabPanelVertical>
+                                                    <TabPanelVertical value={valueVerticalConstellation} index={1} className={classes.verticalTabContent}>
+                                                        C2
+                                                    </TabPanelVertical>
+                                                    <TabPanelVertical value={valueVerticalConstellation} index={2} className={classes.verticalTabContent}>
+                                                        C3
+                                                    </TabPanelVertical>
+                                                    <TabPanelVertical value={valueVerticalConstellation} index={3} className={classes.verticalTabContent}>
+                                                        C4
+                                                    </TabPanelVertical>
+                                                    <TabPanelVertical value={valueVerticalConstellation} index={4} className={classes.verticalTabContent}>
+                                                        C5
+                                                    </TabPanelVertical>
+                                                    <TabPanelVertical value={valueVerticalConstellation} index={5} className={classes.verticalTabContent}>
+                                                        C6
+                                                    </TabPanelVertical>
+                                                </div>
+                                            </div>
+                                        </TabPanelHorizontal>
                                     </div>
                                 </Grid>
                             </Grid>
