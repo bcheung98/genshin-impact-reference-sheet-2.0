@@ -13,6 +13,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import Divider from '@material-ui/core/Divider';
+import PropTypes from 'prop-types';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -106,6 +110,25 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "5px",
         color: "white",
     },
+    characterCard: {
+        border: "2px solid gray",
+        borderRadius: "5px",
+    },
+    talentContainer: {
+        border: "2px solid gray",
+        borderRadius: "5px",
+        height: "504px",
+        marginTop: "8px",
+        padding: "0px !important"
+    },
+    talentDisplay: {
+        flexGrow: 1,
+        display: 'flex',
+        height: "500px",
+    },
+    tabs: {
+        borderRight: `1px solid ${theme.palette.divider}`,
+    },
     dialogDescription: {
         textAlign: "center",
     },
@@ -116,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
     },
     nationIcon: {
         alignItems: "center",
-        height: "90px",
+        height: "86px",
     },
 }));
 
@@ -134,19 +157,47 @@ const MaterialTooltip = withStyles((theme) => ({
     },
 }))(Tooltip);
 
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`vertical-tabpanel-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box p={3}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
+
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
+};
+
 const CharacterCard = (props) => {
     const classes = useStyles();
     let { name, title, rarity, element, weapon, description, constellation, birthday, nation, voiceActors } = props.character;
     let { talents, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
 
     const [open, setOpen] = React.useState(false);
-
     const handleClickOpen = () => {
         setOpen(true);
     };
-
     const handleClose = () => {
         setOpen(false);
+    };
+
+    const [value, setValue] = React.useState(0);
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
     };
 
     return (
@@ -255,7 +306,51 @@ const CharacterCard = (props) => {
                         </DialogTitle>
                         <Divider className={classes.divider} />
                         <DialogContent>
-                            <img src={require(`../assets/characters/cards/Character_${name.split(" ").join("_")}_Card.png`).default} alt={name} />
+                            <Grid container spacing={2} className={classes.dialogMain}>
+                                <Grid item>
+                                    <img src={require(`../assets/characters/cards/Character_${name.split(" ").join("_")}_Card.png`).default} alt={name} className={classes.characterCard} />
+                                </Grid>
+                                <Grid item xs className={classes.talentContainer}>
+                                    <div className={classes.talentDisplay}>
+                                        <Tabs
+                                            orientation="vertical"
+                                            variant="scrollable"
+                                            value={value}
+                                            onChange={handleChange}
+                                            className={classes.tabs}
+                                        >
+                                            <Tab label="Normal Attack" />
+                                            <Tab label="Elemental Skill" />
+                                            <Tab label="Elemental Burst" />
+                                            <Tab label="Alternate Sprint" />
+                                            <Tab label="1st Ascension Passive" />
+                                            <Tab label="4th Ascension Passive" />
+                                            <Tab label="Utility Passive" />
+                                        </Tabs>
+                                        <TabPanel value={value} index={0}>
+                                            Normal Attack
+                                        </TabPanel>
+                                        <TabPanel value={value} index={1}>
+                                            Elemental Skill
+                                        </TabPanel>
+                                        <TabPanel value={value} index={2}>
+                                            Elemental Burst
+                                        </TabPanel>
+                                        <TabPanel value={value} index={3}>
+                                            Alternate Sprint
+                                        </TabPanel>
+                                        <TabPanel value={value} index={4}>
+                                            1st Ascension Passive
+                                        </TabPanel>
+                                        <TabPanel value={value} index={5}>
+                                            4th Ascension Passive
+                                        </TabPanel>
+                                        <TabPanel value={value} index={6}>
+                                            Utility Passive
+                                        </TabPanel>
+                                    </div>
+                                </Grid>
+                            </Grid>
                         </DialogContent>
                         <Divider className={classes.divider} />
                         <DialogContent>
