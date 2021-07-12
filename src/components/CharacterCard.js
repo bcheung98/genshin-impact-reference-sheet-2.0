@@ -208,7 +208,7 @@ const CharacterCard = (props) => {
                             <div className={classes.dialogGrid}>
                                 <Grid container spacing={3}>
                                     <Grid item xs className={classes.dialogTitleLeftColumn}>
-                                        <Typography variant="h4"><b>{name}</b></Typography>
+                                        {props.character.fullname ? <Typography variant="h4"><b>{props.character.fullname}</b></Typography> : <Typography variant="h4"><b>{name}</b></Typography>}
                                         <Typography variant="body1"><i>{title}</i></Typography>
                                         <img className={classes.dialogStars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
                                         <div>
