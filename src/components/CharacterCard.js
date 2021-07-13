@@ -361,8 +361,8 @@ const CharacterCard = (props) => {
                                     <Typography className={classes.genshinFont}><b>Birthday:</b> {birthday}</Typography>
                                     <br />
                                     <Typography className={classes.genshinFont}><b>Voice Actors:</b></Typography>
-                                    <Typography className={classes.genshinFont}><b>EN:</b> {voiceActors["en"]}</Typography>
-                                    <Typography className={classes.genshinFont}><b>JP:</b> {voiceActors["jp"]}</Typography>
+                                    <Typography><b>EN:</b> {voiceActors["en"]}</Typography>
+                                    <Typography><b>JP:</b> {voiceActors["jp"]}</Typography>
                                 </Grid>
                             </Grid>
                         </div>

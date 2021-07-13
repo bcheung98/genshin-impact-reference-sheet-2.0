@@ -43,7 +43,7 @@ const CharacterBrowser = (props) => {
     return (
         <React.Fragment>
             <Filters />
-            <Grid container className={classes.root} spacing={3}>
+            <Grid container className={classes.root}>
                 {characters.characters.length > 0 ? filterCharacters(characters.characters, filters).map(char => <CharacterCard key={char.id} character={char} />) : null}
             </Grid>
         </React.Fragment>
