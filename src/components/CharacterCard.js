@@ -25,7 +25,7 @@ import "../css/appBar.css";
 const useStyles = makeStyles((theme) => ({
     root: {
         width: 325,
-        height: 175,
+        height: 200,
         margin: "auto",
         marginTop: 10,
         marginBottom: 10,
@@ -69,12 +69,12 @@ const useStyles = makeStyles((theme) => ({
         width: '90px',
         height: '90px',
         display: "block",
-        cursor: "pointer",
     },
     stars: {
         height: "25px",
         marginLeft: "auto",
         marginRight: "auto",
+        marginTop: "2px",
         display: "block",
     },
     materialRow: {
@@ -85,6 +85,11 @@ const useStyles = makeStyles((theme) => ({
         border: "2px solid gray",
         borderRadius: "5px",
         margin: "5px",
+    },
+    moreInfoButton: {
+        marginTop: "-10px",
+        marginLeft: "-1px",
+        color: "rgb(10, 155, 201)"
     },
     divider: {
         backgroundColor: "gray",
@@ -247,234 +252,239 @@ const CharacterCard = (props) => {
     };
 
     return (
-        <Card className={classes.root} variant="outlined">
-            <CardContent>
-                <div className={classes.topRow}>
-                    <Typography className={classes.name} variant="h5">
-                        {name}
-                    </Typography>
-                    <div className={classes.circleIcons}>
-                        <MaterialTooltip title={element} arrow placement="top">
-                            <img className={classes.elementIcon} src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
-                        </MaterialTooltip>
-                        <MaterialTooltip title={weapon} arrow placement="top">
-                            <img className={classes.weaponIcon} src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
-                        </MaterialTooltip>
+        <React.Fragment>
+            <Card className={classes.root} variant="outlined">
+                <CardContent>
+                    <div className={classes.topRow}>
+                        <Typography className={classes.name} variant="h5">
+                            {name}
+                        </Typography>
+                        <div className={classes.circleIcons}>
+                            <MaterialTooltip title={element} arrow placement="top">
+                                <img className={classes.elementIcon} src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
+                            </MaterialTooltip>
+                            <MaterialTooltip title={weapon} arrow placement="top">
+                                <img className={classes.weaponIcon} src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
+                            </MaterialTooltip>
+                        </div>
                     </div>
-                </div>
-                <Grid container spacing={2}>
-                    <Grid item xs className={classes.leftColumn}>
-                        <img className={classes.characterIcon} src={require(`../assets/characters/icons/Character_${name.split(" ").join("_")}_Icon.png`).default} alt={name} onClick={() => handleClickOpen()} />
-                        <img className={classes.stars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
-                    </Grid>
-                    <Grid item xs={12} sm container>
-                        <Grid className={classes.materialRow}>
-                            <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
-                                <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
-                            </MaterialTooltip>
-                            <MaterialTooltip title={ascensionMat} arrow placement="top">
-                                <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
-                            </MaterialTooltip>
-                            <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
-                                <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
-                            </MaterialTooltip>
+                    <Grid container spacing={2}>
+                        <Grid item xs className={classes.leftColumn}>
+                            <img className={classes.characterIcon} src={require(`../assets/characters/icons/Character_${name.split(" ").join("_")}_Icon.png`).default} alt={name} />
+                            <img className={classes.stars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
                         </Grid>
-                        <Grid className={classes.materialRow}>
-                            <MaterialTooltip title={localMat} arrow placement="top">
-                                <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
-                            </MaterialTooltip>
-                            <MaterialTooltip title={commonMat} arrow placement="top">
-                                <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
-                            </MaterialTooltip>
-                            <MaterialTooltip title={bossMat} arrow placement="top">
-                                <img className={classes.materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
-                            </MaterialTooltip>
+                        <Grid item xs={12} sm container>
+                            <Grid className={classes.materialRow}>
+                                <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
+                                    <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
+                                </MaterialTooltip>
+                                <MaterialTooltip title={ascensionMat} arrow placement="top">
+                                    <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
+                                </MaterialTooltip>
+                                <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
+                                    <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
+                                </MaterialTooltip>
+                            </Grid>
+                            <Grid className={classes.materialRow}>
+                                <MaterialTooltip title={localMat} arrow placement="top">
+                                    <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
+                                </MaterialTooltip>
+                                <MaterialTooltip title={commonMat} arrow placement="top">
+                                    <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
+                                </MaterialTooltip>
+                                <MaterialTooltip title={bossMat} arrow placement="top">
+                                    <img className={classes.materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
+                                </MaterialTooltip>
+                            </Grid>
                         </Grid>
                     </Grid>
-                </Grid>
-                <Dialog
-                    open={open}
-                    onClose={handleClose}
-                    TransitionComponent={Transition}
-                    className={classes.dialogRoot}
-                    maxWidth={false}
-                    fullWidth
-                >
-                    <div className={classes.dialogContent}>
-                        <DialogTitle>
-                            <div className={classes.dialogGrid}>
-                                <Grid container spacing={3}>
-                                    <Grid item xs className={classes.dialogTitleLeftColumn}>
-                                        {props.character.fullname ? <Typography variant="h4"><b>{props.character.fullname}</b></Typography> : <Typography variant="h4"><b>{name}</b></Typography>}
-                                        <Typography variant="body1"><i>{title}</i></Typography>
-                                        <img className={classes.dialogStars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
-                                        <div>
-                                            <MaterialTooltip title={element} arrow placement="top">
-                                                <img className={classes.dialogElementIcon} src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
-                                            </MaterialTooltip>
-                                            <MaterialTooltip title={weapon} arrow placement="top">
-                                                <img className={classes.dialogWeaponIcon} src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
-                                            </MaterialTooltip>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs className={classes.dialogTitleMiddleColumn}>
-                                        <Grid className={classes.dialogMaterialRow}>
-                                            <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
-                                                <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
-                                            </MaterialTooltip>
-                                            <MaterialTooltip title={ascensionMat} arrow placement="top">
-                                                <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
-                                            </MaterialTooltip>
-                                            <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
-                                                <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
-                                            </MaterialTooltip>
-                                            <MaterialTooltip title={localMat} arrow placement="top">
-                                                <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
-                                            </MaterialTooltip>
-                                            <MaterialTooltip title={commonMat} arrow placement="top">
-                                                <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
-                                            </MaterialTooltip>
-                                            <MaterialTooltip title={bossMat} arrow placement="top">
-                                                <img className={classes.materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
-                                            </MaterialTooltip>
-                                        </Grid>
-                                    </Grid>
-                                    <Grid item xs className={classes.dialogTitleRightColumn}>
-                                        <Typography><b>Constellation:</b> {constellation.name}</Typography>
-                                        <Typography><b>Birthday:</b> {birthday}</Typography>
-                                        <br />
-                                        <Typography><b>Voice Actors</b></Typography>
-                                        <Typography><b>EN:</b> {voiceActors["en"]}</Typography>
-                                        <Typography><b>JP:</b> {voiceActors["jp"]}</Typography>
-                                    </Grid>
-                                </Grid>
-                            </div>
-                        </DialogTitle>
-                        <Divider className={classes.divider} />
-                        <DialogContent>
-                            <Grid container spacing={2} className={classes.dialogMain}>
-                                <Grid item>
-                                    <img src={require(`../assets/characters/cards/Character_${name.split(" ").join("_")}_Card.png`).default} alt={name} className={classes.characterCard} />
-                                </Grid>
-                                <Grid item xs className={classes.talentContainer}>
+                        <Button size="small" className={classes.moreInfoButton} onClick={() => handleClickOpen()}>
+                            More Info
+                        </Button>
+                </CardContent>
+            </Card >
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Transition}
+                className={classes.dialogRoot}
+                maxWidth={false}
+                fullWidth
+            >
+                <div className={classes.dialogContent}>
+                    <DialogTitle>
+                        <div className={classes.dialogGrid}>
+                            <Grid container spacing={3}>
+                                <Grid item xs className={classes.dialogTitleLeftColumn}>
+                                    {props.character.fullname ? <Typography variant="h4"><b>{props.character.fullname}</b></Typography> : <Typography variant="h4"><b>{name}</b></Typography>}
+                                    <Typography variant="body1"><i>{title}</i></Typography>
+                                    <img className={classes.dialogStars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
                                     <div>
-                                        <AppBar position="static" className={`appbar-${element.toLowerCase()}`}>
-                                            <Tabs value={valueHorizontal} onChange={handleChangeHorizontal} classes={{indicator: `appbar-indicator`}} >
-                                                <Tab label="Talents" />
-                                                <Tab label="Constellation" />
-                                            </Tabs>
-                                        </AppBar>
-                                        <TabPanelHorizontal value={valueHorizontal} index={0}>
-                                            <div className={classes.talentDisplay}>
-                                                <Tabs
-                                                    orientation="vertical"
-                                                    variant="scrollable"
-                                                    value={valueVerticalTalent}
-                                                    onChange={handleChangeVerticalTalent}
-                                                    className={classes.tabs}
-                                                >
-                                                    <Tab label="Normal Attack" />
-                                                    <Tab label="Elemental Skill" />
-                                                    <Tab label="Elemental Burst" />
-                                                    <Tab label="1st Ascension Passive" />
-                                                    <Tab label="4th Ascension Passive" />
-                                                    <Tab label="Utility Passive" />
-                                                    {talents.altsprint && <Tab label="Alternate Sprint" />}
-                                                </Tabs>
-                                                <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
-                                                    <Typography variant="h5"><b>{talents.attack.name}</b></Typography>
-                                                    <br />
-                                                    {parse(talents.attack.description)}
-                                                </TabPanelVertical>
-                                                <TabPanelVertical value={valueVerticalTalent} index={1} className={classes.verticalTabContent}>
-                                                    <Typography variant="h5"><b>{talents.skill.name}</b></Typography>
-                                                    <br />
-                                                    {parse(talents.skill.description)}
-                                                </TabPanelVertical>
-                                                <TabPanelVertical value={valueVerticalTalent} index={2} className={classes.verticalTabContent}>
-                                                    <Typography variant="h5"><b>{talents.burst.name}</b></Typography>
-                                                    <br />
-                                                    {parse(talents.burst.description)}
-                                                </TabPanelVertical>
-                                                <TabPanelVertical value={valueVerticalTalent} index={3} className={classes.verticalTabContent}>
-                                                    <Typography variant="h5"><b>{talents.a1passive.name}</b></Typography>
-                                                    <br />
-                                                    {parse(talents.a1passive.description)}
-                                                </TabPanelVertical>
-                                                <TabPanelVertical value={valueVerticalTalent} index={4} className={classes.verticalTabContent}>
-                                                    <Typography variant="h5"><b>{talents.a4passive.name}</b></Typography>
-                                                    <br />
-                                                    {parse(talents.a4passive.description)}
-                                                </TabPanelVertical>
-                                                <TabPanelVertical value={valueVerticalTalent} index={5} className={classes.verticalTabContent}>
-                                                    <Typography variant="h5"><b>{talents.utilpassive.name}</b></Typography>
-                                                    <br />
-                                                    {parse(talents.utilpassive.description)}
-                                                </TabPanelVertical>
-                                                {
-                                                    talents.altsprint &&
-                                                    <TabPanelVertical value={valueVerticalTalent} index={6} className={classes.verticalTabContent}>
-                                                        <Typography variant="h5"><b>{talents.altsprint.name}</b></Typography>
-                                                        <br />
-                                                        {parse(talents.altsprint.description)}
-                                                    </TabPanelVertical>
-                                                }
-                                            </div>
-                                        </TabPanelHorizontal>
-                                        <TabPanelHorizontal value={valueHorizontal} index={1}>
-                                            <div className={classes.constellationDisplay}>
-                                                <Typography variant="h5"><b>C1 - {constellation.c1.name}</b></Typography>
-                                                <br />
-                                                {parse(constellation.c1.description)}
-                                                <br />
-                                                <br />
-                                                <Typography variant="h5"><b>C2 - {constellation.c2.name}</b></Typography>
-                                                <br />
-                                                {parse(constellation.c2.description)}
-                                                <br />
-                                                <br />
-                                                <Typography variant="h5"><b>C3 - {constellation.c3.name}</b></Typography>
-                                                <br />
-                                                {parse(constellation.c3.description)}
-                                                <br />
-                                                <br />
-                                                <Typography variant="h5"><b>C4 - {constellation.c4.name}</b></Typography>
-                                                <br />
-                                                {parse(constellation.c4.description)}
-                                                <br />
-                                                <br />
-                                                <Typography variant="h5"><b>C5 - {constellation.c5.name}</b></Typography>
-                                                <br />
-                                                {parse(constellation.c5.description)}
-                                                <br />
-                                                <br />
-                                                <Typography variant="h5"><b>C6 - {constellation.c6.name}</b></Typography>
-                                                <br />
-                                                {parse(constellation.c6.description)}
-                                            </div>
-                                        </TabPanelHorizontal>
+                                        <MaterialTooltip title={element} arrow placement="top">
+                                            <img className={classes.dialogElementIcon} src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
+                                        </MaterialTooltip>
+                                        <MaterialTooltip title={weapon} arrow placement="top">
+                                            <img className={classes.dialogWeaponIcon} src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
+                                        </MaterialTooltip>
                                     </div>
                                 </Grid>
+                                <Grid item xs className={classes.dialogTitleMiddleColumn}>
+                                    <Grid className={classes.dialogMaterialRow}>
+                                        <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
+                                            <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
+                                        </MaterialTooltip>
+                                        <MaterialTooltip title={ascensionMat} arrow placement="top">
+                                            <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
+                                        </MaterialTooltip>
+                                        <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
+                                            <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
+                                        </MaterialTooltip>
+                                        <MaterialTooltip title={localMat} arrow placement="top">
+                                            <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
+                                        </MaterialTooltip>
+                                        <MaterialTooltip title={commonMat} arrow placement="top">
+                                            <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
+                                        </MaterialTooltip>
+                                        <MaterialTooltip title={bossMat} arrow placement="top">
+                                            <img className={classes.materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
+                                        </MaterialTooltip>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs className={classes.dialogTitleRightColumn}>
+                                    <Typography><b>Constellation:</b> {constellation.name}</Typography>
+                                    <Typography><b>Birthday:</b> {birthday}</Typography>
+                                    <br />
+                                    <Typography><b>Voice Actors</b></Typography>
+                                    <Typography><b>EN:</b> {voiceActors["en"]}</Typography>
+                                    <Typography><b>JP:</b> {voiceActors["jp"]}</Typography>
+                                </Grid>
                             </Grid>
-                        </DialogContent>
-                        <Divider className={classes.divider} />
-                        <DialogContent>
-                            <div className={classes.dialogDescription}>
-                                <Typography><i>{description}</i></Typography>
-                            </div>
-                            <div className={classes.nationIconContainer}>
-                                <img className={classes.nationIcon} src={require(`../assets/nations/${nation}.png`).default} alt={nation} />
-                            </div>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleClose} color="secondary">
-                                Close
-                            </Button>
-                        </DialogActions>
-                    </div>
-                </Dialog>
-            </CardContent>
-        </Card >
+                        </div>
+                    </DialogTitle>
+                    <Divider className={classes.divider} />
+                    <DialogContent>
+                        <Grid container spacing={2} className={classes.dialogMain}>
+                            <Grid item>
+                                <img src={require(`../assets/characters/cards/Character_${name.split(" ").join("_")}_Card.png`).default} alt={name} className={classes.characterCard} />
+                            </Grid>
+                            <Grid item xs className={classes.talentContainer}>
+                                <div>
+                                    <AppBar position="static" className={`appbar-${element.toLowerCase()}`}>
+                                        <Tabs value={valueHorizontal} onChange={handleChangeHorizontal} classes={{ indicator: `appbar-indicator` }} >
+                                            <Tab label="Talents" />
+                                            <Tab label="Constellation" />
+                                        </Tabs>
+                                    </AppBar>
+                                    <TabPanelHorizontal value={valueHorizontal} index={0}>
+                                        <div className={classes.talentDisplay}>
+                                            <Tabs
+                                                orientation="vertical"
+                                                variant="scrollable"
+                                                value={valueVerticalTalent}
+                                                onChange={handleChangeVerticalTalent}
+                                                className={classes.tabs}
+                                            >
+                                                <Tab label="Normal Attack" />
+                                                <Tab label="Elemental Skill" />
+                                                <Tab label="Elemental Burst" />
+                                                <Tab label="1st Ascension Passive" />
+                                                <Tab label="4th Ascension Passive" />
+                                                <Tab label="Utility Passive" />
+                                                {talents.altsprint && <Tab label="Alternate Sprint" />}
+                                            </Tabs>
+                                            <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
+                                                <Typography variant="h5"><b>{talents.attack.name}</b></Typography>
+                                                <br />
+                                                {parse(talents.attack.description)}
+                                            </TabPanelVertical>
+                                            <TabPanelVertical value={valueVerticalTalent} index={1} className={classes.verticalTabContent}>
+                                                <Typography variant="h5"><b>{talents.skill.name}</b></Typography>
+                                                <br />
+                                                {parse(talents.skill.description)}
+                                            </TabPanelVertical>
+                                            <TabPanelVertical value={valueVerticalTalent} index={2} className={classes.verticalTabContent}>
+                                                <Typography variant="h5"><b>{talents.burst.name}</b></Typography>
+                                                <br />
+                                                {parse(talents.burst.description)}
+                                            </TabPanelVertical>
+                                            <TabPanelVertical value={valueVerticalTalent} index={3} className={classes.verticalTabContent}>
+                                                <Typography variant="h5"><b>{talents.a1passive.name}</b></Typography>
+                                                <br />
+                                                {parse(talents.a1passive.description)}
+                                            </TabPanelVertical>
+                                            <TabPanelVertical value={valueVerticalTalent} index={4} className={classes.verticalTabContent}>
+                                                <Typography variant="h5"><b>{talents.a4passive.name}</b></Typography>
+                                                <br />
+                                                {parse(talents.a4passive.description)}
+                                            </TabPanelVertical>
+                                            <TabPanelVertical value={valueVerticalTalent} index={5} className={classes.verticalTabContent}>
+                                                <Typography variant="h5"><b>{talents.utilpassive.name}</b></Typography>
+                                                <br />
+                                                {parse(talents.utilpassive.description)}
+                                            </TabPanelVertical>
+                                            {
+                                                talents.altsprint &&
+                                                <TabPanelVertical value={valueVerticalTalent} index={6} className={classes.verticalTabContent}>
+                                                    <Typography variant="h5"><b>{talents.altsprint.name}</b></Typography>
+                                                    <br />
+                                                    {parse(talents.altsprint.description)}
+                                                </TabPanelVertical>
+                                            }
+                                        </div>
+                                    </TabPanelHorizontal>
+                                    <TabPanelHorizontal value={valueHorizontal} index={1}>
+                                        <div className={classes.constellationDisplay}>
+                                            <Typography variant="h5"><b>C1 - {constellation.c1.name}</b></Typography>
+                                            <br />
+                                            {parse(constellation.c1.description)}
+                                            <br />
+                                            <br />
+                                            <Typography variant="h5"><b>C2 - {constellation.c2.name}</b></Typography>
+                                            <br />
+                                            {parse(constellation.c2.description)}
+                                            <br />
+                                            <br />
+                                            <Typography variant="h5"><b>C3 - {constellation.c3.name}</b></Typography>
+                                            <br />
+                                            {parse(constellation.c3.description)}
+                                            <br />
+                                            <br />
+                                            <Typography variant="h5"><b>C4 - {constellation.c4.name}</b></Typography>
+                                            <br />
+                                            {parse(constellation.c4.description)}
+                                            <br />
+                                            <br />
+                                            <Typography variant="h5"><b>C5 - {constellation.c5.name}</b></Typography>
+                                            <br />
+                                            {parse(constellation.c5.description)}
+                                            <br />
+                                            <br />
+                                            <Typography variant="h5"><b>C6 - {constellation.c6.name}</b></Typography>
+                                            <br />
+                                            {parse(constellation.c6.description)}
+                                        </div>
+                                    </TabPanelHorizontal>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </DialogContent>
+                    <Divider className={classes.divider} />
+                    <DialogContent>
+                        <div className={classes.dialogDescription}>
+                            <Typography><i>{description}</i></Typography>
+                        </div>
+                        <div className={classes.nationIconContainer}>
+                            <img className={classes.nationIcon} src={require(`../assets/nations/${nation}.png`).default} alt={nation} />
+                        </div>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button variant="contained" onClick={handleClose} color="secondary">
+                            Close
+                        </Button>
+                    </DialogActions>
+                </div>
+            </Dialog>
+        </React.Fragment>
     )
 }
 
