@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
 
-import "../filters.css";
+import "../css/filters.css";
 import ElementFilter from "./filters/ElementFilter";
 import WeaponFilter from "./filters/WeaponFilter";
 import TalentFilter from "./filters/TalentFilter";

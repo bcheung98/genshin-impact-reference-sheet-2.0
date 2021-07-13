@@ -19,7 +19,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
-import "../textColor.css";
+import "../css/textColor.css";
+import "../css/appBar.css";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -116,9 +117,6 @@ const useStyles = makeStyles((theme) => ({
     characterCard: {
         border: "2px solid gray",
         borderRadius: "5px",
-    },
-    appBar: {
-        height: "48px",
     },
     talentContainer: {
         border: "2px solid gray",
@@ -360,8 +358,8 @@ const CharacterCard = (props) => {
                                 </Grid>
                                 <Grid item xs className={classes.talentContainer}>
                                     <div>
-                                        <AppBar position="static" className={classes.appBar}>
-                                            <Tabs value={valueHorizontal} onChange={handleChangeHorizontal} >
+                                        <AppBar position="static" className={`appbar-${element.toLowerCase()}`}>
+                                            <Tabs value={valueHorizontal} onChange={handleChangeHorizontal} classes={{indicator: `appbar-indicator`}} >
                                                 <Tab label="Talents" />
                                                 <Tab label="Constellation" />
                                             </Tabs>
