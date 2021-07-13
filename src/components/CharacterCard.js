@@ -33,13 +33,16 @@ const useStyles = makeStyles((theme) => ({
         border: "2px solid gray",
         borderRadius: "5px",
     },
+    genshinFont: {
+        fontFamily: "Genshin, sans-serif"
+    },
     topRow: {
         margin: "auto",
         marginTop: "-15px",
         width: "95%",
     },
     name: {
-        fontWeight: "bold",
+        fontFamily: "Genshin, sans-serif",
         color: "white",
         marginTop: "2px",
         marginBottom: "10px",
@@ -100,6 +103,9 @@ const useStyles = makeStyles((theme) => ({
     },
     dialogGrid: {
         flexGrow: 1,
+    },
+    dialogCircleIcon: {
+        marginLeft: "-7px",
     },
     dialogTitleMiddleColumn: {
         display: "flex",
@@ -298,9 +304,9 @@ const CharacterCard = (props) => {
                             </Grid>
                         </Grid>
                     </Grid>
-                        <Button size="small" className={classes.moreInfoButton} onClick={() => handleClickOpen()}>
-                            More Info
-                        </Button>
+                    <Button size="small" className={classes.moreInfoButton} onClick={() => handleClickOpen()}>
+                        More Info
+                    </Button>
                 </CardContent>
             </Card >
             <Dialog
@@ -316,15 +322,15 @@ const CharacterCard = (props) => {
                         <div className={classes.dialogGrid}>
                             <Grid container spacing={3}>
                                 <Grid item xs className={classes.dialogTitleLeftColumn}>
-                                    {props.character.fullname ? <Typography variant="h4"><b>{props.character.fullname}</b></Typography> : <Typography variant="h4"><b>{name}</b></Typography>}
-                                    <Typography variant="body1"><i>{title}</i></Typography>
+                                    {props.character.fullname ? <Typography className={classes.genshinFont} variant="h4">{props.character.fullname}</Typography> : <Typography  style={{fontFamily: "Genshin"}} variant="h4">{name}</Typography>}
+                                    <Typography variant="body1" className={classes.genshinFont}><i>{title}</i></Typography>
                                     <img className={classes.dialogStars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
-                                    <div>
+                                    <div className={classes.dialogCircleIcon}>
                                         <MaterialTooltip title={element} arrow placement="top">
-                                            <img className={classes.dialogElementIcon} src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
+                                            <img src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
                                         </MaterialTooltip>
                                         <MaterialTooltip title={weapon} arrow placement="top">
-                                            <img className={classes.dialogWeaponIcon} src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
+                                            <img src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
                                         </MaterialTooltip>
                                     </div>
                                 </Grid>
@@ -351,12 +357,12 @@ const CharacterCard = (props) => {
                                     </Grid>
                                 </Grid>
                                 <Grid item xs className={classes.dialogTitleRightColumn}>
-                                    <Typography><b>Constellation:</b> {constellation.name}</Typography>
-                                    <Typography><b>Birthday:</b> {birthday}</Typography>
+                                    <Typography className={classes.genshinFont}><b>Constellation:</b> {constellation.name}</Typography>
+                                    <Typography className={classes.genshinFont}><b>Birthday:</b> {birthday}</Typography>
                                     <br />
-                                    <Typography><b>Voice Actors</b></Typography>
-                                    <Typography><b>EN:</b> {voiceActors["en"]}</Typography>
-                                    <Typography><b>JP:</b> {voiceActors["jp"]}</Typography>
+                                    <Typography className={classes.genshinFont}><b>Voice Actors:</b></Typography>
+                                    <Typography className={classes.genshinFont}><b>EN:</b> {voiceActors["en"]}</Typography>
+                                    <Typography className={classes.genshinFont}><b>JP:</b> {voiceActors["jp"]}</Typography>
                                 </Grid>
                             </Grid>
                         </div>
@@ -371,8 +377,8 @@ const CharacterCard = (props) => {
                                 <div>
                                     <AppBar position="static" className={`appbar-${element.toLowerCase()}`}>
                                         <Tabs value={valueHorizontal} onChange={handleChangeHorizontal} classes={{ indicator: `appbar-indicator` }} >
-                                            <Tab label="Talents" />
-                                            <Tab label="Constellation" />
+                                            <Tab className={classes.genshinFont} label="Talents" />
+                                            <Tab className={classes.genshinFont} label="Constellation" />
                                         </Tabs>
                                     </AppBar>
                                     <TabPanelHorizontal value={valueHorizontal} index={0}>
@@ -384,12 +390,12 @@ const CharacterCard = (props) => {
                                                 onChange={handleChangeVerticalTalent}
                                                 className={classes.tabs}
                                             >
-                                                <Tab label="Normal Attack" />
-                                                <Tab label="Elemental Skill" />
-                                                <Tab label="Elemental Burst" />
-                                                <Tab label="1st Ascension Passive" />
-                                                <Tab label="4th Ascension Passive" />
-                                                <Tab label="Utility Passive" />
+                                                <Tab className={classes.genshinFont} label="Normal Attack" />
+                                                <Tab className={classes.genshinFont} label="Elemental Skill" />
+                                                <Tab className={classes.genshinFont} label="Elemental Burst" />
+                                                <Tab className={classes.genshinFont} label="1st Ascension Passive" />
+                                                <Tab className={classes.genshinFont} label="4th Ascension Passive" />
+                                                <Tab className={classes.genshinFont} label="Utility Passive" />
                                                 {talents.altsprint && <Tab label="Alternate Sprint" />}
                                             </Tabs>
                                             <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
@@ -471,7 +477,7 @@ const CharacterCard = (props) => {
                     <Divider className={classes.divider} />
                     <DialogContent>
                         <div className={classes.dialogDescription}>
-                            <Typography><i>{description}</i></Typography>
+                            <Typography variant="subtitle2" className={classes.genshinFont}><i>{description}</i></Typography>
                         </div>
                         <div className={classes.nationIconContainer}>
                             <img className={classes.nationIcon} src={require(`../assets/nations/${nation}.png`).default} alt={nation} />

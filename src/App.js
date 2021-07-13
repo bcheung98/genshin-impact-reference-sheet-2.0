@@ -11,7 +11,10 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 10,
         padding: 10,
         textAlign: "center",
-        backgroundImage: "linear-gradient(to right, #2d388a, #0e789b, #2d388a)"
+        backgroundImage: "linear-gradient(to right, #2d388a, #0e789b, #2d388a)",
+    },
+    genshinFont: {
+        fontFamily: "Genshin, sans-serif" 
     },
     footerBar: {
         marginTop: 10,
@@ -26,13 +29,13 @@ const App = () => {
     return (
         <React.Fragment>
             <AppBar position="static" className={classes.headerBar}>
-                <Typography variant="h3">Genshin Impact Reference Sheet</Typography>
+                <Typography variant="h4" className={classes.genshinFont}>Genshin Impact Reference Sheet</Typography>
             </AppBar>
             <CharacterBrowser />
             <AppBar position="static" className={classes.footerBar}>
-                <Typography variant="subtitle2">Genshin Impact™ is a registered trademark of MiHoYo Co., Ltd.</Typography>
-                <Typography variant="subtitle2">Images and data ©MiHoYo Co., Ltd.</Typography>
-                <Typography variant="subtitle2">This website was made for my own education and research into making React applications.</Typography>
+                <Typography className={classes.genshinFont} variant="subtitle2">Genshin Impact™ is a registered trademark of MiHoYo Co., Ltd.</Typography>
+                <Typography className={classes.genshinFont} variant="subtitle2">Images and data ©MiHoYo Co., Ltd.</Typography>
+                <Typography className={classes.genshinFont} variant="subtitle2">This website was made for my own education and research into making React applications.</Typography>
             </AppBar>
         </React.Fragment> 
     );

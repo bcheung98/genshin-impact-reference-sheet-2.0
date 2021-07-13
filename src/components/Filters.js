@@ -39,7 +39,7 @@ const Filters = () => {
         <div className={classes.root}>
             <Accordion className={classes.bar}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />}>
-                    <Typography variant="h6">Filters</Typography>
+                    <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Filters</Typography>
                 </AccordionSummary>
                 <Divider className={classes.divider} />
                 <AccordionDetails className={classes.filterRow}>
