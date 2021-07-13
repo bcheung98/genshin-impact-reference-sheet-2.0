@@ -130,6 +130,10 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         display: 'flex',
     },
+    constellationDisplay: {
+        overflowX: "auto",
+        height: "400px"
+    },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
         marginLeft: "-20px",
@@ -241,11 +245,6 @@ const CharacterCard = (props) => {
     const [valueVerticalTalent, setValueVerticalTalent] = React.useState(0);
     const handleChangeVerticalTalent = (event, newValue) => {
         setValueVerticalTalent(newValue);
-    };
-
-    const [valueVerticalConstellation, setValueVerticalConstellation] = React.useState(0);
-    const handleChangeVerticalConstellation = (event, newValue) => {
-        setValueVerticalConstellation(newValue);
     };
 
     return (
@@ -424,53 +423,35 @@ const CharacterCard = (props) => {
                                             </div>
                                         </TabPanelHorizontal>
                                         <TabPanelHorizontal value={valueHorizontal} index={1}>
-                                            <div className={classes.talentDisplay}>
-                                                <Tabs
-                                                    orientation="vertical"
-                                                    variant="scrollable"
-                                                    value={valueVerticalConstellation}
-                                                    onChange={handleChangeVerticalConstellation}
-                                                    className={classes.tabs}
-                                                >
-                                                    <Tab label="C1" />
-                                                    <Tab label="C2" />
-                                                    <Tab label="C3" />
-                                                    <Tab label="C4" />
-                                                    <Tab label="C5" />
-                                                    <Tab label="C6" />
-                                                </Tabs>
-                                                <div>
-                                                    <TabPanelVertical value={valueVerticalConstellation} index={0} className={classes.verticalTabContent}>
-                                                        <Typography variant="h5"><b>{constellation.c1.name}</b></Typography>
-                                                        <br />
-                                                        {parse(constellation.c1.description)}
-                                                    </TabPanelVertical>
-                                                    <TabPanelVertical value={valueVerticalConstellation} index={1} className={classes.verticalTabContent}>
-                                                        <Typography variant="h5"><b>{constellation.c2.name}</b></Typography>
-                                                        <br />
-                                                        {parse(constellation.c2.description)}
-                                                    </TabPanelVertical>
-                                                    <TabPanelVertical value={valueVerticalConstellation} index={2} className={classes.verticalTabContent}>
-                                                        <Typography variant="h5"><b>{constellation.c3.name}</b></Typography>
-                                                        <br />
-                                                        {parse(constellation.c3.description)}
-                                                    </TabPanelVertical>
-                                                    <TabPanelVertical value={valueVerticalConstellation} index={3} className={classes.verticalTabContent}>
-                                                        <Typography variant="h5"><b>{constellation.c4.name}</b></Typography>
-                                                        <br />
-                                                        {parse(constellation.c4.description)}
-                                                    </TabPanelVertical>
-                                                    <TabPanelVertical value={valueVerticalConstellation} index={4} className={classes.verticalTabContent}>
-                                                        <Typography variant="h5"><b>{constellation.c5.name}</b></Typography>
-                                                        <br />
-                                                        {parse(constellation.c5.description)}
-                                                    </TabPanelVertical>
-                                                    <TabPanelVertical value={valueVerticalConstellation} index={5} className={classes.verticalTabContent}>
-                                                        <Typography variant="h5"><b>{constellation.c6.name}</b></Typography>
-                                                        <br />
-                                                        {parse(constellation.c6.description)}
-                                                    </TabPanelVertical>
-                                                </div>
+                                            <div className={classes.constellationDisplay}>
+                                                <Typography variant="h5"><b>C1 - {constellation.c1.name}</b></Typography>
+                                                <br />
+                                                {parse(constellation.c1.description)}
+                                                <br />
+                                                <br />
+                                                <Typography variant="h5"><b>C2 - {constellation.c2.name}</b></Typography>
+                                                <br />
+                                                {parse(constellation.c2.description)}
+                                                <br />
+                                                <br />
+                                                <Typography variant="h5"><b>C3 - {constellation.c3.name}</b></Typography>
+                                                <br />
+                                                {parse(constellation.c3.description)}
+                                                <br />
+                                                <br />
+                                                <Typography variant="h5"><b>C4 - {constellation.c4.name}</b></Typography>
+                                                <br />
+                                                {parse(constellation.c4.description)}
+                                                <br />
+                                                <br />
+                                                <Typography variant="h5"><b>C5 - {constellation.c5.name}</b></Typography>
+                                                <br />
+                                                {parse(constellation.c5.description)}
+                                                <br />
+                                                <br />
+                                                <Typography variant="h5"><b>C6 - {constellation.c6.name}</b></Typography>
+                                                <br />
+                                                {parse(constellation.c6.description)}
                                             </div>
                                         </TabPanelHorizontal>
                                     </div>
