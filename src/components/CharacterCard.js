@@ -1,4 +1,5 @@
 import React from "react";
+import parse from "html-react-parser";
 import { formatTalents } from "../helpers/formatTalents";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -132,10 +133,14 @@ const useStyles = makeStyles((theme) => ({
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
         marginLeft: "-20px",
+        width: "200px",
         height: "425px"
     },
     verticalTabContent: {
         height: "400px",
+        width: "850px",
+        marginTop: "-20px",
+        overflowX: "auto"
     },
     dialogDescription: {
         textAlign: "center",
@@ -177,7 +182,7 @@ function TabPanelHorizontal(props) {
         >
             {value === index && (
                 <Box p={3}>
-                    <Typography>{children}</Typography>
+                    <Typography component="div">{children}</Typography>
                 </Box>
             )}
         </div>
@@ -202,7 +207,7 @@ function TabPanelVertical(props) {
         >
             {value === index && (
                 <Box p={3}>
-                    <Typography>{children}</Typography>
+                    <Typography component="div">{children}</Typography>
                 </Box>
             )}
         </div>
@@ -217,8 +222,8 @@ TabPanelVertical.propTypes = {
 
 const CharacterCard = (props) => {
     const classes = useStyles();
-    let { name, title, rarity, element, weapon, description, birthday, nation, voiceActors } = props.character;
-    let { talents, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
+    let { name, title, rarity, element, weapon, talents, constellation, description, birthday, nation, voiceActors } = props.character;
+    let { talentBook, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
 
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
@@ -266,8 +271,8 @@ const CharacterCard = (props) => {
                     </Grid>
                     <Grid item xs={12} sm container>
                         <Grid className={classes.materialRow}>
-                            <MaterialTooltip title={formatTalents(talents)} arrow placement="top">
-                                <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talents}.png`).default} alt={talents} />
+                            <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
+                                <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
                             </MaterialTooltip>
                             <MaterialTooltip title={ascensionMat} arrow placement="top">
                                 <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
@@ -316,8 +321,8 @@ const CharacterCard = (props) => {
                                     </Grid>
                                     <Grid item xs className={classes.dialogTitleMiddleColumn}>
                                         <Grid className={classes.dialogMaterialRow}>
-                                            <MaterialTooltip title={formatTalents(talents)} arrow placement="top">
-                                                <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talents}.png`).default} alt={talents} />
+                                            <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
+                                                <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
                                             </MaterialTooltip>
                                             <MaterialTooltip title={ascensionMat} arrow placement="top">
                                                 <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
@@ -337,7 +342,7 @@ const CharacterCard = (props) => {
                                         </Grid>
                                     </Grid>
                                     <Grid item xs className={classes.dialogTitleRightColumn}>
-                                        {/* <Typography><b>Constellation:</b> {constellation}</Typography> */}
+                                        <Typography><b>Constellation:</b> {constellation.name}</Typography>
                                         <Typography><b>Birthday:</b> {birthday}</Typography>
                                         <br />
                                         <Typography><b>Voice Actors</b></Typography>
@@ -376,35 +381,45 @@ const CharacterCard = (props) => {
                                                     <Tab label="1st Ascension Passive" />
                                                     <Tab label="4th Ascension Passive" />
                                                     <Tab label="Utility Passive" />
-                                                    <Tab label="Alternate Sprint" />
+                                                    {talents.altsprint && <Tab label="Alternate Sprint" />}
                                                 </Tabs>
+                                                <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
+                                                    <Typography variant="h5"><b>{talents.attack.name}</b></Typography>
+                                                    <br />
+                                                    {parse(talents.attack.description)}
+                                                </TabPanelVertical>
+                                                <TabPanelVertical value={valueVerticalTalent} index={1} className={classes.verticalTabContent}>
+                                                    <Typography variant="h5"><b>{talents.skill.name}</b></Typography>
+                                                    <br />
+                                                    {parse(talents.skill.description)}
+                                                </TabPanelVertical>
+                                                <TabPanelVertical value={valueVerticalTalent} index={2} className={classes.verticalTabContent}>
+                                                    <Typography variant="h5"><b>{talents.burst.name}</b></Typography>
+                                                    <br />
+                                                    {parse(talents.burst.description)}
+                                                </TabPanelVertical>
+                                                <TabPanelVertical value={valueVerticalTalent} index={3} className={classes.verticalTabContent}>
+                                                    <Typography variant="h5"><b>{talents.a1passive.name}</b></Typography>
+                                                    <br />
+                                                    {parse(talents.a1passive.description)}
+                                                </TabPanelVertical>
+                                                <TabPanelVertical value={valueVerticalTalent} index={4} className={classes.verticalTabContent}>
+                                                    <Typography variant="h5"><b>{talents.a4passive.name}</b></Typography>
+                                                    <br />
+                                                    {parse(talents.a4passive.description)}
+                                                </TabPanelVertical>
+                                                <TabPanelVertical value={valueVerticalTalent} index={5} className={classes.verticalTabContent}>
+                                                    <Typography variant="h5"><b>{talents.utilpassive.name}</b></Typography>
+                                                    <br />
+                                                    {parse(talents.utilpassive.description)}
+                                                </TabPanelVertical>
                                                 {
-                                                    props.character.talents ?
-                                                        <React.Fragment>
-                                                            <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
-                                                                Normal Attack
-                                                            </TabPanelVertical>
-                                                            <TabPanelVertical value={valueVerticalTalent} index={1} className={classes.verticalTabContent}>
-                                                                Elemental Skill
-                                                            </TabPanelVertical>
-                                                            <TabPanelVertical value={valueVerticalTalent} index={2} className={classes.verticalTabContent}>
-                                                                Elemental Burst
-                                                            </TabPanelVertical>
-                                                            <TabPanelVertical value={valueVerticalTalent} index={3} className={classes.verticalTabContent}>
-                                                                1st Ascension Passive
-                                                            </TabPanelVertical>
-                                                            <TabPanelVertical value={valueVerticalTalent} index={4} className={classes.verticalTabContent}>
-                                                                4th Ascension Passive
-                                                            </TabPanelVertical>
-                                                            <TabPanelVertical value={valueVerticalTalent} index={5} className={classes.verticalTabContent}>
-                                                                Utility Passive
-                                                            </TabPanelVertical>
-                                                            <TabPanelVertical value={valueVerticalTalent} index={6} className={classes.verticalTabContent}>
-                                                                Alternate Sprint
-                                                            </TabPanelVertical>
-                                                        </React.Fragment>
-                                                        :
-                                                        null
+                                                    talents.altsprint &&
+                                                    <TabPanelVertical value={valueVerticalTalent} index={6} className={classes.verticalTabContent}>
+                                                        <Typography variant="h5"><b>{talents.altsprint.name}</b></Typography>
+                                                        <br />
+                                                        {parse(talents.altsprint.description)}
+                                                    </TabPanelVertical>
                                                 }
                                             </div>
                                         </TabPanelHorizontal>
@@ -426,22 +441,34 @@ const CharacterCard = (props) => {
                                                 </Tabs>
                                                 <div>
                                                     <TabPanelVertical value={valueVerticalConstellation} index={0} className={classes.verticalTabContent}>
-                                                        C1
+                                                        <Typography variant="h5"><b>{constellation.c1.name}</b></Typography>
+                                                        <br />
+                                                        {parse(constellation.c1.description)}
                                                     </TabPanelVertical>
                                                     <TabPanelVertical value={valueVerticalConstellation} index={1} className={classes.verticalTabContent}>
-                                                        C2
+                                                        <Typography variant="h5"><b>{constellation.c2.name}</b></Typography>
+                                                        <br />
+                                                        {parse(constellation.c2.description)}
                                                     </TabPanelVertical>
                                                     <TabPanelVertical value={valueVerticalConstellation} index={2} className={classes.verticalTabContent}>
-                                                        C3
+                                                        <Typography variant="h5"><b>{constellation.c3.name}</b></Typography>
+                                                        <br />
+                                                        {parse(constellation.c3.description)}
                                                     </TabPanelVertical>
                                                     <TabPanelVertical value={valueVerticalConstellation} index={3} className={classes.verticalTabContent}>
-                                                        C4
+                                                        <Typography variant="h5"><b>{constellation.c4.name}</b></Typography>
+                                                        <br />
+                                                        {parse(constellation.c4.description)}
                                                     </TabPanelVertical>
                                                     <TabPanelVertical value={valueVerticalConstellation} index={4} className={classes.verticalTabContent}>
-                                                        C5
+                                                        <Typography variant="h5"><b>{constellation.c5.name}</b></Typography>
+                                                        <br />
+                                                        {parse(constellation.c5.description)}
                                                     </TabPanelVertical>
                                                     <TabPanelVertical value={valueVerticalConstellation} index={5} className={classes.verticalTabContent}>
-                                                        C6
+                                                        <Typography variant="h5"><b>{constellation.c6.name}</b></Typography>
+                                                        <br />
+                                                        {parse(constellation.c6.description)}
                                                     </TabPanelVertical>
                                                 </div>
                                             </div>

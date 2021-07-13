@@ -23,7 +23,7 @@ const filterCharacters = (characters, filters) => {
         chars = chars.filter(char => filters.weapon.includes(char.weapon));
     }
     if (filters.talent.length > 0) {
-        chars = chars.filter(char => filters.talent.includes(char.materials.talents));
+        chars = chars.filter(char => filters.talent.includes(char.materials.talentBook));
     }
     if (filters.bossMat.length > 0) {
         chars = chars.filter(char => filters.bossMat.includes(char.materials.bossMat));
