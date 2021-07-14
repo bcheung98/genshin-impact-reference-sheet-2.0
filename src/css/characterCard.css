@@ -1,0 +1,63 @@
+.text-pyro {
+    color: #e46052
+}
+
+.text-hydro {
+    color: #5e89e4
+}
+
+.text-electro {
+    color: #d85dd8
+}
+
+.text-cryo {
+    color: #90e1fa
+}
+
+.text-anemo {
+    color: #4bcfa3
+}
+
+.text-geo {
+    color: #e4ad4e
+}
+
+.text-dendro {
+    color: #51810e
+}
+
+.text-highlight {
+    color: #ffe7b9
+}
+
+.appbar-pyro {
+    background-color: #ad0000 !important;
+}
+
+.appbar-hydro {
+    background-color: #204eb3 !important;
+}
+
+.appbar-electro {
+    background-color: #8216a3 !important;
+}
+
+.appbar-cryo {
+    background-color: #4492aa !important;
+}
+
+.appbar-anemo {
+    background-color: #1aa577 !important;
+}
+
+.appbar-geo {
+    background-color: #9b732e !important;
+}
+
+.appbar-dendro {
+    background-color: #51810e !important;
+}
+
+.appbar-indicator {
+    background-color: white !important;
+}
