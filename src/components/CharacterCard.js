@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "rgb(32, 32, 32)",
         border: "2px solid gray",
         borderRadius: "5px",
+        fontFamily: "Genshin, sans-serif",
     },
     genshinFont: {
         fontFamily: "Genshin, sans-serif"
@@ -133,7 +134,8 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "5px",
         height: "504px",
         marginTop: "8px",
-        overflowY: "hidden"
+        padding: "0px !important",
+        overflowY: "hidden",
     },
     talentDisplay: {
         flexGrow: 1,
@@ -146,6 +148,7 @@ const useStyles = makeStyles((theme) => ({
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
         marginLeft: "-20px",
+        minWidth: "125px",
         width: "200px",
         height: "425px"
     },
@@ -154,6 +157,12 @@ const useStyles = makeStyles((theme) => ({
         width: "850px",
         marginTop: "-20px",
         overflowX: "auto"
+    },
+    verticalTabSelector: {
+        fontFamily: "Genshin, sans-serif",
+        textTransform: "none",
+        borderBottom: "2px solid gray",
+        borderRight: "2px solid gray",
     },
     dialogDescription: {
         textAlign: "center",
@@ -321,7 +330,7 @@ const CharacterCard = (props) => {
                         <div className={classes.dialogGrid}>
                             <Grid container spacing={3}>
                                 <Grid item xs className={classes.dialogTitleLeftColumn}>
-                                    {props.character.fullname ? <Typography className={classes.genshinFont} variant="h4">{props.character.fullname}</Typography> : <Typography  style={{fontFamily: "Genshin"}} variant="h4">{name}</Typography>}
+                                    {props.character.fullname ? <Typography className={classes.genshinFont} variant="h4">{props.character.fullname}</Typography> : <Typography style={{ fontFamily: "Genshin" }} variant="h4">{name}</Typography>}
                                     <Typography variant="body1" className={classes.genshinFont}><i>{title}</i></Typography>
                                     <img className={classes.dialogStars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
                                     <div className={classes.dialogCircleIcon}>
@@ -375,7 +384,11 @@ const CharacterCard = (props) => {
                             <Grid item xs className={classes.talentContainer}>
                                 <div>
                                     <AppBar position="static" className={`appbar-${element.toLowerCase()}`}>
-                                        <Tabs value={valueHorizontal} onChange={handleChangeHorizontal} classes={{ indicator: `appbar-indicator` }} >
+                                        <Tabs
+                                            value={valueHorizontal}
+                                            onChange={handleChangeHorizontal}
+                                            classes={{ indicator: "appbar-indicator" }}
+                                        >
                                             <Tab className={classes.genshinFont} label="Talents" />
                                             <Tab className={classes.genshinFont} label="Constellation" />
                                         </Tabs>
@@ -387,50 +400,51 @@ const CharacterCard = (props) => {
                                                 variant="scrollable"
                                                 value={valueVerticalTalent}
                                                 onChange={handleChangeVerticalTalent}
+                                                classes={{ indicator: `appbar-${element.toLowerCase()}` }}
                                                 className={classes.tabs}
                                             >
-                                                <Tab className={classes.genshinFont} label="Normal Attack" />
-                                                <Tab className={classes.genshinFont} label="Elemental Skill" />
-                                                <Tab className={classes.genshinFont} label="Elemental Burst" />
-                                                <Tab className={classes.genshinFont} label="1st Ascension Passive" />
-                                                <Tab className={classes.genshinFont} label="4th Ascension Passive" />
-                                                <Tab className={classes.genshinFont} label="Utility Passive" />
-                                                {talents.altsprint && <Tab className={classes.genshinFont} label="Alternate Sprint" />}
+                                                <Tab className={classes.verticalTabSelector} label={`${talents.attack.name}`} />
+                                                <Tab className={classes.verticalTabSelector} label={`${talents.skill.name}`} />
+                                                <Tab className={classes.verticalTabSelector} label={`${talents.burst.name}`} />
+                                                <Tab className={classes.verticalTabSelector} label={`${talents.a1passive.name}`} />
+                                                <Tab className={classes.verticalTabSelector} label={`${talents.a4passive.name}`} />
+                                                <Tab className={classes.verticalTabSelector} label={`${talents.utilpassive.name}`} />
+                                                {talents.altsprint && <Tab className={classes.verticalTabSelector} label={`${talents.altsprint.name}`} />}
                                             </Tabs>
                                             <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
-                                                <Typography variant="h5"><b>{talents.attack.name}</b></Typography>
+                                                <Typography className={classes.genshinFont} variant="h6" component="p">Normal Attack</Typography>
                                                 <br />
                                                 {parse(talents.attack.description)}
                                             </TabPanelVertical>
                                             <TabPanelVertical value={valueVerticalTalent} index={1} className={classes.verticalTabContent}>
-                                                <Typography variant="h5"><b>{talents.skill.name}</b></Typography>
+                                                <Typography className={classes.genshinFont} variant="h6" component="p">Elemental Skill</Typography>
                                                 <br />
                                                 {parse(talents.skill.description)}
                                             </TabPanelVertical>
                                             <TabPanelVertical value={valueVerticalTalent} index={2} className={classes.verticalTabContent}>
-                                                <Typography variant="h5"><b>{talents.burst.name}</b></Typography>
+                                                <Typography className={classes.genshinFont} variant="h6" component="p">Elemental Burst</Typography>
                                                 <br />
                                                 {parse(talents.burst.description)}
                                             </TabPanelVertical>
                                             <TabPanelVertical value={valueVerticalTalent} index={3} className={classes.verticalTabContent}>
-                                                <Typography variant="h5"><b>{talents.a1passive.name}</b></Typography>
+                                                <Typography className={classes.genshinFont} variant="h6" component="p">1st Ascension Passive</Typography>
                                                 <br />
                                                 {parse(talents.a1passive.description)}
                                             </TabPanelVertical>
                                             <TabPanelVertical value={valueVerticalTalent} index={4} className={classes.verticalTabContent}>
-                                                <Typography variant="h5"><b>{talents.a4passive.name}</b></Typography>
+                                                <Typography className={classes.genshinFont} variant="h6" component="p">4th Ascension Passive</Typography>
                                                 <br />
                                                 {parse(talents.a4passive.description)}
                                             </TabPanelVertical>
                                             <TabPanelVertical value={valueVerticalTalent} index={5} className={classes.verticalTabContent}>
-                                                <Typography variant="h5"><b>{talents.utilpassive.name}</b></Typography>
+                                                <Typography className={classes.genshinFont} variant="h6" component="p">Utility Passive</Typography>
                                                 <br />
                                                 {parse(talents.utilpassive.description)}
                                             </TabPanelVertical>
                                             {
                                                 talents.altsprint &&
                                                 <TabPanelVertical value={valueVerticalTalent} index={6} className={classes.verticalTabContent}>
-                                                    <Typography variant="h5"><b>{talents.altsprint.name}</b></Typography>
+                                                    <Typography className={classes.genshinFont} variant="h6" component="p">Alternate Sprint</Typography>
                                                     <br />
                                                     {parse(talents.altsprint.description)}
                                                 </TabPanelVertical>
@@ -439,32 +453,32 @@ const CharacterCard = (props) => {
                                     </TabPanelHorizontal>
                                     <TabPanelHorizontal value={valueHorizontal} index={1}>
                                         <div className={classes.constellationDisplay}>
-                                            <Typography variant="h5"><b>C1 - {constellation.c1.name}</b></Typography>
+                                            <Typography className={classes.genshinFont} variant="h5">C1 - {constellation.c1.name}</Typography>
                                             <br />
                                             {parse(constellation.c1.description)}
                                             <br />
                                             <br />
-                                            <Typography variant="h5"><b>C2 - {constellation.c2.name}</b></Typography>
+                                            <Typography className={classes.genshinFont} variant="h5">C2 - {constellation.c2.name}</Typography>
                                             <br />
                                             {parse(constellation.c2.description)}
                                             <br />
                                             <br />
-                                            <Typography variant="h5"><b>C3 - {constellation.c3.name}</b></Typography>
+                                            <Typography className={classes.genshinFont} variant="h5">C3 - {constellation.c3.name}</Typography>
                                             <br />
                                             {parse(constellation.c3.description)}
                                             <br />
                                             <br />
-                                            <Typography variant="h5"><b>C4 - {constellation.c4.name}</b></Typography>
+                                            <Typography className={classes.genshinFont} variant="h5">C4 - {constellation.c4.name}</Typography>
                                             <br />
                                             {parse(constellation.c4.description)}
                                             <br />
                                             <br />
-                                            <Typography variant="h5"><b>C5 - {constellation.c5.name}</b></Typography>
+                                            <Typography className={classes.genshinFont} variant="h5">C5 - {constellation.c5.name}</Typography>
                                             <br />
                                             {parse(constellation.c5.description)}
                                             <br />
                                             <br />
-                                            <Typography variant="h5"><b>C6 - {constellation.c6.name}</b></Typography>
+                                            <Typography className={classes.genshinFont} variant="h5">C6 - {constellation.c6.name}</Typography>
                                             <br />
                                             {parse(constellation.c6.description)}
                                         </div>
