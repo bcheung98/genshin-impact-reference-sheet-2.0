@@ -395,7 +395,7 @@ const CharacterCard = (props) => {
                                                 <Tab className={classes.genshinFont} label="1st Ascension Passive" />
                                                 <Tab className={classes.genshinFont} label="4th Ascension Passive" />
                                                 <Tab className={classes.genshinFont} label="Utility Passive" />
-                                                {talents.altsprint && <Tab label="Alternate Sprint" />}
+                                                {talents.altsprint && <Tab className={classes.genshinFont} label="Alternate Sprint" />}
                                             </Tabs>
                                             <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
                                                 <Typography variant="h5"><b>{talents.attack.name}</b></Typography>
