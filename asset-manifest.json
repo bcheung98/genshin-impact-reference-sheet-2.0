@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.9db624aa.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.02096ceb.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.02096ceb.chunk.js.map",
+    "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.7859b791.chunk.css",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.706ced31.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.706ced31.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
-    "static/js/2.e304199a.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.e304199a.chunk.js",
-    "static/js/2.e304199a.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.e304199a.chunk.js.map",
+    "static/js/2.71c7114a.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.71c7114a.chunk.js",
+    "static/js/2.71c7114a.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.71c7114a.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
-    "static/css/main.9db624aa.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.9db624aa.chunk.css.map",
-    "static/js/2.e304199a.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.e304199a.chunk.js.LICENSE.txt",
+    "static/css/main.7859b791.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.7859b791.chunk.css.map",
+    "static/js/2.71c7114a.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.71c7114a.chunk.js.LICENSE.txt",
     "static/media/Anemo_Gemstone.png": "/genshin-impact-reference-sheet-2.0/static/media/Anemo_Gemstone.8e700e70.png",
     "static/media/Arrow.png": "/genshin-impact-reference-sheet-2.0/static/media/Arrow.29467e1e.png",
     "static/media/Ballad.png": "/genshin-impact-reference-sheet-2.0/static/media/Ballad.31e97540.png",
@@ -116,8 +116,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
-    "static/js/2.e304199a.chunk.js",
-    "static/css/main.9db624aa.chunk.css",
-    "static/js/main.02096ceb.chunk.js"
+    "static/js/2.71c7114a.chunk.js",
+    "static/css/main.7859b791.chunk.css",
+    "static/js/main.706ced31.chunk.js"
   ]
 }
