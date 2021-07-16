@@ -128,11 +128,12 @@ const useStyles = makeStyles((theme) => ({
     characterCard: {
         border: "2px solid gray",
         borderRadius: "5px",
+        height: "600px",
     },
     talentContainer: {
         border: "2px solid gray",
         borderRadius: "5px",
-        height: "504px",
+        height: "604px",
         marginTop: "8px",
         padding: "0px !important",
         overflowY: "hidden",
@@ -142,21 +143,26 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     constellationDisplay: {
-        overflowX: "auto",
-        height: "400px"
+        overflowY: "auto",
+        height: "500px",
     },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
-        marginLeft: "-20px",
+        marginLeft: "-25px",
+        marginTop: "-24px",
         minWidth: "125px",
-        width: "200px",
+        width: "225px",
         height: "425px"
     },
     verticalTabContent: {
-        height: "400px",
-        width: "850px",
-        marginTop: "-20px",
-        overflowX: "auto"
+        height: "550px",
+        width: "975px",
+        marginTop: "-15px",
+        overflowX: "auto",
+    },
+    horizontalTabSelector: {
+        fontFamily: "Genshin, sans-serif",
+        width: "210px",
     },
     verticalTabSelector: {
         fontFamily: "Genshin, sans-serif",
@@ -246,6 +252,7 @@ const CharacterCard = (props) => {
     const classes = useStyles();
     let { name, title, rarity, element, weapon, talents, constellation, description, birthday, nation, voiceActors } = props.character;
     let { talentBook, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
+    let avatarURL = require(`../assets/characters/avatars/Character_${name.split(" ").join("_")}_Avatar.png`).default;
 
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
@@ -379,7 +386,7 @@ const CharacterCard = (props) => {
                     <DialogContent>
                         <Grid container spacing={2} className={classes.dialogMain}>
                             <Grid item>
-                                <img src={require(`../assets/characters/cards/Character_${name.split(" ").join("_")}_Card.png`).default} alt={name} className={classes.characterCard} />
+                                <img src={require(`../assets/characters/avatars/Character_${name.split(" ").join("_")}_Avatar.png`).default} alt={name} className={classes.characterCard} />
                             </Grid>
                             <Grid item xs className={classes.talentContainer}>
                                 <div>
@@ -389,8 +396,8 @@ const CharacterCard = (props) => {
                                             onChange={handleChangeHorizontal}
                                             classes={{ indicator: "appbar-indicator" }}
                                         >
-                                            <Tab className={classes.genshinFont} label="Talents" />
-                                            <Tab className={classes.genshinFont} label="Constellation" />
+                                            <Tab className={classes.horizontalTabSelector} label="Talents" />
+                                            <Tab className={classes.horizontalTabSelector} label="Constellation" />
                                         </Tabs>
                                     </AppBar>
                                     <TabPanelHorizontal value={valueHorizontal} index={0}>
