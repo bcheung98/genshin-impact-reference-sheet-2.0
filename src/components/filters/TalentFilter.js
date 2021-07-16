@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { FilterTooltip } from "../../helpers/FilterTooltip";
-import { formatTalents } from "../../helpers/formatTalents";
+import { formatTalents } from "../../helpers/TooltipText";
 
 let freedomIcon = require("../../assets/materials/talent_mats/Freedom.png").default;
 let resistanceIcon = require("../../assets/materials/talent_mats/Resistance.png").default;
