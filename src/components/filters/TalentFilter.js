@@ -9,6 +9,9 @@ let balladIcon = require("../../assets/materials/talent_mats/Ballad.png").defaul
 let prosperityIcon = require("../../assets/materials/talent_mats/Prosperity.png").default;
 let diligenceIcon = require("../../assets/materials/talent_mats/Diligence.png").default;
 let goldIcon = require("../../assets/materials/talent_mats/Gold.png").default;
+let transienceIcon = require("../../assets/materials/talent_mats/Transience.png").default;
+let eleganceIcon = require("../../assets/materials/talent_mats/Elegance.png").default;
+let lightIcon = require("../../assets/materials/talent_mats/Light.png").default;
 
 const TalentFilter = (props) => {
     return (
@@ -30,6 +33,15 @@ const TalentFilter = (props) => {
             </FilterTooltip>
             <FilterTooltip title={formatTalents("Gold")} arrow placement="top">
                 <img className="filter-off" id="gold-button" src={goldIcon} alt="Gold" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatTalents("Transience")} arrow placement="top">
+                <img className="filter-off" id="transience-button" src={transienceIcon} alt="Transience" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatTalents("Elegance")} arrow placement="top">
+                <img className="filter-off" id="elegance-button" src={eleganceIcon} alt="Elegance" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatTalents("Light")} arrow placement="top">
+                <img className="filter-off" id="light-button" src={lightIcon} alt="Light" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
         </React.Fragment>
     )

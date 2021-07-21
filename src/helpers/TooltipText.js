@@ -2,14 +2,17 @@ export const formatTalents = (talent) => {
     switch (talent) {
         case "Freedom":
         case "Prosperity":
+        case "Transience":
             talent += " (Mon/Thu)";
             break;
         case "Resistance":
         case "Diligence":
+        case "Elegance":
             talent += " (Tue/Fri)"
             break;
         case "Ballad":
         case "Gold":
+        case "Light":
             talent += " (Wed/Sat)"
             break;
         default:
