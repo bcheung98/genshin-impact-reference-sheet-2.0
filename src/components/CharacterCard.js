@@ -1,6 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
-import { formatTalents, formatBossMats } from "../helpers/TooltipText";
+import { formatTalents, formatCommonMats, formatBossMats, formatAscensionMats } from "../helpers/TooltipText";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -279,10 +279,10 @@ const CharacterCard = (props) => {
                             {name}
                         </Typography>
                         <div className={classes.circleIcons}>
-                            <MaterialTooltip title={element} arrow placement="top">
+                            <MaterialTooltip title={element} arrow placement="bottom">
                                 <img className={classes.elementIcon} src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
                             </MaterialTooltip>
-                            <MaterialTooltip title={weapon} arrow placement="top">
+                            <MaterialTooltip title={weapon} arrow placement="bottom">
                                 <img className={classes.weaponIcon} src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
                             </MaterialTooltip>
                         </div>
@@ -294,24 +294,24 @@ const CharacterCard = (props) => {
                         </Grid>
                         <Grid item xs={12} sm container>
                             <Grid className={classes.materialRow}>
-                                <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
+                                <MaterialTooltip title={formatTalents(talentBook)} arrow placement="bottom">
                                     <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
                                 </MaterialTooltip>
-                                <MaterialTooltip title={ascensionMat} arrow placement="top">
+                                <MaterialTooltip title={formatAscensionMats(ascensionMat)} arrow placement="bottom">
                                     <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
                                 </MaterialTooltip>
-                                <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
+                                <MaterialTooltip title={`${element} Gemstone`} arrow placement="bottom">
                                     <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
                                 </MaterialTooltip>
                             </Grid>
                             <Grid className={classes.materialRow}>
-                                <MaterialTooltip title={localMat} arrow placement="top">
+                                <MaterialTooltip title={localMat} arrow placement="bottom">
                                     <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
                                 </MaterialTooltip>
-                                <MaterialTooltip title={commonMat} arrow placement="top">
+                                <MaterialTooltip title={formatCommonMats(commonMat)} arrow placement="bottom">
                                     <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
                                 </MaterialTooltip>
-                                <MaterialTooltip title={formatBossMats(bossMat)} arrow placement="top">
+                                <MaterialTooltip title={formatBossMats(bossMat)} arrow placement="bottom">
                                     <img className={classes.materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
                                 </MaterialTooltip>
                             </Grid>
@@ -352,7 +352,7 @@ const CharacterCard = (props) => {
                                         <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
                                             <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
                                         </MaterialTooltip>
-                                        <MaterialTooltip title={ascensionMat} arrow placement="top">
+                                        <MaterialTooltip title={formatAscensionMats(ascensionMat)} arrow placement="top">
                                             <img className={classes.materialImage} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
                                         </MaterialTooltip>
                                         <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
@@ -361,7 +361,7 @@ const CharacterCard = (props) => {
                                         <MaterialTooltip title={localMat} arrow placement="top">
                                             <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
                                         </MaterialTooltip>
-                                        <MaterialTooltip title={commonMat} arrow placement="top">
+                                        <MaterialTooltip title={formatCommonMats(commonMat)} arrow placement="top">
                                             <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
                                         </MaterialTooltip>
                                         <MaterialTooltip title={formatBossMats(bossMat)} arrow placement="top">

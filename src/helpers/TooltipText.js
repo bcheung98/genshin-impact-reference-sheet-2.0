@@ -21,28 +21,93 @@ export const formatTalents = (talent) => {
     return talent;
 }
 
-export const formatBossMats = (bossMat) => {
-    switch (bossMat) {
+export const formatBossMats = (material) => {
+    switch (material) {
         case "Dvalin's Claw":
         case "Dvalin's Plume":
         case "Dvalin's Sigh":
-            bossMat += " (Stormterror)";
+            material += " (Stormterror)";
             break;
         case "Ring of Boreas":
         case "Spirit Locket of Boreas":
         case "Tail of Boreas":
-            bossMat += " (Andrius)";
+            material += " (Andrius)";
             break;
         case "Shadow of the Warrior":
         case "Shard of a Foul Legacy":
         case "Tusk of Monoceros Caeli":
-            bossMat += " (Childe)";
+            material += " (Childe)";
             break;
         case "Bloodjade Branch":
         case "Dragon Lord's Crown":
         case "Gilded Scale":
-            bossMat += " (Azhdaha)";
+            material += " (Azhdaha)";
             break;
     }
-    return bossMat;
+    return material;
+}
+
+export const formatCommonMats = (material) => {
+    switch (material) {
+        case "Arrow":
+            material = "Hilichurl Arrow";
+            break;
+        case "Handguard":
+            material = "Nobushi Handguard";
+            break;
+        case "Mask":
+            material = "Hilichurl Mask";
+            break;
+        case "Nectar":
+            material = "Whopperflower Nectar";
+            break;
+        case "Oculus":
+            material = "Chaos Oculus";
+            break;
+        case "Scroll":
+            material = "Samachurl Scroll";
+            break;
+        default:
+            return material;
+    }
+    return material;
+}
+
+export const formatAscensionMats = (material) => {
+    switch (material) {
+        case "Basalt Pillar":
+            material += " (Geo Hypostasis)";
+            break;
+        case "Cleansing Heart":
+            material += " (Oceanid)";
+            break;
+        case "Crystalline Bloom":
+            material += " (Cryo Hypostasis)";
+            break;
+        case "Everflame Seed":
+            material += " (Pyro Regisvine)";
+            break;
+        case "Hoarfrost Core":
+            material += " (Cryo Regisvine)";
+            break;
+        case "Hurricane Seed":
+            material += " (Anemo Hypostasis)";
+            break;
+        case "Juvenile Jade":
+            material += " (Primo Geovishap)";
+            break;
+        case "Lightning Prism":
+            material += " (Electro Hypostasis)";
+            break;
+        case "Marionette Core":
+            material += " (Maguu Kenki)";
+            break;
+        case "Perpetual Heart":
+            material += " (Perpetual Mechanical Array)";
+            break;
+        case "Smoldering Pearl":
+            material += " (Pyro Hypostasis)";
+            break;
+    }
+    return material;
 }
