@@ -43,6 +43,8 @@ export const formatBossMats = (material) => {
         case "Gilded Scale":
             material += " (Azhdaha)";
             break;
+        default:
+            return material;
     }
     return material;
 }
@@ -108,6 +110,8 @@ export const formatAscensionMats = (material) => {
         case "Smoldering Pearl":
             material += " (Pyro Hypostasis)";
             break;
+        default:
+            return material;
     }
     return material;
 }
