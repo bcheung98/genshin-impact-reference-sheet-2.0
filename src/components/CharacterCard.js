@@ -1,6 +1,7 @@
 import React from "react";
 import parse from "html-react-parser";
 import { formatTalents, formatCommonMats, formatBossMats, formatAscensionMats } from "../helpers/TooltipText";
+import { FormatTalentKey } from "../helpers/FormatTalentKey";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -408,52 +409,17 @@ const CharacterCard = (props) => {
                                                 classes={{ indicator: `appbar-${element.toLowerCase()}` }}
                                                 className={classes.tabs}
                                             >
-                                                <Tab className={classes.verticalTabSelector} label={`${talents.attack.name}`} />
-                                                <Tab className={classes.verticalTabSelector} label={`${talents.skill.name}`} />
-                                                <Tab className={classes.verticalTabSelector} label={`${talents.burst.name}`} />
-                                                <Tab className={classes.verticalTabSelector} label={`${talents.a1passive.name}`} />
-                                                <Tab className={classes.verticalTabSelector} label={`${talents.a4passive.name}`} />
-                                                <Tab className={classes.verticalTabSelector} label={`${talents.utilpassive.name}`} />
-                                                {talents.altsprint && <Tab className={classes.verticalTabSelector} label={`${talents.altsprint.name}`} />}
+                                                {Object.entries(talents).map(([k, v]) => <Tab key={k} className={classes.verticalTabSelector} label={`${v.name}`} />)}
                                             </Tabs>
-                                            <TabPanelVertical value={valueVerticalTalent} index={0} className={classes.verticalTabContent}>
-                                                <Typography className={classes.genshinFont} variant="h6" component="p">Normal Attack</Typography>
-                                                <br />
-                                                {parse(talents.attack.description)}
-                                            </TabPanelVertical>
-                                            <TabPanelVertical value={valueVerticalTalent} index={1} className={classes.verticalTabContent}>
-                                                <Typography className={classes.genshinFont} variant="h6" component="p">Elemental Skill</Typography>
-                                                <br />
-                                                {parse(talents.skill.description)}
-                                            </TabPanelVertical>
-                                            <TabPanelVertical value={valueVerticalTalent} index={2} className={classes.verticalTabContent}>
-                                                <Typography className={classes.genshinFont} variant="h6" component="p">Elemental Burst</Typography>
-                                                <br />
-                                                {parse(talents.burst.description)}
-                                            </TabPanelVertical>
-                                            <TabPanelVertical value={valueVerticalTalent} index={3} className={classes.verticalTabContent}>
-                                                <Typography className={classes.genshinFont} variant="h6" component="p">1st Ascension Passive</Typography>
-                                                <br />
-                                                {parse(talents.a1passive.description)}
-                                            </TabPanelVertical>
-                                            <TabPanelVertical value={valueVerticalTalent} index={4} className={classes.verticalTabContent}>
-                                                <Typography className={classes.genshinFont} variant="h6" component="p">4th Ascension Passive</Typography>
-                                                <br />
-                                                {parse(talents.a4passive.description)}
-                                            </TabPanelVertical>
-                                            <TabPanelVertical value={valueVerticalTalent} index={5} className={classes.verticalTabContent}>
-                                                <Typography className={classes.genshinFont} variant="h6" component="p">Utility Passive</Typography>
-                                                <br />
-                                                {parse(talents.utilpassive.description)}
-                                            </TabPanelVertical>
-                                            {
-                                                talents.altsprint &&
-                                                <TabPanelVertical value={valueVerticalTalent} index={6} className={classes.verticalTabContent}>
-                                                    <Typography className={classes.genshinFont} variant="h6" component="p">Alternate Sprint</Typography>
-                                                    <br />
-                                                    {parse(talents.altsprint.description)}
-                                                </TabPanelVertical>
-                                            }
+                                            {Object.keys(talents).map((key, index) => {
+                                                return (
+                                                    <TabPanelVertical key={key} value={valueVerticalTalent} index={index} className={classes.verticalTabContent}>
+                                                        <Typography className={classes.genshinFont} variant="h6" component="p">{FormatTalentKey(key)}</Typography>
+                                                        <br />
+                                                        {parse(talents[key].description)}
+                                                    </TabPanelVertical>
+                                                )
+                                            })}
                                         </div>
                                     </TabPanelHorizontal>
                                     <TabPanelHorizontal value={valueHorizontal} index={1}>
