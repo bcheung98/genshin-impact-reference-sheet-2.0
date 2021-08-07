@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.6f4af6f0.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.e4e2ab09.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.e4e2ab09.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.3d618fd1.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.3d618fd1.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
-    "static/js/2.0515a768.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.0515a768.chunk.js",
-    "static/js/2.0515a768.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.0515a768.chunk.js.map",
+    "static/js/2.9ad04d23.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.9ad04d23.chunk.js",
+    "static/js/2.9ad04d23.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.9ad04d23.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
     "static/css/main.6f4af6f0.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.6f4af6f0.chunk.css.map",
-    "static/js/2.0515a768.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.0515a768.chunk.js.LICENSE.txt",
+    "static/js/2.9ad04d23.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.9ad04d23.chunk.js.LICENSE.txt",
     "static/media/Anemo_Gemstone.png": "/genshin-impact-reference-sheet-2.0/static/media/Anemo_Gemstone.8e700e70.png",
     "static/media/Arrow.png": "/genshin-impact-reference-sheet-2.0/static/media/Arrow.29467e1e.png",
     "static/media/Ballad.png": "/genshin-impact-reference-sheet-2.0/static/media/Ballad.31e97540.png",
@@ -50,6 +50,8 @@
     "static/media/Character_Razor_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Razor_Avatar.c613c89b.png",
     "static/media/Character_Rosaria_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Rosaria_Avatar.e4d99365.png",
     "static/media/Character_Rosaria_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Rosaria_Icon.006d21fa.png",
+    "static/media/Character_Sayu_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Sayu_Avatar.f5477d7c.png",
+    "static/media/Character_Sayu_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Sayu_Icon.702ce53c.png",
     "static/media/Character_Sucrose_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Sucrose_Avatar.31b0d24d.png",
     "static/media/Character_Tartaglia_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Tartaglia_Avatar.38d8a6ff.png",
     "static/media/Character_Tartaglia_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Tartaglia_Icon.e0fc133a.png",
@@ -133,8 +135,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
-    "static/js/2.0515a768.chunk.js",
+    "static/js/2.9ad04d23.chunk.js",
     "static/css/main.6f4af6f0.chunk.css",
-    "static/js/main.e4e2ab09.chunk.js"
+    "static/js/main.3d618fd1.chunk.js"
   ]
 }
