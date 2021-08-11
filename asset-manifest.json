@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.6f4af6f0.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.3d618fd1.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.3d618fd1.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.8c3d66b1.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.8c3d66b1.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
     "static/js/2.9ad04d23.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.9ad04d23.chunk.js",
@@ -50,7 +50,7 @@
     "static/media/Character_Razor_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Razor_Avatar.c613c89b.png",
     "static/media/Character_Rosaria_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Rosaria_Avatar.e4d99365.png",
     "static/media/Character_Rosaria_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Rosaria_Icon.006d21fa.png",
-    "static/media/Character_Sayu_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Sayu_Avatar.f5477d7c.png",
+    "static/media/Character_Sayu_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Sayu_Avatar.584d539a.png",
     "static/media/Character_Sayu_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Sayu_Icon.702ce53c.png",
     "static/media/Character_Sucrose_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Sucrose_Avatar.31b0d24d.png",
     "static/media/Character_Tartaglia_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Tartaglia_Avatar.38d8a6ff.png",
@@ -62,7 +62,7 @@
     "static/media/Character_Xinyan_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Xinyan_Avatar.bf8fdf1c.png",
     "static/media/Character_Yanfei_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Yanfei_Avatar.0ced8ca5.png",
     "static/media/Character_Yanfei_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Yanfei_Icon.1c34aa49.png",
-    "static/media/Character_Yoimiya_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Yoimiya_Avatar.4f53747b.png",
+    "static/media/Character_Yoimiya_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Yoimiya_Avatar.aeb2976a.png",
     "static/media/Character_Yoimiya_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Yoimiya_Icon.980da504.png",
     "static/media/Character_Zhongli_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Zhongli_Avatar.dfa3b537.png",
     "static/media/Cleansing_Heart.png": "/genshin-impact-reference-sheet-2.0/static/media/Cleansing_Heart.db1ae0b6.png",
@@ -137,6 +137,6 @@
     "static/js/runtime-main.d1c32acd.js",
     "static/js/2.9ad04d23.chunk.js",
     "static/css/main.6f4af6f0.chunk.css",
-    "static/js/main.3d618fd1.chunk.js"
+    "static/js/main.8c3d66b1.chunk.js"
   ]
 }
