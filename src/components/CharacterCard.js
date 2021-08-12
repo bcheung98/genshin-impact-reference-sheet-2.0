@@ -1,6 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
-import { formatTalents, formatCommonMats, formatBossMats, formatAscensionMats } from "../helpers/TooltipText";
+import { formatTalents, formatCommonMats, formatBossMats, formatAscensionMats, formatGemstone } from "../helpers/TooltipText";
 import { FormatTalentKey } from "../helpers/FormatTalentKey";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -295,7 +295,7 @@ const CharacterCard = (props) => {
                         </Grid>
                         <Grid item xs={12} sm container>
                             <Grid className={classes.materialRow}>
-                                <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
+                                <MaterialTooltip title={formatGemstone(element)} arrow placement="top">
                                     <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
                                 </MaterialTooltip>
                                 <MaterialTooltip title={formatAscensionMats(ascensionMat)} arrow placement="top">
@@ -350,7 +350,7 @@ const CharacterCard = (props) => {
                                 </Grid>
                                 <Grid item xs className={classes.dialogTitleMiddleColumn}>
                                     <Grid className={classes.dialogMaterialRow}>
-                                        <MaterialTooltip title={`${element} Gemstone`} arrow placement="top">
+                                        <MaterialTooltip title={formatGemstone(element)} arrow placement="top">
                                             <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
                                         </MaterialTooltip>
                                         <MaterialTooltip title={formatAscensionMats(ascensionMat)} arrow placement="top">

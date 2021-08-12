@@ -115,3 +115,29 @@ export const formatAscensionMats = (material) => {
     }
     return material;
 }
+
+export const formatGemstone = (material) => {
+    switch (material) {
+        case "Pyro":
+            material = "Agnidus Agate Gemstone";
+            break;
+        case "Hydro":
+            material = "Varunada Lazurite Gemstone";
+            break;
+        case "Electro":
+            material = "Vajrada Amethyst Gemstone";
+            break;
+        case "Cryo":
+            material = "Shivada Jade Gemstone";
+            break;
+        case "Anemo":
+            material = "Vayuda Turquoise Gemstone";
+            break;
+        case "Geo":
+            material = "Prithiva Topaz Gemstone";
+            break;
+        default:
+            return material;
+    }
+    return material;
+}
