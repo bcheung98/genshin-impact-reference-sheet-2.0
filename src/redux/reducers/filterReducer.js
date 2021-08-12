@@ -2,7 +2,8 @@ const initialState = {
     element: [],
     weapon: [],
     talent: [],
-    bossMat: []
+    bossMat: [],
+    nation: []
 }
 
 const filterReducer = (state = initialState, action) => {
@@ -39,6 +40,13 @@ const filterReducer = (state = initialState, action) => {
             return {
                 ...state,
                 bossMat: tempBossMat
+            }
+        case "SET_NATION_FILTERS":
+            let tempNation = [...state.nation];
+            !state.nation.includes(target) ? tempNation.push(target) : tempNation.splice(tempNation.indexOf(target), 1);
+            return {
+                ...state,
+                nation: tempNation
             }
         default:
             return state

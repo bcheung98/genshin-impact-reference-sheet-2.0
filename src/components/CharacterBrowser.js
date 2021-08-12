@@ -28,6 +28,9 @@ const filterCharacters = (characters, filters) => {
     if (filters.bossMat.length > 0) {
         chars = chars.filter(char => filters.bossMat.includes(char.materials.bossMat));
     }
+    if (filters.nation.length > 0) {
+        chars = chars.filter(char => filters.nation.includes(char.nation));
+    }
     return chars
 }
 

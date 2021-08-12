@@ -12,6 +12,7 @@ import ElementFilter from "./filters/ElementFilter";
 import WeaponFilter from "./filters/WeaponFilter";
 import TalentFilter from "./filters/TalentFilter";
 import BossMatFilter from "./filters/BossMatFilter";
+import NationFilter from "./filters/NationFilter";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -56,6 +57,10 @@ const Filters = () => {
                 <Divider className={classes.divider} />
                 <AccordionDetails className={classes.filterRow}>
                     <BossMatFilter />
+                </AccordionDetails>
+                <Divider className={classes.divider} />
+                <AccordionDetails className={classes.filterRow}>
+                    <NationFilter />
                 </AccordionDetails>
             </Accordion>
         </div>
