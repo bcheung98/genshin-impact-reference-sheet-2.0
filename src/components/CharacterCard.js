@@ -191,7 +191,7 @@ const useStyles = makeStyles((theme) => ({
     },
     table: {
         backgroundColor: "rgb(32, 32, 32)",
-        padding: 0,
+        border: "2px solid gray",
     },
 }));
 
