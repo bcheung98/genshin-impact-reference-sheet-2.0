@@ -500,7 +500,7 @@ const CharacterCard = (props) => {
                                             <Table className={classes.table} size="small">
                                                 <TableHead>
                                                     <StyledTableRow>
-                                                        <StyledTableCell className={classes.genshinFont}>Level</StyledTableCell>
+                                                        <StyledTableCell className={classes.genshinFont} align="center">Level</StyledTableCell>
                                                         <StyledTableCell className={classes.genshinFont} align="center">Base HP</StyledTableCell>
                                                         <StyledTableCell className={classes.genshinFont} align="center">Base ATK</StyledTableCell>
                                                         <StyledTableCell className={classes.genshinFont} align="center">Base DEF</StyledTableCell>
@@ -510,7 +510,7 @@ const CharacterCard = (props) => {
                                                 <TableBody>
                                                     {rows.map((row) => (
                                                         <StyledTableRow key={row.level}>
-                                                            <StyledTableCell component="th" scope="row">
+                                                            <StyledTableCell component="th" scope="row" align="center">
                                                                 {row.level}
                                                             </StyledTableCell>
                                                             <StyledTableCell align="center">{Number(row.hp).toLocaleString()}</StyledTableCell>
