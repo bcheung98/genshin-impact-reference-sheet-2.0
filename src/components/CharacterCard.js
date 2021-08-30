@@ -20,6 +20,13 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import "../css/characterCard.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -182,6 +189,10 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         height: "86px",
     },
+    table: {
+        backgroundColor: "rgb(32, 32, 32)",
+        padding: 0,
+    },
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -248,9 +259,34 @@ TabPanelVertical.propTypes = {
     value: PropTypes.any.isRequired,
 };
 
+const StyledTableCell = withStyles((theme) => ({
+    head: {
+        backgroundColor: "rgb(20, 20, 20)",
+        color: "white",
+    },
+    body: {
+        color: "white",
+    },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+    root: {
+        '&:nth-of-type(even)': {
+            backgroundColor: "rgb(20, 20, 20)",
+        },
+        '&:hover': {
+            backgroundColor: "rgb(60, 60, 60)",
+        },
+    },
+}))(TableRow);
+
+const createData = (level, hp, atk, def, special) => {
+    return { level, hp, atk, def, special }
+}
+
 const CharacterCard = (props) => {
     const classes = useStyles();
-    let { name, title, rarity, element, weapon, talents, constellation, description, birthday, nation, voiceActors } = props.character;
+    let { name, title, rarity, element, weapon, talents, constellation, stats, description, birthday, nation, voiceActors } = props.character;
     let { talentBook, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
 
     const [open, setOpen] = React.useState(false);
@@ -270,6 +306,10 @@ const CharacterCard = (props) => {
     const handleChangeVerticalTalent = (event, newValue) => {
         setValueVerticalTalent(newValue);
     };
+
+    const levels = ["1", "20", "20+", "40", "40+", "50", "50+", "60", "60+", "70", "70+", "80", "80+", "90"]
+
+    const rows = levels.map((level, index) => createData(level, stats.hp[index], stats.atk[index], stats.def[index], stats.special[index]))
 
     return (
         <React.Fragment>
@@ -397,6 +437,7 @@ const CharacterCard = (props) => {
                                         >
                                             <Tab className={classes.horizontalTabSelector} label="Talents" />
                                             <Tab className={classes.horizontalTabSelector} label="Constellation" />
+                                            <Tab className={classes.horizontalTabSelector} label="Stats" />
                                         </Tabs>
                                     </AppBar>
                                     <TabPanelHorizontal value={valueHorizontal} index={0}>
@@ -453,6 +494,34 @@ const CharacterCard = (props) => {
                                             <br />
                                             {parse(constellation.c6.description)}
                                         </div>
+                                    </TabPanelHorizontal>
+                                    <TabPanelHorizontal value={valueHorizontal} index={2}>
+                                        <TableContainer component={Paper}>
+                                            <Table className={classes.table} size="small">
+                                                <TableHead>
+                                                    <StyledTableRow>
+                                                        <StyledTableCell className={classes.genshinFont}>Level</StyledTableCell>
+                                                        <StyledTableCell className={classes.genshinFont} align="center">Base HP</StyledTableCell>
+                                                        <StyledTableCell className={classes.genshinFont} align="center">Base ATK</StyledTableCell>
+                                                        <StyledTableCell className={classes.genshinFont} align="center">Base DEF</StyledTableCell>
+                                                        <StyledTableCell className={classes.genshinFont} align="center">{stats.ascensionStat}</StyledTableCell>
+                                                    </StyledTableRow>
+                                                </TableHead>
+                                                <TableBody>
+                                                    {rows.map((row) => (
+                                                        <StyledTableRow key={row.level}>
+                                                            <StyledTableCell component="th" scope="row">
+                                                                {row.level}
+                                                            </StyledTableCell>
+                                                            <StyledTableCell align="center">{Number(row.hp).toLocaleString()}</StyledTableCell>
+                                                            <StyledTableCell align="center">{row.atk}</StyledTableCell>
+                                                            <StyledTableCell align="center">{row.def}</StyledTableCell>
+                                                            <StyledTableCell align="center">{stats.ascensionStat !== "Elemental Mastery" ? row.special + "%" : row.special}</StyledTableCell>
+                                                        </StyledTableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
                                     </TabPanelHorizontal>
                                 </div>
                             </Grid>
