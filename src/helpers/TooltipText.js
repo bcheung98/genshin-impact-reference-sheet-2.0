@@ -43,6 +43,11 @@ export const formatBossMats = (material) => {
         case "Gilded Scale":
             material += " (Azhdaha)";
             break;
+        case "Ashen Heart":
+        case "Hellfire Butterfly":
+        case "Molten Moment":
+            material += " (Signora)";
+            break;
         default:
             return material;
     }
@@ -63,11 +68,11 @@ export const formatCommonMats = (material) => {
         case "Nectar":
             material = "Whopperflower Nectar";
             break;
-        case "Oculus":
-            material = "Chaos Oculus";
-            break;
         case "Scroll":
             material = "Samachurl Scroll";
+            break;
+        case "Specter":
+            material = "Specter Core";
             break;
         default:
             return material;
@@ -109,6 +114,12 @@ export const formatAscensionMats = (material) => {
             break;
         case "Smoldering Pearl":
             material += " (Pyro Hypostasis)";
+            break;
+        case "Storm Beads":
+            material += " (Thunder Manifestation)";
+            break;
+        case "Dew of Repudiation":
+            material += " (Hydro Hypostasis)"; 
             break;
         default:
             return material;

@@ -15,6 +15,9 @@ let tuskIcon = require("../../assets/materials/boss_mats/Tusk_of_Monoceros_Caeli
 let branchIcon = require("../../assets/materials/boss_mats/Bloodjade_Branch.png").default;
 let crownIcon = require("../../assets/materials/boss_mats/Dragon_Lord's_Crown.png").default;
 let scaleIcon = require("../../assets/materials/boss_mats/Gilded_Scale.png").default;
+let heartIcon = require("../../assets/materials/boss_mats/Ashen_Heart.png").default;
+let butterflyIcon = require("../../assets/materials/boss_mats/Hellfire_Butterfly.png").default;
+let momentIcon = require("../../assets/materials/boss_mats/Molten_Moment.png").default;
 
 const BossMatFilter = (props) => {
     return (
@@ -54,6 +57,15 @@ const BossMatFilter = (props) => {
             </FilterTooltip>
             <FilterTooltip title={formatBossMats("Gilded Scale")} arrow placement="top">
                 <img className="filter-off" id="gilded scale-button" src={scaleIcon} alt="Gilded Scale" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatBossMats("Ashen Heart")} arrow placement="top">
+                <img className="filter-off" id="ashen heart-button" src={heartIcon} alt="Ashen Heart" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatBossMats("Hellfire Butterfly")} arrow placement="top">
+                <img className="filter-off" id="hellfire butterfly-button" src={butterflyIcon} alt="Hellfire Butterfly" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatBossMats("Molten Moment")} arrow placement="top">
+                <img className="filter-off" id="molten moment-button" src={momentIcon} alt="Molten Moment" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
         </React.Fragment>
     )
