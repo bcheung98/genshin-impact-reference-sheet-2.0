@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.6f4af6f0.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.84501ca7.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.84501ca7.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.18251174.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.18251174.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
     "static/js/2.a978e414.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.a978e414.chunk.js",
@@ -13,7 +13,7 @@
     "static/media/Amakumo_Fruit.png": "/genshin-impact-reference-sheet-2.0/static/media/Amakumo_Fruit.1bc748f0.png",
     "static/media/Anemo_Gemstone.png": "/genshin-impact-reference-sheet-2.0/static/media/Anemo_Gemstone.8e700e70.png",
     "static/media/Arrow.png": "/genshin-impact-reference-sheet-2.0/static/media/Arrow.29467e1e.png",
-    "static/media/Ashen_Heart.png": "/genshin-impact-reference-sheet-2.0/static/media/Ashen_Heart.67a9855c.png",
+    "static/media/Ashen_Heart.png": "/genshin-impact-reference-sheet-2.0/static/media/Ashen_Heart.f4d4d3d5.png",
     "static/media/Ballad.png": "/genshin-impact-reference-sheet-2.0/static/media/Ballad.31e97540.png",
     "static/media/Basalt_Pillar.png": "/genshin-impact-reference-sheet-2.0/static/media/Basalt_Pillar.4f767277.png",
     "static/media/Bloodjade_Branch.png": "/genshin-impact-reference-sheet-2.0/static/media/Bloodjade_Branch.09d37dc4.png",
@@ -106,7 +106,7 @@
     "static/media/Liyue.png": "/genshin-impact-reference-sheet-2.0/static/media/Liyue.6d9b6b14.png",
     "static/media/Marionette_Core.png": "/genshin-impact-reference-sheet-2.0/static/media/Marionette_Core.9a7937e9.png",
     "static/media/Mask.png": "/genshin-impact-reference-sheet-2.0/static/media/Mask.f1570eba.png",
-    "static/media/Molten_Moment.png": "/genshin-impact-reference-sheet-2.0/static/media/Molten_Moment.f4d4d3d5.png",
+    "static/media/Molten_Moment.png": "/genshin-impact-reference-sheet-2.0/static/media/Molten_Moment.67a9855c.png",
     "static/media/Mondstadt.png": "/genshin-impact-reference-sheet-2.0/static/media/Mondstadt.dc7336a5.png",
     "static/media/Naku_Weed.png": "/genshin-impact-reference-sheet-2.0/static/media/Naku_Weed.3c9aa5e5.png",
     "static/media/Nectar.png": "/genshin-impact-reference-sheet-2.0/static/media/Nectar.ed79ec9f.png",
@@ -147,6 +147,6 @@
     "static/js/runtime-main.d1c32acd.js",
     "static/js/2.a978e414.chunk.js",
     "static/css/main.6f4af6f0.chunk.css",
-    "static/js/main.84501ca7.chunk.js"
+    "static/js/main.18251174.chunk.js"
   ]
 }
