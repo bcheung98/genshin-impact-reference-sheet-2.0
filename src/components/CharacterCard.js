@@ -27,6 +27,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Avatar from '@material-ui/core/Avatar';
 import "../css/characterCard.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -138,6 +139,10 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "5px",
         height: "600px",
     },
+    talentContainerHeader: {
+        display: "flex",
+        alignItems: "center",
+    },
     talentContainer: {
         border: "2px solid gray",
         borderRadius: "5px",
@@ -145,6 +150,14 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "8px",
         padding: "0px !important",
         overflowY: "hidden",
+    },
+    talentIcon: {
+        display: "flex",
+        flexDirection: "column",
+        marginRight: "15px",
+        width: "64px",
+        height: "64px",
+        border: "2px solid gray"
     },
     talentDisplay: {
         flexGrow: 1,
@@ -455,7 +468,10 @@ const CharacterCard = (props) => {
                                             {Object.keys(talents).map((key, index) => {
                                                 return (
                                                     <TabPanelVertical key={key} value={valueVerticalTalent} index={index} className={classes.verticalTabContent}>
-                                                        <Typography className={classes.genshinFont} variant="h6" component="p">{FormatTalentKey(key)}</Typography>
+                                                        <div className={classes.talentContainerHeader}>
+                                                            <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.talentIcon} />
+                                                            <Typography className={classes.genshinFont} variant="h5" component="p">{FormatTalentKey(key)}</Typography>
+                                                        </div>
                                                         <br />
                                                         {parse(talents[key].description)}
                                                     </TabPanelVertical>
