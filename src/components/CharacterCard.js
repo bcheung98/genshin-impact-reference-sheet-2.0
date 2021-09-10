@@ -139,10 +139,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "5px",
         height: "600px",
     },
-    talentContainerHeader: {
-        display: "flex",
-        alignItems: "center",
-    },
     talentContainer: {
         border: "2px solid gray",
         borderRadius: "5px",
@@ -150,14 +146,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "8px",
         padding: "0px !important",
         overflowY: "hidden",
-    },
-    talentIcon: {
-        display: "flex",
-        flexDirection: "column",
-        marginRight: "15px",
-        width: "64px",
-        height: "64px",
-        border: "2px solid gray"
     },
     talentDisplay: {
         flexGrow: 1,
@@ -205,6 +193,18 @@ const useStyles = makeStyles((theme) => ({
     table: {
         backgroundColor: "rgb(32, 32, 32)",
         border: "2px solid gray",
+    },
+    avatarHeader: {
+        display: "flex",
+        alignItems: "center",
+    },
+    avatar: {
+        display: "flex",
+        flexDirection: "column",
+        marginRight: "15px",
+        width: "64px",
+        height: "64px",
+        border: "2px solid gray"
     },
 }));
 
@@ -468,8 +468,8 @@ const CharacterCard = (props) => {
                                             {Object.keys(talents).map((key, index) => {
                                                 return (
                                                     <TabPanelVertical key={key} value={valueVerticalTalent} index={index} className={classes.verticalTabContent}>
-                                                        <div className={classes.talentContainerHeader}>
-                                                            <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.talentIcon} />
+                                                        <div className={classes.avatarHeader}>
+                                                            <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
                                                             <Typography className={classes.genshinFont} variant="h5" component="p">{FormatTalentKey(key)}</Typography>
                                                         </div>
                                                         <br />
@@ -481,32 +481,55 @@ const CharacterCard = (props) => {
                                     </TabPanelHorizontal>
                                     <TabPanelHorizontal value={valueHorizontal} index={1}>
                                         <div className={classes.constellationDisplay}>
-                                            <Typography className={classes.genshinFont} variant="h5">C1 - {constellation.c1.name}</Typography>
+                                            <div className={classes.avatarHeader}>
+                                                <Avatar alt={constellation.c1.name} src={require(`../assets/characters/constellations/${name.split(" ").join("_").toLowerCase()}_c1.png`).default} className={classes.avatar} />
+                                                <Typography className={classes.genshinFont} variant="h5">C1 - {constellation.c1.name}</Typography>
+                                            </div>
                                             <br />
                                             {parse(constellation.c1.description)}
+                                            <br /><br />
+                                            <Divider className={classes.divider} />
                                             <br />
-                                            <br />
-                                            <Typography className={classes.genshinFont} variant="h5">C2 - {constellation.c2.name}</Typography>
+                                            <div className={classes.avatarHeader}>
+                                                <Avatar alt={constellation.c2.name} src={require(`../assets/characters/constellations/${name.split(" ").join("_").toLowerCase()}_c2.png`).default} className={classes.avatar} />
+                                                <Typography className={classes.genshinFont} variant="h5">C2 - {constellation.c2.name}</Typography>
+                                            </div>
                                             <br />
                                             {parse(constellation.c2.description)}
+                                            <br /><br />
+                                            <Divider className={classes.divider} />
                                             <br />
-                                            <br />
-                                            <Typography className={classes.genshinFont} variant="h5">C3 - {constellation.c3.name}</Typography>
+                                            <div className={classes.avatarHeader}>
+                                                <Avatar alt={constellation.c3.name} src={require(`../assets/characters/constellations/${name.split(" ").join("_").toLowerCase()}_c3.png`).default} className={classes.avatar} />
+                                                <Typography className={classes.genshinFont} variant="h5">C3 - {constellation.c3.name}</Typography>
+                                            </div>
                                             <br />
                                             {parse(constellation.c3.description)}
+                                            <br /><br />
+                                            <Divider className={classes.divider} />
                                             <br />
-                                            <br />
-                                            <Typography className={classes.genshinFont} variant="h5">C4 - {constellation.c4.name}</Typography>
+                                            <div className={classes.avatarHeader}>
+                                                <Avatar alt={constellation.c4.name} src={require(`../assets/characters/constellations/${name.split(" ").join("_").toLowerCase()}_c4.png`).default} className={classes.avatar} />
+                                                <Typography className={classes.genshinFont} variant="h5">C4 - {constellation.c4.name}</Typography>
+                                            </div>
                                             <br />
                                             {parse(constellation.c4.description)}
+                                            <br /><br />
+                                            <Divider className={classes.divider} />
                                             <br />
-                                            <br />
-                                            <Typography className={classes.genshinFont} variant="h5">C5 - {constellation.c5.name}</Typography>
+                                            <div className={classes.avatarHeader}>
+                                                <Avatar alt={constellation.c5.name} src={require(`../assets/characters/constellations/${name.split(" ").join("_").toLowerCase()}_c5.png`).default} className={classes.avatar} />
+                                                <Typography className={classes.genshinFont} variant="h5">C5 - {constellation.c5.name}</Typography>
+                                            </div>
                                             <br />
                                             {parse(constellation.c5.description)}
+                                            <br /><br />
+                                            <Divider className={classes.divider} />
                                             <br />
-                                            <br />
-                                            <Typography className={classes.genshinFont} variant="h5">C6 - {constellation.c6.name}</Typography>
+                                            <div className={classes.avatarHeader}>
+                                                <Avatar alt={constellation.c6.name} src={require(`../assets/characters/constellations/${name.split(" ").join("_").toLowerCase()}_c6.png`).default} className={classes.avatar} />
+                                                <Typography className={classes.genshinFont} variant="h5">C6 - {constellation.c6.name}</Typography>
+                                            </div>
                                             <br />
                                             {parse(constellation.c6.description)}
                                         </div>
