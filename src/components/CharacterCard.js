@@ -160,7 +160,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "-24px",
         minWidth: "125px",
         width: "225px",
-        height: "425px"
+        height: "650px"
     },
     verticalTabContent: {
         height: "550px",
@@ -177,6 +177,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: "none",
         borderBottom: "2px solid gray",
         borderRight: "2px solid gray",
+        minHeight: "50px",
     },
     dialogDescription: {
         textAlign: "center",
