@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
         width: "70%",
         marginBottom: "15px"
     },
+    summary: {
+        height: "32px",
+    },
     bar: {
         color: "white",
         backgroundColor: "rgb(32, 32, 32)",
@@ -39,16 +42,17 @@ const Filters = () => {
     return (
         <div className={classes.root}>
             <Accordion className={classes.bar}>
-                <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
                     <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Filters</Typography>
                 </AccordionSummary>
                 <Divider className={classes.divider} />
                 <AccordionDetails className={classes.filterRow}>
-                    <ElementFilter />
-                </AccordionDetails>
-                <Divider className={classes.divider} />
-                <AccordionDetails className={classes.filterRow}>
-                    <WeaponFilter />
+                    <div>
+                        <ElementFilter />
+                    </div>
+                    <div style={{ marginLeft: "58px" }}>
+                        <WeaponFilter />
+                    </div>
                 </AccordionDetails>
                 <Divider className={classes.divider} />
                 <AccordionDetails className={classes.filterRow}>
