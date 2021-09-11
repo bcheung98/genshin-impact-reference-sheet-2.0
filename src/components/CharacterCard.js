@@ -300,8 +300,8 @@ const StyledTableRow = withStyles((theme) => ({
     },
 }))(TableRow);
 
-const createData = (level, hp, atk, def, special) => {
-    return { level, hp, atk, def, special }
+const createData = (level, hp, atk, def, critRate, critDMG, special) => {
+    return { level, hp, atk, def, critRate, critDMG, special }
 }
 
 const CharacterCard = (props) => {
@@ -329,7 +329,7 @@ const CharacterCard = (props) => {
 
     const levels = ["1", "20", "20+", "40", "40+", "50", "50+", "60", "60+", "70", "70+", "80", "80+", "90"]
 
-    const rows = levels.map((level, index) => createData(level, stats.hp[index], stats.atk[index], stats.def[index], stats.special[index]))
+    const rows = levels.map((level, index) => stats.special ? createData(level, stats.hp[index], stats.atk[index], stats.def[index], stats.critRate[index], stats.critDMG[index], stats.special[index]) : createData(level, stats.hp[index], stats.atk[index], stats.def[index], stats.critRate[index], stats.critDMG[index]))
 
     return (
         <React.Fragment>
@@ -556,7 +556,9 @@ const CharacterCard = (props) => {
                                                         <StyledTableCell className={classes.genshinFont} align="center">Base HP</StyledTableCell>
                                                         <StyledTableCell className={classes.genshinFont} align="center">Base ATK</StyledTableCell>
                                                         <StyledTableCell className={classes.genshinFont} align="center">Base DEF</StyledTableCell>
-                                                        <StyledTableCell className={classes.genshinFont} align="center">{stats.ascensionStat}</StyledTableCell>
+                                                        <StyledTableCell className={classes.genshinFont} align="center">CRIT Rate</StyledTableCell>
+                                                        <StyledTableCell className={classes.genshinFont} align="center">CRIT DMG</StyledTableCell>
+                                                        {stats.special &&  <StyledTableCell className={classes.genshinFont} align="center">{stats.ascensionStat}</StyledTableCell>}
                                                     </StyledTableRow>
                                                 </TableHead>
                                                 <TableBody>
@@ -568,7 +570,9 @@ const CharacterCard = (props) => {
                                                             <StyledTableCell align="center">{Number(row.hp).toLocaleString()}</StyledTableCell>
                                                             <StyledTableCell align="center">{row.atk}</StyledTableCell>
                                                             <StyledTableCell align="center">{row.def}</StyledTableCell>
-                                                            <StyledTableCell align="center">{stats.ascensionStat !== "Elemental Mastery" ? row.special + "%" : row.special}</StyledTableCell>
+                                                            <StyledTableCell align="center">{row.critRate}%</StyledTableCell>
+                                                            <StyledTableCell align="center">{row.critDMG}%</StyledTableCell>
+                                                            {stats.special && <StyledTableCell align="center">{stats.ascensionStat !== "Elemental Mastery" ? row.special + "%" : row.special}</StyledTableCell>}
                                                         </StyledTableRow>
                                                     ))}
                                                 </TableBody>
