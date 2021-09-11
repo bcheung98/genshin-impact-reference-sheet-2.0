@@ -479,7 +479,7 @@ const CharacterCard = (props) => {
                                             {Object.keys(talents).map((key, index) => {
                                                 return (
                                                     <TabPanelVertical key={key} value={valueVerticalTalent} index={index} className={classes.verticalTabContent}>
-                                                        <Typography className={classes.genshinFont} variant="h6" component="p">{FormatTalentKey(key)}</Typography>
+                                                        <Typography className={classes.genshinFont} variant="body1" component="p"><i>{FormatTalentKey(key).toUpperCase()}</i></Typography>
                                                         <br />
                                                         <div className={classes.avatarHeader}>
                                                             <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
