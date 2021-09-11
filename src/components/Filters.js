@@ -13,6 +13,7 @@ import WeaponFilter from "./filters/WeaponFilter";
 import TalentFilter from "./filters/TalentFilter";
 import BossMatFilter from "./filters/BossMatFilter";
 import NationFilter from "./filters/NationFilter";
+import RarityFilter from "./filters/RarityFilter";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,6 +53,9 @@ const Filters = () => {
                     </div>
                     <div style={{ marginLeft: "58px" }}>
                         <WeaponFilter />
+                    </div>
+                    <div style={{ marginLeft: "58px" }}>
+                        <RarityFilter />
                     </div>
                 </AccordionDetails>
                 <Divider className={classes.divider} />

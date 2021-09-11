@@ -3,13 +3,20 @@ const initialState = {
     weapon: [],
     talent: [],
     bossMat: [],
-    nation: []
+    nation: [],
+    rarity: [],
 }
 
 const filterReducer = (state = initialState, action) => {
     let { target, type } = action;
     if (target !== undefined) {
-        let targetButton = document.getElementById(`${target.toLowerCase()}-button`);
+        let targetButton;
+        if (target === "4" || target === "5") {
+            targetButton = document.getElementById(`${target}-button`);
+        }
+        else {
+            targetButton = document.getElementById(`${target.toLowerCase()}-button`);
+        }
         targetButton.className === "filter-off" ? targetButton.className = "filter-on" : targetButton.className = "filter-off";
     }
     switch (type) {
@@ -47,6 +54,13 @@ const filterReducer = (state = initialState, action) => {
             return {
                 ...state,
                 nation: tempNation
+            }
+        case "SET_RARITY_FILTERS":
+            let tempRarity = [...state.rarity];
+            !state.rarity.includes(parseInt(target)) ? tempRarity.push(parseInt(target)) : tempRarity.splice(tempRarity.indexOf(parseInt(target)), 1);
+            return {
+                ...state,
+                rarity: tempRarity
             }
         default:
             return state

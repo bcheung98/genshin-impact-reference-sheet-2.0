@@ -31,6 +31,9 @@ const filterCharacters = (characters, filters) => {
     if (filters.nation.length > 0) {
         chars = chars.filter(char => filters.nation.includes(char.nation));
     }
+    if (filters.rarity.length > 0) {
+        chars = chars.filter(char => filters.rarity.includes(char.rarity));
+    }
     return chars
 }
 
