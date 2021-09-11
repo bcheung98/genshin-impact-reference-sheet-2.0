@@ -558,7 +558,7 @@ const CharacterCard = (props) => {
                                                         <StyledTableCell className={classes.genshinFont} align="center">Base DEF</StyledTableCell>
                                                         <StyledTableCell className={classes.genshinFont} align="center">CRIT Rate</StyledTableCell>
                                                         <StyledTableCell className={classes.genshinFont} align="center">CRIT DMG</StyledTableCell>
-                                                        {stats.special &&  <StyledTableCell className={classes.genshinFont} align="center">{stats.ascensionStat}</StyledTableCell>}
+                                                        {stats.special && <StyledTableCell className={classes.genshinFont} align="center">{stats.ascensionStat}</StyledTableCell>}
                                                     </StyledTableRow>
                                                 </TableHead>
                                                 <TableBody>
