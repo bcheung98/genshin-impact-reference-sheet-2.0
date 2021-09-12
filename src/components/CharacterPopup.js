@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     divider: {
         backgroundColor: "gray",
     },
+    dialogMain: {
+        marginTop: "-15px",
+    },
     dialogGrid: {
         flexGrow: 1,
     },
@@ -55,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
     },
     dialogStars: {
-        height: "25px",
+        height: "35px",
         marginLeft: "-5px",
     },
     dialogContent: {
@@ -84,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
     constellationDisplay: {
         overflowY: "auto",
         height: "500px",
+        paddingRight: "15px",
     },
     tabs: {
         marginLeft: "-25px",
@@ -94,7 +98,8 @@ const useStyles = makeStyles((theme) => ({
     },
     verticalTabContent: {
         height: "550px",
-        width: "975px",
+        minWidth: "300px",
+        width: "1265px",
         marginTop: "-15px",
         overflowX: "auto",
     },
@@ -298,7 +303,6 @@ const CharacterPopup = (props) => {
                     </Grid>
                 </div>
             </DialogTitle>
-            <Divider className={classes.divider} />
             <DialogContent>
                 <Grid container spacing={2} className={classes.dialogMain}>
                     <Grid item>
@@ -436,7 +440,6 @@ const CharacterPopup = (props) => {
                     </Grid>
                 </Grid>
             </DialogContent>
-            <Divider className={classes.divider} />
             <DialogContent>
                 <div className={classes.dialogDescription}>
                     <Typography variant="subtitle2" className={classes.genshinFont}><i>{description}</i></Typography>
