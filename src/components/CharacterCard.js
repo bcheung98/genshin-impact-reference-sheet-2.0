@@ -25,9 +25,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "5px",
         fontFamily: "Genshin, sans-serif",
     },
-    genshinFont: {
-        fontFamily: "Genshin, sans-serif"
-    },
     topRow: {
         margin: "auto",
         marginTop: "-15px",

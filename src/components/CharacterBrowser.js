@@ -1,17 +1,34 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchCharacters } from "../redux/actions/fetchCharacters";
-
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import ViewComfyIcon from '@material-ui/icons/ViewComfy';
+import ListIcon from '@material-ui/icons/List';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+
 import Filters from "./Filters";
 import CharacterCard from "./CharacterCard";
+import CharacterList from "./CharacterList";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: "100%",
         margin: "auto"
-    }
+    },
+    buttonGroup: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: "20px",
+    },
+    switch: {
+        marginLeft: "20px",
+    },
+    toggleIcon: {
+        color: "white",
+    },
 }));
 
 const filterCharacters = (characters, filters) => {
@@ -44,14 +61,39 @@ const CharacterBrowser = (props) => {
         fetchCharacters();
     }, [])
 
-    let { characters, fetchCharacters, filters } = props
+    const [checked, setChecked] = React.useState(false);
+    const toggleChecked = () => {
+        setChecked((prev) => !prev);
+        console.log(checked)
+    };
+
+    let { characters, fetchCharacters, filters } = props;
 
     return (
         <React.Fragment>
-            <Filters />
-            <Grid container className={classes.root}>
-                {characters.characters.length > 0 ? filterCharacters(characters.characters, filters).map(char => <CharacterCard key={char.id} character={char} />) : null}
-            </Grid>
+            <div className={classes.buttonGroup}>
+                <ViewComfyIcon className={classes.toggleIcon} fontSize="large" />
+                <FormControlLabel
+                    control={
+                        <Switch
+                            color="primary"
+                            onChange={toggleChecked}
+                            checked={checked}
+                            className={classes.switch}
+                        />
+                    }
+                />
+                <ListIcon className={classes.toggleIcon} fontSize="large" />
+            </div>
+            <Filters className={classes.root} />
+            {!checked ?
+                (<Grid container className={classes.root}>
+                    {characters.characters.length > 0 ? filterCharacters(characters.characters, filters).map(char => <CharacterCard key={char.id} character={char} />) : null}
+                </Grid>)
+                :
+                <CharacterList characters={filterCharacters(characters.characters, filters)} />
+            }
+
         </React.Fragment>
     )
 }
