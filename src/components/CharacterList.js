@@ -9,10 +9,13 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Paper from "@material-ui/core/Paper";
+import Typography from '@material-ui/core/Typography';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "100%",
+        width: "75%",
+        margin: "auto",
     },
     genshinFont: {
         fontFamily: "Genshin, sans-serif",
@@ -20,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         margin: "50px",
-        backgroundColor: "rgb(16, 16, 16)",
+        backgroundColor: "rgb(32, 32, 32)",
         border: "2px solid gray",
         color: "white",
     },
@@ -38,6 +41,37 @@ const useStyles = makeStyles((theme) => ({
         position: "absolute",
         top: 20,
         width: 1,
+    },
+    characterIcon: {
+        marginRight: "20px",
+        height: '48px',
+    },
+    stars: {
+        height: "25px",
+    },
+    elementIcon: {
+        marginRight: "10px",
+        height: '32px',
+    },
+    weaponIcon: {
+        marginRight: "10px",
+        height: '32px',
+    },
+    nationIcon: {
+        marginRight: "10px",
+        height: '48px',
+    },
+    avatarFlexRow: {
+        display: "flex",
+        alignItems: "center",
+    },
+    activeSortIcon: {
+        color: "red !important",
+        opacity: 1,
+    },
+    inactiveSortIcon: {
+        color: "white !important",
+        opacity: 0
     },
 }));
 
@@ -68,14 +102,14 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-    { id: "name", numeric: false, label: "Name" },
-    { id: "rarity", numeric: true, label: "Rarity" },
-    { id: "element", numeric: true, label: "Element" },
-    { id: "weapon", numeric: true, label: "Weapon" },
-    { id: "nation", numeric: true, label: "Nation" },
+    { id: "name", label: "Name" },
+    { id: "rarity", label: "Rarity" },
+    { id: "element", label: "Element" },
+    { id: "weapon", label: "Weapon" },
+    { id: "nation", label: "Nation" },
 ];
 
-function CharacterListHead(props) {
+const CharacterListHead = (props) => {
     const { classes, order, orderBy, onRequestSort } = props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
@@ -95,9 +129,10 @@ function CharacterListHead(props) {
                             active={orderBy === headCell.id}
                             direction={orderBy === headCell.id ? order : "asc"}
                             onClick={createSortHandler(headCell.id)}
-                            className={classes.genshinFont}
+                            IconComponent={KeyboardArrowDownIcon}
+                            classes={{ icon: ((orderBy === headCell.id) ? classes.activeSortIcon : classes.inactiveSortIcon) }}
                         >
-                            {headCell.label}
+                            <Typography variant="h6" className={classes.genshinFont}>{headCell.label}</Typography>
                         </TableSortLabel>
                     </TableCell>
                 ))}
@@ -124,9 +159,6 @@ const StyledTableCell = withStyles((theme) => ({
 
 const StyledTableRow = withStyles((theme) => ({
     root: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: "rgb(32, 32, 32)",
-        },
         '&:hover': {
             backgroundColor: "rgb(64, 64, 64)",
         },
@@ -154,7 +186,7 @@ const CharacterList = (props) => {
         <div className={classes.root}>
             <Paper className={classes.paper}>
                 <TableContainer>
-                    <Table className={classes.table}>
+                    <Table className={classes.table} size="small">
                         <CharacterListHead
                             classes={classes}
                             order={order}
@@ -164,21 +196,39 @@ const CharacterList = (props) => {
                         <TableBody>
                             {stableSort(rows, getComparator(order, orderBy))
                                 .map((row, index) => {
-                                    const labelId = `enhanced-table-checkbox-${index}`;
                                     return (
-                                        <StyledTableRow
-                                            tabIndex={-1}
-                                            key={row.name}
-                                        >
-                                            <StyledTableCell className={classes.genshinFont} component="th" id={labelId} scope="row">
-                                                {row.name}
+                                        <StyledTableRow key={index}>
+                                            <StyledTableCell className={classes.genshinFont}>
+                                                <div className={classes.avatarFlexRow}>
+                                                    <img className={classes.characterIcon} src={require(`../assets/characters/icons/Character_${row.name.split(" ").join("_")}_Icon.png`).default} alt={row.name} />
+                                                    <Typography variant="body1" className={classes.genshinFont}>{row.name}</Typography>
+                                                </div>
                                             </StyledTableCell>
-                                            <StyledTableCell className={classes.genshinFont} align="left">{row.rarity}</StyledTableCell>
-                                            <StyledTableCell className={classes.genshinFont} align="left">{row.element}</StyledTableCell>
-                                            <StyledTableCell className={classes.genshinFont} align="left">{row.weapon}</StyledTableCell>
-                                            <StyledTableCell className={classes.genshinFont} align="left">{row.nation}</StyledTableCell>
+                                            <StyledTableCell className={classes.genshinFont} align="left">
+                                                <div className={classes.avatarFlexRow}>
+                                                    <img className={classes.stars} src={require(`../assets/stars/Icon_${row.rarity}_Stars.png`).default} alt={row.rarity} />
+                                                </div>
+                                            </StyledTableCell>
+                                            <StyledTableCell className={classes.genshinFont} align="left">
+                                                <div className={classes.avatarFlexRow}>
+                                                    <img className={classes.elementIcon} src={require(`../assets/elements/Element_${row.element}.png`).default} alt={row.element} />
+                                                    <Typography variant="body1" className={classes.genshinFont}>{row.element}</Typography>
+                                                </div>
+                                            </StyledTableCell>
+                                            <StyledTableCell className={classes.genshinFont} align="left">
+                                                <div className={classes.avatarFlexRow}>
+                                                    <img className={classes.weaponIcon} src={require(`../assets/weapons/Weapon-class-${row.weapon.toLowerCase()}-icon.png`).default} alt={row.weapon} />
+                                                    <Typography variant="body1" className={classes.genshinFont}>{row.weapon}</Typography>
+                                                </div>
+                                            </StyledTableCell>
+                                            <StyledTableCell className={classes.genshinFont} align="left">
+                                                <div className={classes.avatarFlexRow}>
+                                                    {row.nation && <img className={classes.nationIcon} src={require(`../assets/nations/${row.nation}.png`).default} alt={row.nation} />}
+                                                    <Typography variant="body1" className={classes.genshinFont}>{row.nation}</Typography>
+                                                </div>
+                                            </StyledTableCell>
                                         </StyledTableRow>
-                                    );
+                                    )
                                 })}
                         </TableBody>
                     </Table>

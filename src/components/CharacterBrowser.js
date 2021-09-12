@@ -64,7 +64,6 @@ const CharacterBrowser = (props) => {
     const [checked, setChecked] = React.useState(false);
     const toggleChecked = () => {
         setChecked((prev) => !prev);
-        console.log(checked)
     };
 
     let { characters, fetchCharacters, filters } = props;
