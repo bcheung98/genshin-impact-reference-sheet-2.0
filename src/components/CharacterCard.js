@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         marginTop: 10,
         marginBottom: 10,
-        backgroundColor: "rgb(32, 32, 32)",
+        backgroundColor: "rgb(40, 40, 40)",
         border: "2px solid gray",
         borderRadius: "5px",
         fontFamily: "Genshin, sans-serif",
@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
         width: '90px',
         height: '90px',
         display: "block",
+        backgroundColor: "rgb(32, 32, 32)",
     },
     stars: {
         height: "25px",
@@ -77,12 +78,7 @@ const useStyles = makeStyles((theme) => ({
         border: "2px solid gray",
         borderRadius: "5px",
         margin: "5px",
-    },
-    materialImageLarge: {
-        height: "56px",
-        border: "2px solid gray",
-        borderRadius: "5px",
-        margin: "5px",
+        backgroundColor: "rgb(32, 32, 32)",
     },
     moreInfoButton: {
         marginTop: "-10px",
