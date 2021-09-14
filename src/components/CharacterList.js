@@ -106,7 +106,7 @@ const headCells = [
     { id: "rarity", label: "Rarity" },
     { id: "element", label: "Element" },
     { id: "weapon", label: "Weapon" },
-    { id: "talentBook", label: "Talent Book" },
+    { id: "nation", label: "Nation" },
 ];
 
 const CharacterListHead = (props) => {
@@ -165,8 +165,8 @@ const StyledTableRow = withStyles((theme) => ({
     },
 }))(TableRow);
 
-const createData = (name, rarity, element, weapon, talentBook) => {
-    return { name, rarity, element, weapon, talentBook };
+const createData = (name, rarity, element, weapon, nation) => {
+    return { name, rarity, element, weapon, nation };
 }
 
 const CharacterList = (props) => {
@@ -180,7 +180,7 @@ const CharacterList = (props) => {
         setOrderBy(property);
     };
 
-    const rows = props.characters.map(char => createData(char.name, char.rarity, char.element, char.weapon, char.materials.talentBook));
+    const rows = props.characters.map(char => createData(char.name, char.rarity, char.element, char.weapon, char.nation));
 
     return (
         <div className={classes.root}>
@@ -223,8 +223,8 @@ const CharacterList = (props) => {
                                             </StyledTableCell>
                                             <StyledTableCell className={classes.genshinFont} align="left">
                                                 <div className={classes.avatarFlexRow}>
-                                                    {<img className={classes.talentBookIcon} src={require(`../assets/materials/talent_mats/${row.talentBook}.png`).default} alt={row.talentBook} />}
-                                                    <Typography variant="body1" className={classes.genshinFont}>{row.talentBook}</Typography>
+                                                    {<img className={classes.talentBookIcon} src={require(`../assets/nations/${row.nation}.png`).default} alt={row.nation} />}
+                                                    <Typography variant="body1" className={classes.genshinFont}>{row.nation}</Typography>
                                                 </div>
                                             </StyledTableCell>
                                         </StyledTableRow>
