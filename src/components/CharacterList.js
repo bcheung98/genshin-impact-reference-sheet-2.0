@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
         minWidth: 750,
         color: "white",
     },
+    charCount: {
+        fontFamily: "Genshin, sans-serif",
+        textAlign: "center",
+        margin: "5px",
+    },
     visuallyHidden: {
         border: 0,
         clip: "rect(0 0 0 0)",
@@ -186,6 +191,7 @@ const CharacterList = (props) => {
         <div className={classes.root}>
             <Paper className={classes.paper}>
                 <TableContainer>
+                    <Typography variant="h6" className={classes.genshinFont, classes.charCount}>{props.characters.length} Characters</Typography>
                     <Table className={classes.table} size="small">
                         <CharacterListHead
                             classes={classes}
