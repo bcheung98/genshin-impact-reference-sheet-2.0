@@ -11,6 +11,7 @@ import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Paper from "@material-ui/core/Paper";
 import Typography from '@material-ui/core/Typography';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -34,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     charCount: {
         fontFamily: "Genshin, sans-serif",
         textAlign: "center",
-        margin: "5px",
+        margin: "10px",
     },
     visuallyHidden: {
         border: 0,
@@ -77,6 +78,9 @@ const useStyles = makeStyles((theme) => ({
     inactiveSortIcon: {
         color: "white !important",
         opacity: 0
+    },
+    divider: {
+        backgroundColor: "rgb(224, 224, 224)",
     },
 }));
 
@@ -191,7 +195,8 @@ const CharacterList = (props) => {
         <div className={classes.root}>
             <Paper className={classes.paper}>
                 <TableContainer>
-                    <Typography variant="h6" className={classes.genshinFont, classes.charCount}>{props.characters.length} Characters</Typography>
+                    <Typography variant="h5" className={classes.genshinFont, classes.charCount}>{props.characters.length} Characters</Typography>
+                    <Divider className={classes.divider} />
                     <Table className={classes.table} size="small">
                         <CharacterListHead
                             classes={classes}
