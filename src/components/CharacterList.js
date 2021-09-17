@@ -166,7 +166,7 @@ const CharacterList = (props) => {
                             onRequestSort={handleRequestSort}
                         />
                         <TableBody>
-                            {stableSort(rows, getComparator(order, orderBy)).map((row, index) => <CharacterRow key={index} row={row} />)}
+                            {stableSort(rows, getComparator(order, orderBy)).map((row, index) => <CharacterRow key={index} row={row} characters={props.characters} />)}
                         </TableBody>
                     </Table>
                 </TableContainer>
