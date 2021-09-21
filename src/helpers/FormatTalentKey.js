@@ -19,6 +19,7 @@ export const FormatTalentKey = (key) => {
             key = "4th Ascension Passive";
             break;
         case "utilpassive":
+        case "passive":
             key = "Utility Passive";
             break;
         default:
