@@ -45,9 +45,13 @@ const useStyles = makeStyles((theme) => ({
     },
     elementIcon: {
         height: "35px",
+        border: "1px solid rgb(40, 40, 40)",
+        borderRadius: "64px",
     },
     weaponIcon: {
         height: "35px",
+        border: "1px solid rgb(40, 40, 40)",
+        borderRadius: "64px",
     },
     leftColumn: {
         marginTop: "5px",

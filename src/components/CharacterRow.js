@@ -36,6 +36,8 @@ const useStyles = makeStyles((theme) => ({
     weaponIcon: {
         marginRight: "10px",
         height: '32px',
+        border: "1px solid rgb(40, 40, 40)",
+        borderRadius: "64px",
     },
     talentBookIcon: {
         marginRight: "10px",

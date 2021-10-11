@@ -46,8 +46,12 @@ const useStyles = makeStyles((theme) => ({
     dialogGrid: {
         flexGrow: 1,
     },
-    dialogCircleIcon: {
+    dialogCircleIconGroup: {
         marginLeft: "-7px",
+    },
+    dialogCircleIcon: {
+        border: "1px solid rgb(32, 32, 32)",
+        borderRadius: "64px",
     },
     dialogTitleMiddleColumn: {
         display: "flex",
@@ -140,7 +144,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: "15px",
         width: "64px",
         height: "64px",
-        border: "2px solid gray"
+        border: "2px solid gray",
     },
 }));
 
@@ -257,12 +261,12 @@ const CharacterPopup = (props) => {
                             {props.character.fullname ? <Typography className={classes.genshinFont} variant="h4">{props.character.fullname}</Typography> : <Typography style={{ fontFamily: "Genshin" }} variant="h4">{name}</Typography>}
                             <Typography variant="body1" className={classes.genshinFont}><i>{title}</i></Typography>
                             <img className={classes.dialogStars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
-                            <div className={classes.dialogCircleIcon}>
+                            <div className={classes.dialogCircleIconGroup}>
                                 <MaterialTooltip title={element} arrow placement="top">
-                                    <img src={require(`../assets/elements/Element_${element}.png`).default} alt={element} />
+                                    <img src={require(`../assets/elements/Element_${element}.png`).default} className={classes.dialogCircleIcon} alt={element} />
                                 </MaterialTooltip>
                                 <MaterialTooltip title={weapon} arrow placement="top">
-                                    <img src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} alt={weapon} />
+                                    <img src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} className={classes.dialogCircleIcon} alt={weapon} />
                                 </MaterialTooltip>
                             </div>
                         </Grid>
