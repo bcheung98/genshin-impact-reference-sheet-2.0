@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.d626f826.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.6266d5d5.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.6266d5d5.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.c5cc8f8b.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.c5cc8f8b.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
-    "static/js/2.98f3eb1b.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.98f3eb1b.chunk.js",
-    "static/js/2.98f3eb1b.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.98f3eb1b.chunk.js.map",
+    "static/js/2.143cf231.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.143cf231.chunk.js",
+    "static/js/2.143cf231.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.143cf231.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
     "static/css/main.d626f826.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.d626f826.chunk.css.map",
-    "static/js/2.98f3eb1b.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.98f3eb1b.chunk.js.LICENSE.txt",
+    "static/js/2.143cf231.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.143cf231.chunk.js.LICENSE.txt",
     "static/media/Amakumo_Fruit.png": "/genshin-impact-reference-sheet-2.0/static/media/Amakumo_Fruit.1bc748f0.png",
     "static/media/Anemo_Gemstone.png": "/genshin-impact-reference-sheet-2.0/static/media/Anemo_Gemstone.8e700e70.png",
     "static/media/Arrow.png": "/genshin-impact-reference-sheet-2.0/static/media/Arrow.29467e1e.png",
@@ -65,6 +65,8 @@
     "static/media/Character_Sucrose_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Sucrose_Avatar.31b0d24d.png",
     "static/media/Character_Tartaglia_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Tartaglia_Avatar.38d8a6ff.png",
     "static/media/Character_Tartaglia_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Tartaglia_Icon.e0fc133a.png",
+    "static/media/Character_Thoma_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Thoma_Avatar.a9c77ec6.png",
+    "static/media/Character_Thoma_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Thoma_Icon.f6e9c20a.png",
     "static/media/Character_Venti_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Venti_Avatar.ebfd2de9.png",
     "static/media/Character_Xiangling_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Xiangling_Avatar.e66b544b.png",
     "static/media/Character_Xiao_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Xiao_Avatar.4fa212a8.png",
@@ -92,6 +94,7 @@
     "static/media/Elegance.png": "/genshin-impact-reference-sheet-2.0/static/media/Elegance.15a2b3fc.png",
     "static/media/Everflame_Seed.png": "/genshin-impact-reference-sheet-2.0/static/media/Everflame_Seed.890af9d3.png",
     "static/media/Fatui_Insignia.png": "/genshin-impact-reference-sheet-2.0/static/media/Fatui_Insignia.e5c355b0.png",
+    "static/media/Fluorescent_Fungus.png": "/genshin-impact-reference-sheet-2.0/static/media/Fluorescent_Fungus.d8ef683d.png",
     "static/media/Freedom.png": "/genshin-impact-reference-sheet-2.0/static/media/Freedom.f6bcd36d.png",
     "static/media/Geo_Gemstone.png": "/genshin-impact-reference-sheet-2.0/static/media/Geo_Gemstone.80a364ff.png",
     "static/media/Gilded_Scale.png": "/genshin-impact-reference-sheet-2.0/static/media/Gilded_Scale.8910ddec.png",
@@ -527,6 +530,7 @@
     "static/media/tartaglia_c6.png": "/genshin-impact-reference-sheet-2.0/static/media/tartaglia_c6.15a2da08.png",
     "static/media/tartaglia_skill.png": "/genshin-impact-reference-sheet-2.0/static/media/tartaglia_skill.dcd22544.png",
     "static/media/tartaglia_utilpassive.png": "/genshin-impact-reference-sheet-2.0/static/media/tartaglia_utilpassive.82b2cc63.png",
+    "static/media/thoma_skill.png": "/genshin-impact-reference-sheet-2.0/static/media/thoma_skill.88bc24cf.png",
     "static/media/venti_a1passive.png": "/genshin-impact-reference-sheet-2.0/static/media/venti_a1passive.8b60fe65.png",
     "static/media/venti_a4passive.png": "/genshin-impact-reference-sheet-2.0/static/media/venti_a4passive.6a40586a.png",
     "static/media/venti_attack.png": "/genshin-impact-reference-sheet-2.0/static/media/venti_attack.9c099a84.png",
@@ -626,8 +630,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
-    "static/js/2.98f3eb1b.chunk.js",
+    "static/js/2.143cf231.chunk.js",
     "static/css/main.d626f826.chunk.css",
-    "static/js/main.6266d5d5.chunk.js"
+    "static/js/main.c5cc8f8b.chunk.js"
   ]
 }
