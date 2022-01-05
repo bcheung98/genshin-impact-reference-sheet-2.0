@@ -119,7 +119,13 @@ export const formatAscensionMats = (material) => {
             material += " (Thunder Manifestation)";
             break;
         case "Dew of Repudiation":
-            material += " (Hydro Hypostasis)"; 
+            material += " (Hydro Hypostasis)";
+            break;
+        case "Riftborn Regalia":
+            material += " (Golden Wolflord)";
+            break;
+        case "Dragonheir's False Fin":
+            material += " (Bathysmal Vishap Herd)";
             break;
         default:
             return material;
