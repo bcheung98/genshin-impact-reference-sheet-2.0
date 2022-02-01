@@ -152,7 +152,7 @@ const CharacterCard = (props) => {
                     </div>
                     <Grid container spacing={2}>
                         <Grid item xs className={classes.leftColumn}>
-                            <img className={classes.characterIcon} src={require(`../assets/characters/icons/Character_${name.split(" ").join("_")}_Icon.png`).default} alt={name} />
+                            <img className={classes.characterIcon} src={require(`../assets/characters/thumbs/Character_${name.split(" ").join("_")}_Thumb.png`).default} alt={name} />
                             <img className={classes.stars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
                         </Grid>
                         <Grid item xs={12} sm container>
