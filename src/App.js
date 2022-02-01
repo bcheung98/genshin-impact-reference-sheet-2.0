@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
         padding: 10,
         textAlign: "center",
         backgroundImage: "linear-gradient(to right, #2d388a, #0e789b, #2d388a)",
+        borderBottom: "2px solid gray",
     },
     genshinFont: {
         fontFamily: "Genshin, sans-serif" 
@@ -20,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 10,
         padding: 10,
         textAlign: "center",
-        backgroundImage: "linear-gradient(to right, #2d388a, #0e789b, #2d388a)"
+        backgroundImage: "linear-gradient(to right, #2d388a, #0e789b, #2d388a)",
+        borderTop: "2px solid gray",
     }
 }))
 

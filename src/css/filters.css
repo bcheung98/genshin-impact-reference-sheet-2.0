@@ -12,11 +12,11 @@
 }
 
 .filter-off {
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(36, 41, 56);
     opacity: 0.5;
 }
 
 .filter-on {
-    background-color: rgb(16, 16, 16);
+    background-color: rgb(20, 25, 40);
     opacity: 1;
 }

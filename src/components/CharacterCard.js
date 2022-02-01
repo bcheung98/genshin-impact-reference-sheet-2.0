@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         marginTop: 10,
         marginBottom: 10,
-        backgroundColor: "rgb(40, 40, 40)",
+        backgroundColor: "rgb(44, 49, 64)",
         border: "2px solid gray",
         borderRadius: "5px",
         fontFamily: "Genshin, sans-serif",
@@ -45,12 +45,12 @@ const useStyles = makeStyles((theme) => ({
     },
     elementIcon: {
         height: "35px",
-        border: "1px solid rgb(40, 40, 40)",
+        border: "1px solid rgb(44, 49, 64)",
         borderRadius: "64px",
     },
     weaponIcon: {
         height: "35px",
-        border: "1px solid rgb(40, 40, 40)",
+        border: "1px solid rgb(44, 49, 64)",
         borderRadius: "64px",
     },
     leftColumn: {
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
         border: "2px solid gray",
         borderRadius: "5px",
         margin: "5px",
-        backgroundColor: "rgb(32, 32, 32)",
+        backgroundColor: "rgb(36, 41, 56)",
     },
     moreInfoButton: {
         marginTop: "-10px",
@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: "95vw",
     },
     dialogContent: {
-        backgroundColor: "rgb(32, 32, 32)",
+        backgroundColor: "rgb(36, 41, 56)",
         border: "2px solid gray",
         borderRadius: "5px",
         color: "white",

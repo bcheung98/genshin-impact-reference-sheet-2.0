@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     bar: {
         color: "white",
-        backgroundColor: "rgb(40, 40, 40)",
+        backgroundColor: "rgb(44, 49, 64)",
         border: "2px solid gray",
     },
     filterRow: {

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         margin: "50px",
-        backgroundColor: "rgb(40, 40, 40)",
+        backgroundColor: "rgb(44, 49, 64)",
         border: "2px solid gray",
         color: "white",
     },

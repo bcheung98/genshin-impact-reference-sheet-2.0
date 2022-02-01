@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "-7px",
     },
     dialogCircleIcon: {
-        border: "1px solid rgb(32, 32, 32)",
+        border: "1px solid rgb(44, 49, 64)",
         borderRadius: "64px",
     },
     dialogTitleMiddleColumn: {
@@ -64,12 +64,6 @@ const useStyles = makeStyles((theme) => ({
     dialogStars: {
         height: "35px",
         marginLeft: "-5px",
-    },
-    dialogContent: {
-        backgroundColor: "rgb(32, 32, 32)",
-        border: "2px solid gray",
-        borderRadius: "5px",
-        color: "white",
     },
     characterCard: {
         border: "2px solid gray",
@@ -131,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
         height: "86px",
     },
     table: {
-        backgroundColor: "rgb(32, 32, 32)",
+        backgroundColor: "rgb(44, 49, 64)",
         border: "2px solid gray",
     },
     avatarHeader: {
@@ -210,7 +204,7 @@ TabPanelVertical.propTypes = {
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-        backgroundColor: "rgb(20, 20, 20)",
+        backgroundColor: "rgb(24, 29, 44)",
         color: "white",
     },
     body: {
@@ -221,10 +215,10 @@ const StyledTableCell = withStyles((theme) => ({
 const StyledTableRow = withStyles((theme) => ({
     root: {
         '&:nth-of-type(even)': {
-            backgroundColor: "rgb(20, 20, 20)",
+            backgroundColor: "rgb(24, 29, 44)",
         },
         '&:hover': {
-            backgroundColor: "rgb(60, 60, 60)",
+            backgroundColor: "rgb(64, 69, 84)",
         },
     },
 }))(TableRow);

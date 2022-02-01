@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: "95vw",
     },
     dialogContent: {
-        backgroundColor: "rgb(32, 32, 32)",
+        backgroundColor: "rgb(36, 41, 56)",
         border: "2px solid gray",
         borderRadius: "5px",
         color: "white",
@@ -71,7 +71,7 @@ const StyledTableCell = withStyles((theme) => ({
 const StyledTableRow = withStyles((theme) => ({
     root: {
         '&:hover': {
-            backgroundColor: "rgb(64, 64, 64)",
+            backgroundColor: "rgb(68, 73, 88)",
         },
     },
 }))(TableRow);
