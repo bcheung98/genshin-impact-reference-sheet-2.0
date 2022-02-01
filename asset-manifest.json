@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.d626f826.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.0dd7760b.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.0dd7760b.chunk.js.map",
+    "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.ea63e9a1.chunk.css",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.771ff983.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.771ff983.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
     "static/js/2.463dc5ce.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.463dc5ce.chunk.js",
     "static/js/2.463dc5ce.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.463dc5ce.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
-    "static/css/main.d626f826.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.d626f826.chunk.css.map",
+    "static/css/main.ea63e9a1.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.ea63e9a1.chunk.css.map",
     "static/js/2.463dc5ce.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.463dc5ce.chunk.js.LICENSE.txt",
     "static/media/Amakumo_Fruit.png": "/genshin-impact-reference-sheet-2.0/static/media/Amakumo_Fruit.1bc748f0.png",
     "static/media/Anemo_Gemstone.png": "/genshin-impact-reference-sheet-2.0/static/media/Anemo_Gemstone.8e700e70.png",
@@ -734,7 +734,7 @@
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
     "static/js/2.463dc5ce.chunk.js",
-    "static/css/main.d626f826.chunk.css",
-    "static/js/main.0dd7760b.chunk.js"
+    "static/css/main.ea63e9a1.chunk.css",
+    "static/js/main.771ff983.chunk.js"
   ]
 }
