@@ -16,7 +16,7 @@ import CharacterRow from "./CharacterRow";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "75%",
+        width: "100%",
         margin: "auto",
     },
     genshinFont: {
@@ -94,6 +94,8 @@ const headCells = [
     { id: "element", label: "Element" },
     { id: "weapon", label: "Weapon" },
     { id: "nation", label: "Nation" },
+    { id: "gender", label: "Sex" },
+    { id: "id", label: "Release Date" }
 ];
 
 const CharacterListHead = (props) => {
@@ -135,8 +137,8 @@ CharacterListHead.propTypes = {
     orderBy: PropTypes.string.isRequired,
 };
 
-const createData = (name, rarity, element, weapon, nation) => {
-    return { name, rarity, element, weapon, nation };
+const createData = (name, rarity, element, weapon, nation, gender, releaseDate, version, id) => {
+    return { name, rarity, element, weapon, nation, gender, releaseDate, version, id };
 }
 
 const CharacterList = (props) => {
@@ -150,7 +152,7 @@ const CharacterList = (props) => {
         setOrderBy(property);
     };
 
-    const rows = props.characters.map(char => createData(char.name, char.rarity, char.element, char.weapon, char.nation));
+    const rows = props.characters.map(char => createData(char.name, char.rarity, char.element, char.weapon, char.nation, char.gender, char.release.date, char.release.version, char.id));
 
     return (
         <div className={classes.root}>

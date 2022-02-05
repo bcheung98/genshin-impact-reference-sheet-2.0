@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     weaponIcon: {
         marginRight: "10px",
         height: '32px',
-        border: "1px solid rgb(40, 40, 40)",
+        border: "1px solid rgb(44, 49, 64)",
         borderRadius: "64px",
     },
     talentBookIcon: {
@@ -123,6 +123,16 @@ const CharacterRow = (props) => {
                     <div className={classes.avatarFlexRow}>
                         {row.nation && <img className={classes.talentBookIcon} src={require(`../assets/nations/${row.nation}.png`).default} alt={row.nation} />}
                         <Typography variant="body1" className={classes.genshinFont}>{row.nation}</Typography>
+                    </div>
+                </StyledTableCell>
+                <StyledTableCell className={classes.genshinFont} align="left">
+                    <div className={classes.avatarFlexRow}>
+                        <Typography variant="body1" className={classes.genshinFont}>{row.gender}</Typography>
+                    </div>
+                </StyledTableCell>
+                <StyledTableCell className={classes.genshinFont} align="left">
+                    <div className={classes.avatarFlexRow}>
+                        <Typography variant="body1" className={classes.genshinFont}>{`${row.releaseDate} (${row.version})`}</Typography>
                     </div>
                 </StyledTableCell>
             </StyledTableRow>
