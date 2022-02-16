@@ -31,7 +31,7 @@ export const formatBossMats = (material) => {
         case "Ring of Boreas":
         case "Spirit Locket of Boreas":
         case "Tail of Boreas":
-            material += " (Andrius)";
+            material += " (Lupus Boreas)";
             break;
         case "Shadow of the Warrior":
         case "Shard of a Foul Legacy":
@@ -46,10 +46,15 @@ export const formatBossMats = (material) => {
         case "Ashen Heart":
         case "Hellfire Butterfly":
         case "Molten Moment":
-            material += " (Signora)";
+            material += " (La Signora)";
+            break;
+        case "Mudra of the Malefic General":
+        case "Tears of the Calamitous God":
+        case "The Meaning of Aeons":
+            material += " (Narukami no Mikoto)";
             break;
         default:
-            return material;
+            material += "";
     }
     return material;
 }
@@ -75,7 +80,7 @@ export const formatCommonMats = (material) => {
             material = "Specter Core";
             break;
         default:
-            return material;
+            material += "";
     }
     return material;
 }
@@ -128,7 +133,7 @@ export const formatAscensionMats = (material) => {
             material += " (Bathysmal Vishap Herd)";
             break;
         default:
-            return material;
+            material += "";
     }
     return material;
 }
@@ -154,7 +159,7 @@ export const formatGemstone = (material) => {
             material = "Prithiva Topaz Gemstone";
             break;
         default:
-            return material;
+            material += "";
     }
     return material;
 }
