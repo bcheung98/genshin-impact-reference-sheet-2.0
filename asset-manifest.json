@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.ea63e9a1.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.29fb7245.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.29fb7245.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.4353d909.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.4353d909.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
-    "static/js/2.e8c312a2.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.e8c312a2.chunk.js",
-    "static/js/2.e8c312a2.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.e8c312a2.chunk.js.map",
+    "static/js/2.278a24c9.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.278a24c9.chunk.js",
+    "static/js/2.278a24c9.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.278a24c9.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
     "static/css/main.ea63e9a1.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.ea63e9a1.chunk.css.map",
-    "static/js/2.e8c312a2.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.e8c312a2.chunk.js.LICENSE.txt",
+    "static/js/2.278a24c9.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.278a24c9.chunk.js.LICENSE.txt",
     "static/media/Amakumo_Fruit.png": "/genshin-impact-reference-sheet-2.0/static/media/Amakumo_Fruit.1bc748f0.png",
     "static/media/Anemo_Gemstone.png": "/genshin-impact-reference-sheet-2.0/static/media/Anemo_Gemstone.8e700e70.png",
     "static/media/Arrow.png": "/genshin-impact-reference-sheet-2.0/static/media/Arrow.29467e1e.png",
@@ -30,6 +30,9 @@
     "static/media/Character_Ayaka_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Ayaka_Avatar.f7ec952c.png",
     "static/media/Character_Ayaka_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Ayaka_Icon.6bd20b9b.png",
     "static/media/Character_Ayaka_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Ayaka_Thumb.be8b553b.png",
+    "static/media/Character_Ayato_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Ayato_Avatar.8fcc876f.png",
+    "static/media/Character_Ayato_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Ayato_Icon.33cfc7b4.png",
+    "static/media/Character_Ayato_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Ayato_Thumb.7c5dda02.png",
     "static/media/Character_Barbara_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Barbara_Avatar.0e11787e.png",
     "static/media/Character_Barbara_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Barbara_Thumb.452f86cf.png",
     "static/media/Character_Beidou_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Beidou_Avatar.8f3496d0.png",
@@ -258,6 +261,16 @@
     "static/media/ayaka_c6.png": "/genshin-impact-reference-sheet-2.0/static/media/ayaka_c6.2e88bb30.png",
     "static/media/ayaka_skill.png": "/genshin-impact-reference-sheet-2.0/static/media/ayaka_skill.4f8fecd1.png",
     "static/media/ayaka_utilpassive.png": "/genshin-impact-reference-sheet-2.0/static/media/ayaka_utilpassive.756c0bf7.png",
+    "static/media/ayato_a1passive.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_a1passive.71e30354.png",
+    "static/media/ayato_a4passive.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_a4passive.0909d1aa.png",
+    "static/media/ayato_attack.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_attack.971b47ed.png",
+    "static/media/ayato_c1.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_c1.0857d8ee.png",
+    "static/media/ayato_c2.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_c2.c06e674b.png",
+    "static/media/ayato_c3.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_c3.d8a7106c.png",
+    "static/media/ayato_c4.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_c4.40df44ce.png",
+    "static/media/ayato_c5.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_c5.de3c7752.png",
+    "static/media/ayato_c6.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_c6.89f9d70f.png",
+    "static/media/ayato_utilpassive.png": "/genshin-impact-reference-sheet-2.0/static/media/ayato_utilpassive.e5187276.png",
     "static/media/barbara_a1passive.png": "/genshin-impact-reference-sheet-2.0/static/media/barbara_a1passive.72b686ed.png",
     "static/media/barbara_a4passive.png": "/genshin-impact-reference-sheet-2.0/static/media/barbara_a4passive.20db2a1a.png",
     "static/media/barbara_attack.png": "/genshin-impact-reference-sheet-2.0/static/media/barbara_attack.4c347b6a.png",
@@ -751,8 +764,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
-    "static/js/2.e8c312a2.chunk.js",
+    "static/js/2.278a24c9.chunk.js",
     "static/css/main.ea63e9a1.chunk.css",
-    "static/js/main.29fb7245.chunk.js"
+    "static/js/main.4353d909.chunk.js"
   ]
 }
