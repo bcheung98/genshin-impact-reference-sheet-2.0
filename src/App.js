@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "2px solid gray",
     },
     genshinFont: {
-        fontFamily: "Genshin, sans-serif" 
+        fontFamily: "Genshin, sans-serif"
     },
     footerBar: {
         marginTop: 10,
@@ -35,11 +35,10 @@ const App = () => {
             </AppBar>
             <CharacterBrowser />
             <AppBar position="static" className={classes.footerBar}>
-                <Typography className={classes.genshinFont} variant="subtitle2">Genshin Impact™ is a registered trademark of MiHoYo Co., Ltd.</Typography>
-                <Typography className={classes.genshinFont} variant="subtitle2">Images and data ©MiHoYo Co., Ltd.</Typography>
-                <Typography className={classes.genshinFont} variant="subtitle2">This website was made for my own education and research into making React applications.</Typography>
+                <Typography className={classes.genshinFont} variant="subtitle2">This website is not affiliated with HoyoVerse</Typography>
+                <Typography className={classes.genshinFont} variant="subtitle2">Genshin Impact™ is a registered trademark of HoYoverse. Images and data ©HoyoVerse.</Typography>
             </AppBar>
-        </React.Fragment> 
+        </React.Fragment>
     );
 }
 
