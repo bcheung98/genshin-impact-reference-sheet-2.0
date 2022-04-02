@@ -64,6 +64,9 @@ export const formatCommonMats = (material) => {
         case "Arrow":
             material = "Hilichurl Arrow";
             break;
+        case "Fungi":
+            material = "Fungal Spores";
+            break;
         case "Handguard":
             material = "Nobushi Handguard";
             break;
@@ -131,6 +134,9 @@ export const formatAscensionMats = (material) => {
             break;
         case "Dragonheir's False Fin":
             material += " (Bathysmal Vishap Herd)";
+            break;
+        case "Runic Fang":
+            material += " (Ruin Serpent";
             break;
         default:
             material += "";
