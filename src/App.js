@@ -35,7 +35,7 @@ const App = () => {
             </AppBar>
             <CharacterBrowser />
             <AppBar position="static" className={classes.footerBar}>
-                <Typography className={classes.genshinFont} variant="subtitle2">This website is not affiliated with HoyoVerse</Typography>
+                <Typography className={classes.genshinFont} variant="subtitle2">This website is not affiliated with HoyoVerse.</Typography>
                 <Typography className={classes.genshinFont} variant="subtitle2">Genshin Impact™ is a registered trademark of HoYoverse. Images and data ©HoyoVerse.</Typography>
             </AppBar>
         </React.Fragment>
