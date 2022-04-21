@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from "react-redux";
-import { FilterTooltip } from "../../helpers/FilterTooltip";
-import { formatTalents } from "../../helpers/TooltipText";
 import Typography from '@material-ui/core/Typography';
 
 let freedomIcon = require("../../assets/materials/talent_mats/Freedom.png").default;
