@@ -14,8 +14,7 @@ import CharacterList from "./CharacterList";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "100%",
-        margin: "auto"
+        marginLeft: "-40px",
     },
     buttonGroup: {
         display: "flex",
@@ -84,14 +83,21 @@ const CharacterBrowser = (props) => {
                 />
                 <ListIcon className={classes.toggleIcon} fontSize="large" />
             </div>
-            <Filters className={classes.root} />
-            {!checked ?
-                (<Grid container className={classes.root}>
-                    {characters.characters.length > 0 ? filterCharacters(characters.characters, filters).map(char => <CharacterCard key={char.id} character={char} />) : null}
-                </Grid>)
-                :
-                <CharacterList characters={filterCharacters(characters.characters, filters)} />
-            }
+            <Grid container>
+                <Grid item xs={3}>
+                    <Filters />
+                </Grid>
+                <Grid item xs={9}>
+                    {!checked ?
+                        (<Grid container className={classes.root}>
+                            {characters.characters.length > 0 ? filterCharacters(characters.characters, filters).map(char => <CharacterCard key={char.id} character={char} />) : null}
+                        </Grid>)
+                        :
+                        <CharacterList characters={filterCharacters(characters.characters, filters)} />
+                    }
+                </Grid>
+            </Grid>
+
 
         </React.Fragment>
     )
