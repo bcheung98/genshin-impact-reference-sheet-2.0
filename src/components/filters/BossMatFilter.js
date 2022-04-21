@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     bossIcon: {
         marginLeft: "-7px",
         marginRight: "10px",
-        width: "32px",
+        height: "32px",
         border: "2px solid gray",
         borderRadius: "5px",
     },

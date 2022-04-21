@@ -91,7 +91,7 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Weekly Boss Material</Typography>
+                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Weekly Boss</Typography>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <BossMatFilter />
