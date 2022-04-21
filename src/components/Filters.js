@@ -22,9 +22,13 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "10px",
         marginLeft: "30px",
     },
-    summary: {
+    rootSummary: {
         margin: "10px",
-        height: "32px",
+        textAlign: "center",
+        fontFamily: "Genshin, sans-serif",
+    },
+    summary: {
+        marginBottom: "-5px",
         textAlign: "center",
         fontFamily: "Genshin, sans-serif",
     },
@@ -51,7 +55,7 @@ const Filters = () => {
     return (
         <div className={classes.root}>
             <Paper className={classes.bar}>
-                <Typography variant="h5" className={classes.summary}>Filters</Typography>
+                <Typography variant="h5" className={classes.rootSummary}>Filters</Typography>
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
