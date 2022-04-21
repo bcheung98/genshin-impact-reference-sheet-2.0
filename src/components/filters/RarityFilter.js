@@ -1,16 +1,23 @@
 import React from "react";
+import { makeStyles } from '@material-ui/core/styles';
 import { connect } from "react-redux";
-import { FilterTooltip } from "../../helpers/FilterTooltip";
+
+const useStyles = makeStyles((theme) => ({
+    filter: {
+        display: "flex",
+    },
+}));
 
 const RarityFilter = (props) => {
+    const classes = useStyles();
     return (
         <React.Fragment>
-            <FilterTooltip title="5 Star" arrow placement="top">
+            <div className={classes.filter}>
                 <img className="filter-off" id="5-button" src={require("../../assets/stars/Icon_5_Stars.png").default} alt="5" onClick={(e) => props.setFilter(e.target.alt)} />
-            </FilterTooltip>
-            <FilterTooltip title="4 Star" arrow placement="top">
+            </div>
+            <div className={classes.filter}>
                 <img className="filter-off" id="4-button" src={require("../../assets/stars/Icon_4_Stars.png").default} alt="4" onClick={(e) => props.setFilter(e.target.alt)} />
-            </FilterTooltip>
+            </div>
         </React.Fragment>
     )
 }

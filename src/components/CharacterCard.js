@@ -99,11 +99,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "5px",
         color: "white",
     },
-    characterCard: {
-        border: "2px solid gray",
-        borderRadius: "5px",
-        height: "600px",
-    },
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {

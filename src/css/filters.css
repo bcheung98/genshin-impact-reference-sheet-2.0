@@ -1,5 +1,5 @@
 .filter-off, .filter-on {
-    height: 40px;
+    height: 32px;
     margin: 5px;
     padding: 2px;
     border: 2px solid gray;
@@ -9,6 +9,7 @@
 .filter-off:hover, .filter-on:hover {
     box-shadow: 0 0 15px 1px dodgerblue;
     border: 2px solid dodgerblue;
+    cursor: pointer;
 }
 
 .filter-off {
