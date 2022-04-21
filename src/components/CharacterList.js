@@ -17,7 +17,8 @@ import CharacterRow from "./CharacterRow";
 const useStyles = makeStyles((theme) => ({
     root: {
         width: "100%",
-        margin: "auto",
+        marginTop: "-40px",
+        marginLeft: "-50px",
     },
     genshinFont: {
         fontFamily: "Genshin, sans-serif",
