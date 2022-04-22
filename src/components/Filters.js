@@ -20,9 +20,9 @@ import LocalSpecialtyFilter from "./filters/LocalSpecialtyFilter";
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: "auto",
-        width: "80%",
+        width: "85%",
         marginTop: "10px",
-        marginLeft: "30px",
+        marginLeft: "20px",
     },
     rootSummary: {
         margin: "10px",
