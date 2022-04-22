@@ -1,10 +1,11 @@
 const initialState = {
     element: [],
     weapon: [],
+    rarity: [],
     talent: [],
     bossMat: [],
-    nation: [],
-    rarity: [],
+    localMat: [],
+    nation: []
 }
 
 const filterReducer = (state = initialState, action) => {
@@ -34,6 +35,13 @@ const filterReducer = (state = initialState, action) => {
                 ...state,
                 weapon: tempWeapon
             }
+        case "SET_RARITY_FILTERS":
+            let tempRarity = [...state.rarity];
+            !state.rarity.includes(parseInt(target)) ? tempRarity.push(parseInt(target)) : tempRarity.splice(tempRarity.indexOf(parseInt(target)), 1);
+            return {
+                ...state,
+                rarity: tempRarity
+            }
         case "SET_TALENT_FILTERS":
             let tempTalent = [...state.talent];
             !state.talent.includes(target) ? tempTalent.push(target) : tempTalent.splice(tempTalent.indexOf(target), 1);
@@ -48,19 +56,19 @@ const filterReducer = (state = initialState, action) => {
                 ...state,
                 bossMat: tempBossMat
             }
+        case "SET_LOCAL_MAT_FILTERS":
+            let tempLocalMat = [...state.localMat];
+            !state.localMat.includes(target) ? tempLocalMat.push(target) : tempLocalMat.splice(tempLocalMat.indexOf(target), 1);
+            return {
+                ...state,
+                localMat: tempLocalMat
+            }
         case "SET_NATION_FILTERS":
             let tempNation = [...state.nation];
             !state.nation.includes(target) ? tempNation.push(target) : tempNation.splice(tempNation.indexOf(target), 1);
             return {
                 ...state,
                 nation: tempNation
-            }
-        case "SET_RARITY_FILTERS":
-            let tempRarity = [...state.rarity];
-            !state.rarity.includes(parseInt(target)) ? tempRarity.push(parseInt(target)) : tempRarity.splice(tempRarity.indexOf(parseInt(target)), 1);
-            return {
-                ...state,
-                rarity: tempRarity
             }
         default:
             return state

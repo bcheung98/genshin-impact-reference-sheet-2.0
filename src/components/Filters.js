@@ -10,10 +10,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "../css/filters.css";
 import ElementFilter from "./filters/ElementFilter";
 import WeaponFilter from "./filters/WeaponFilter";
+import RarityFilter from "./filters/RarityFilter";
 import TalentFilter from "./filters/TalentFilter";
 import BossMatFilter from "./filters/BossMatFilter";
 import NationFilter from "./filters/NationFilter";
-import RarityFilter from "./filters/RarityFilter";
+import LocalSpecialtyFilter from "./filters/LocalSpecialtyFilter";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -99,6 +101,15 @@ const Filters = () => {
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <BossMatFilter />
+                    </AccordionDetails>
+                </Accordion>
+
+                <Accordion className={classes.subBar}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
+                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Local Specialty</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails className={classes.filterRow}>
+                        <LocalSpecialtyFilter />
                     </AccordionDetails>
                 </Accordion>
 
