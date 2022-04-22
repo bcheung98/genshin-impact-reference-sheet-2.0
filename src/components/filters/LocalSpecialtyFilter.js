@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from "react-redux";
+import { FilterTooltip } from "../../helpers/FilterTooltip";
 import Typography from '@material-ui/core/Typography';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -85,38 +86,30 @@ const LocalMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <div className={classes.filter}>
+                        <FilterTooltip title="Calla Lily" arrow placement="top">
                             <img className="filter-off" id="calla lily-button" src={callaLilyIcon} alt="Calla Lily" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Calla Lily</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Cecilia" arrow placement="top">
                             <img className="filter-off" id="cecilia-button" src={ceciliaIcon} alt="Cecilia" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Cecilia</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Dandelion Seed" arrow placement="top">
                             <img className="filter-off" id="dandelion seed-button" src={dandelionIcon} alt="Dandelion Seed" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Dandelion Seed</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Philanemo Mushroom" arrow placement="top">
                             <img className="filter-off" id="philanemo mushroom-button" src={philanemoIcon} alt="Philanemo Mushroom" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Philanemo Mushroom</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Small Lamp Grass" arrow placement="top">
                             <img className="filter-off" id="small lamp grass-button" src={lampGrassIcon} alt="Small Lamp Grass" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Small Lamp Grass</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Valberry" arrow placement="top">
                             <img className="filter-off" id="valberry-button" src={valberryIcon} alt="Valberry" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Valberry</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Windwheel Aster" arrow placement="top">
                             <img className="filter-off" id="windwheel aster-button" src={asterIcon} alt="Windwheel Aster" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Windwheel Aster</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Wolfhook" arrow placement="top">
                             <img className="filter-off" id="wolfhook-button" src={wolfhookIcon} alt="Wolfhook" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Wolfhook</Typography>
-                        </div>
+                        </FilterTooltip>
                     </div>
                 </AccordionDetails>
             </Accordion>
@@ -130,42 +123,34 @@ const LocalMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <div className={classes.filter}>
+                        <FilterTooltip title="Cor Lapis" arrow placement="top">
                             <img className="filter-off" id="cor lapis-button" src={corLapisIcon} alt="Cor Lapis" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Cor Lapis</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Glaze Lily" arrow placement="top">
                             <img className="filter-off" id="glaze lily-button" src={glazeLilyIcon} alt="Glaze Lily" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Glaze Lily</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Jueyun Chili" arrow placement="top">
                             <img className="filter-off" id="jueyun chili-button" src={chiliIcon} alt="Jueyun Chili" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Jueyun Chili</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Noctilucous Jade" arrow placement="top">
                             <img className="filter-off" id="noctilucous jade-button" src={jadeIcon} alt="Noctilucous Jade" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Noctilucous Jade</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Qingxin" arrow placement="top">
                             <img className="filter-off" id="qingxin-button" src={qingxinIcon} alt="Qingxin" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Qingxin</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Silk Flower" arrow placement="top">
                             <img className="filter-off" id="silk flower-button" src={silkIcon} alt="Silk Flower" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Silk Flower</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Starconch" arrow placement="top">
                             <img className="filter-off" id="starconch-button" src={starconchIcon} alt="Starconch" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Starconch</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Violetgrass" arrow placement="top">
                             <img className="filter-off" id="violetgrass-button" src={violetgrassIcon} alt="Violetgrass" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Violetgrass</Typography>
-                        </div>
+                        </FilterTooltip>
                     </div>
                 </AccordionDetails>
             </Accordion>
-            
+
             <Accordion className={classes.subBar}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
                     <div className={classes.filter}>
@@ -175,42 +160,33 @@ const LocalMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <div className={classes.filter}>
+                        <FilterTooltip title="Amakumo Fruit" arrow placement="top">
                             <img className="filter-off" id="amakumo fruit-button" src={amakumoIcon} alt="Amakumo Fruit" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Amakumo Fruit</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Crystal Marrow" arrow placement="top">
                             <img className="filter-off" id="crystal marrow-button" src={marrowIcon} alt="Crystal Marrow" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Crystal Marrow</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Dendrobium" arrow placement="top">
                             <img className="filter-off" id="dendrobium-button" src={dendrobiumIcon} alt="Dendrobium" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Dendrobium</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Fluorescent Fungus" arrow placement="top">
                             <img className="filter-off" id="fluorescent fungus-button" src={fluoFungusIcon} alt="Fluorescent Fungus" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Fluorescent Fungus</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Naku Weed" arrow placement="top">
                             <img className="filter-off" id="naku weed-button" src={nakuIcon} alt="Naku Weed" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Naku Weed</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Onikabuto" arrow placement="top">
                             <img className="filter-off" id="onikabuto-button" src={onikabutoIcon} alt="Onikabuto" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Onikabuto</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Sakura Bloom" arrow placement="top">
                             <img className="filter-off" id="sakura bloom-button" src={sakuraIcon} alt="Sakura Bloom" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Sakura Bloom</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Sango Pearl" arrow placement="top">
                             <img className="filter-off" id="sango pearl-button" src={pearlIcon} alt="Sango Pearl" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Sango Pearl</Typography>
-                        </div>
-                        <div className={classes.filter}>
+                        </FilterTooltip>
+                        <FilterTooltip title="Sea Ganoderma" arrow placement="top">
                             <img className="filter-off" id="sea ganoderma-button" src={ganodermaIcon} alt="Sea Ganoderma" onClick={(e) => props.setFilter(e.target.alt)} />
-                            <Typography variant="body1" className={classes.text}>Sea Ganoderma</Typography>
-                        </div>
+                        </FilterTooltip>
                     </div>
                 </AccordionDetails>
             </Accordion>

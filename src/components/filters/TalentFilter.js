@@ -1,7 +1,7 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
 import { connect } from "react-redux";
-import Typography from '@material-ui/core/Typography';
+import { FilterTooltip } from "../../helpers/FilterTooltip";
+import { formatTalents } from "../../helpers/TooltipText";
 
 let freedomIcon = require("../../assets/materials/talent_mats/Freedom.png").default;
 let resistanceIcon = require("../../assets/materials/talent_mats/Resistance.png").default;
@@ -13,56 +13,41 @@ let transienceIcon = require("../../assets/materials/talent_mats/Transience.png"
 let eleganceIcon = require("../../assets/materials/talent_mats/Elegance.png").default;
 let lightIcon = require("../../assets/materials/talent_mats/Light.png").default;
 
-const useStyles = makeStyles((theme) => ({
-    filter: {
-        display: "flex",
-    },
-    text: {
-        fontFamily: "Genshin, sans-serif",
-        marginTop: "12px",
-        marginLeft: "5px",
-    },
-}));
-
 const TalentFilter = (props) => {
-    const classes = useStyles();
     return (
         <div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="freedom-button" src={freedomIcon} alt="Freedom" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Freedom (Mon/Thu)</Typography>
+            <div>
+                <FilterTooltip title={formatTalents("Freedom")} arrow placement="top">
+                    <img className="filter-off" id="freedom-button" src={freedomIcon} alt="Freedom" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+                <FilterTooltip title={formatTalents("Resistance")} arrow placement="top">
+                    <img className="filter-off" id="resistance-button" src={resistanceIcon} alt="Resistance" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+                <FilterTooltip title={formatTalents("Ballad")} arrow placement="top">
+                    <img className="filter-off" id="ballad-button" src={balladIcon} alt="Ballad" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
             </div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="resistance-button" src={resistanceIcon} alt="Resistance" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Resistance (Tue/Fri)</Typography>
+            <div>
+                <FilterTooltip title={formatTalents("Prosperity")} arrow placement="top">
+                    <img className="filter-off" id="prosperity-button" src={prosperityIcon} alt="Prosperity" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+                <FilterTooltip title={formatTalents("Diligence")} arrow placement="top">
+                    <img className="filter-off" id="diligence-button" src={diligenceIcon} alt="Diligence" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+                <FilterTooltip title={formatTalents("Gold")} arrow placement="top">
+                    <img className="filter-off" id="gold-button" src={goldIcon} alt="Gold" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
             </div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="ballad-button" src={balladIcon} alt="Ballad" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Ballad(Wed/Sat)</Typography>
-            </div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="prosperity-button" src={prosperityIcon} alt="Prosperity" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Prosperity (Mon/Thu)</Typography>
-            </div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="diligence-button" src={diligenceIcon} alt="Diligence" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Diligence (Tue/Fri)</Typography>
-            </div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="gold-button" src={goldIcon} alt="Gold" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Gold (Wed/Sat)</Typography>
-            </div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="transience-button" src={transienceIcon} alt="Transience" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Transience (Mon/Thu)</Typography>
-            </div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="elegance-button" src={eleganceIcon} alt="Elegance" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Elegance (Tue/Fri)</Typography>
-            </div>
-            <div className={classes.filter}>
-                <img className="filter-off" id="light-button" src={lightIcon} alt="Light" onClick={(e) => props.setFilter(e.target.alt)} />
-                <Typography variant="body1" className={classes.text}>Light (Wed/Fri)</Typography>
+            <div>
+                <FilterTooltip title={formatTalents("Transience")} arrow placement="top">
+                    <img className="filter-off" id="transience-button" src={transienceIcon} alt="Transience" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+                <FilterTooltip title={formatTalents("Elegance")} arrow placement="top">
+                    <img className="filter-off" id="elegance-button" src={eleganceIcon} alt="Elegance" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+                <FilterTooltip title={formatTalents("Light")} arrow placement="top">
+                    <img className="filter-off" id="light-button" src={lightIcon} alt="Light" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
             </div>
         </div>
     )
