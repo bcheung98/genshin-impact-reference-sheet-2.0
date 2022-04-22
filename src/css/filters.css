@@ -1,3 +1,16 @@
+.filter-text-off, .filter-text-on {
+    font-size: 16pt;
+    margin: 0;
+}
+
+.filter-text-off {
+    color: white;
+}
+
+.filter-text-on {
+    color: rgb(30, 175, 255);
+}
+
 .filter-off, .filter-on {
     height: 32px;
     margin: 5px;

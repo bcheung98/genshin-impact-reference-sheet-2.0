@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
     filterRow: {
         margin: "5px",
-        padding: 0
+        padding: 0,
     },
 }));
 
@@ -61,7 +61,7 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Element</Typography>
+                        <p className="filter-text-off" id="element-filter-text" style={{ fontFamily: "Genshin" }}>Element</p>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <ElementFilter />
@@ -70,7 +70,7 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Weapon</Typography>
+                        <p className="filter-text-off" id="weapon-filter-text" style={{ fontFamily: "Genshin" }}>Weapon</p>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <WeaponFilter />
@@ -79,7 +79,7 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Rarity</Typography>
+                        <p className="filter-text-off" id="rarity-filter-text" style={{ fontFamily: "Genshin" }}>Rarity</p>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <RarityFilter />
@@ -88,7 +88,7 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Talent Book</Typography>
+                        <p className="filter-text-off" id="talent-filter-text" style={{ fontFamily: "Genshin" }}>Talent Book</p>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <TalentFilter />
@@ -97,7 +97,7 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Weekly Boss</Typography>
+                        <p className="filter-text-off" id="boss-filter-text" style={{ fontFamily: "Genshin" }}>Weekly Boss</p>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <BossMatFilter />
@@ -106,7 +106,7 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Local Specialty</Typography>
+                        <p className="filter-text-off" id="local-filter-text" style={{ fontFamily: "Genshin" }}>Local Specialty</p>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <LocalSpecialtyFilter />
@@ -115,7 +115,7 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Nation</Typography>
+                        <p className="filter-text-off" id="nation-filter-text" style={{ fontFamily: "Genshin" }}>Nation</p>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
                         <NationFilter />
