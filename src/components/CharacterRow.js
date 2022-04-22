@@ -17,12 +17,12 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Genshin, sans-serif",
         cursor: "pointer",
         "&:hover": {
-            color: "dodgerblue",
+            color: "rgb(30, 175, 255)",
             textDecoration: "underline",
         },
     },
     characterIcon: {
-        marginRight: "20px",
+        marginRight: "15px",
         height: '48px',
         cursor: "pointer",
     },
@@ -30,17 +30,17 @@ const useStyles = makeStyles((theme) => ({
         height: "25px",
     },
     elementIcon: {
-        marginRight: "10px",
+        marginRight: "8px",
         height: '32px',
     },
     weaponIcon: {
-        marginRight: "10px",
+        marginRight: "8px",
         height: '32px',
         border: "1px solid rgb(44, 49, 64)",
         borderRadius: "64px",
     },
     talentBookIcon: {
-        marginRight: "10px",
+        marginRight: "8px",
         height: '48px',
     },
     avatarFlexRow: {
