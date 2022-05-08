@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     },
     dialogRoot: {
         margin: "auto",
-        maxWidth: "95vw",
+        maxWidth: "98vw",
     },
     dialogContent: {
         backgroundColor: "rgb(36, 41, 56)",

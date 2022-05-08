@@ -2,6 +2,7 @@ import React from "react";
 import parse from "html-react-parser";
 import { formatTalents, formatCommonMats, formatBossMats, formatAscensionMats, formatGemstone } from "../helpers/TooltipText";
 import { FormatTalentKey } from "../helpers/FormatTalentKey";
+import TalentScalingTable from "./TalentScalingTable";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -212,7 +213,7 @@ const StyledTableCell = withStyles((theme) => ({
     },
 }))(TableCell);
 
-const StyledTableRow = withStyles((theme) => ({
+const StyledTableAlternatingRows = withStyles((theme) => ({
     root: {
         '&:nth-of-type(even)': {
             backgroundColor: "rgb(24, 29, 44)",
@@ -223,7 +224,7 @@ const StyledTableRow = withStyles((theme) => ({
     },
 }))(TableRow);
 
-const createData = (level, hp, atk, def, critRate, critDMG, special) => {
+const createCharacterStats = (level, hp, atk, def, critRate, critDMG, special) => {
     return { level, hp, atk, def, critRate, critDMG, special }
 }
 
@@ -244,7 +245,7 @@ const CharacterPopup = (props) => {
 
     const levels = ["1", "20", "20+", "40", "40+", "50", "50+", "60", "60+", "70", "70+", "80", "80+", "90"]
 
-    const rows = levels.map((level, index) => stats.special ? createData(level, stats.hp[index], stats.atk[index], stats.def[index], stats.critRate[index], stats.critDMG[index], stats.special[index]) : createData(level, stats.hp[index], stats.atk[index], stats.def[index], stats.critRate[index], stats.critDMG[index]))
+    const characterStatRows = levels.map((level, index) => stats.special ? createCharacterStats(level, stats.hp[index], stats.atk[index], stats.def[index], stats.critRate[index], stats.critDMG[index], stats.special[index]) : createCharacterStats(level, stats.hp[index], stats.atk[index], stats.def[index], stats.critRate[index], stats.critDMG[index]))
 
     return (
         <React.Fragment>
@@ -342,6 +343,8 @@ const CharacterPopup = (props) => {
                                                 </div>
                                                 <br />
                                                 {parse(talents[key].description)}
+                                                <br /><br />
+                                                {["attack", "skill", "burst"].includes(key) && <TalentScalingTable stats={talents[key].scaling}/>}
                                             </TabPanelVertical>
                                         )
                                     })}
@@ -406,7 +409,7 @@ const CharacterPopup = (props) => {
                                 <TableContainer component={Paper}>
                                     <Table className={classes.table} size="small">
                                         <TableHead>
-                                            <StyledTableRow>
+                                            <StyledTableAlternatingRows>
                                                 <StyledTableCell className={classes.genshinFont} align="center">Level</StyledTableCell>
                                                 <StyledTableCell className={classes.genshinFont} align="center">Base HP</StyledTableCell>
                                                 <StyledTableCell className={classes.genshinFont} align="center">Base ATK</StyledTableCell>
@@ -414,11 +417,11 @@ const CharacterPopup = (props) => {
                                                 <StyledTableCell className={classes.genshinFont} align="center">CRIT Rate</StyledTableCell>
                                                 <StyledTableCell className={classes.genshinFont} align="center">CRIT DMG</StyledTableCell>
                                                 {stats.special && <StyledTableCell className={classes.genshinFont} align="center">{stats.ascensionStat}</StyledTableCell>}
-                                            </StyledTableRow>
+                                            </StyledTableAlternatingRows>
                                         </TableHead>
                                         <TableBody>
-                                            {rows.map((row) => (
-                                                <StyledTableRow key={row.level}>
+                                            {characterStatRows.map((row) => (
+                                                <StyledTableAlternatingRows key={row.level}>
                                                     <StyledTableCell component="th" scope="row" align="center">
                                                         {row.level}
                                                     </StyledTableCell>
@@ -428,7 +431,7 @@ const CharacterPopup = (props) => {
                                                     <StyledTableCell align="center">{row.critRate}%</StyledTableCell>
                                                     <StyledTableCell align="center">{row.critDMG}%</StyledTableCell>
                                                     {stats.special && <StyledTableCell align="center">{stats.ascensionStat !== "Elemental Mastery" ? row.special + "%" : row.special}</StyledTableCell>}
-                                                </StyledTableRow>
+                                                </StyledTableAlternatingRows>
                                             ))}
                                         </TableBody>
                                     </Table>
