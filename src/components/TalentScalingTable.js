@@ -40,7 +40,7 @@ const createTalentScaling = (level, one, two, three, four, five, six, seven, eig
 const TalentScalingTable = (props) => {
     const classes = useStyles();
 
-    const rows = props.stats ? props.stats.map(stat => createTalentScaling(stat[0], stat[1], stat[2], stat[3], stat[4], stat[5], stat[6], stat[7], stat[8], stat[9], stat[10], stat[11], stat[12], stat[13])) : null;
+    const rows = props.stats ? props.stats.map(stat => stat.length !== 2 ? createTalentScaling(stat[0], stat[1], stat[2], stat[3], stat[4], stat[5], stat[6], stat[7], stat[8], stat[9], stat[10], stat[11], stat[12], stat[13]) : createTalentScaling(stat[0], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1])) : null;
 
     return (
         <React.Fragment>
@@ -60,18 +60,22 @@ const TalentScalingTable = (props) => {
                                     {row.level}
                                 </StyledTableCell>
                                 <StyledTableCell align="center">{row.one}</StyledTableCell>
-                                <StyledTableCell align="center">{row.two}</StyledTableCell>
-                                <StyledTableCell align="center">{row.three}</StyledTableCell>
-                                <StyledTableCell align="center">{row.four}</StyledTableCell>
-                                <StyledTableCell align="center">{row.five}</StyledTableCell>
-                                <StyledTableCell align="center">{row.six}</StyledTableCell>
-                                <StyledTableCell align="center">{row.seven}</StyledTableCell>
-                                <StyledTableCell align="center">{row.eight}</StyledTableCell>
-                                <StyledTableCell align="center">{row.nine}</StyledTableCell>
-                                <StyledTableCell align="center">{row.ten}</StyledTableCell>
-                                <StyledTableCell align="center">{row.eleven}</StyledTableCell>
-                                <StyledTableCell align="center">{row.twelve}</StyledTableCell>
-                                <StyledTableCell align="center">{row.thirteen}</StyledTableCell>
+                                {props.attackType !== "altsprint" &&
+                                    <React.Fragment>
+                                        <StyledTableCell align="center">{row.two}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.three}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.four}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.five}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.six}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.seven}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.eight}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.nine}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.ten}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.eleven}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.twelve}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.thirteen}</StyledTableCell>
+                                    </React.Fragment>
+                                }
                             </StyledTableRows>
                         )) : null}
                     </TableBody>

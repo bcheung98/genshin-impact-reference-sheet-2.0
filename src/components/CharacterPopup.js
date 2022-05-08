@@ -344,7 +344,7 @@ const CharacterPopup = (props) => {
                                                 <br />
                                                 {parse(talents[key].description)}
                                                 <br /><br />
-                                                {["attack", "skill", "burst"].includes(key) && <TalentScalingTable stats={talents[key].scaling}/>}
+                                                {["attack", "skill", "burst", "altsprint"].includes(key) && <TalentScalingTable attackType={key} stats={talents[key].scaling}/>}
                                             </TabPanelVertical>
                                         )
                                     })}
