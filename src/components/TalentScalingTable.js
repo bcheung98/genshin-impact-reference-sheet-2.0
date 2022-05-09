@@ -40,11 +40,10 @@ const createTalentScaling = (level, one, two, three, four, five, six, seven, eig
 const TalentScalingTable = (props) => {
     const classes = useStyles();
 
-    const rows = props.stats ? props.stats.map(stat => stat.length !== 2 ? createTalentScaling(stat[0], stat[1], stat[2], stat[3], stat[4], stat[5], stat[6], stat[7], stat[8], stat[9], stat[10], stat[11], stat[12], stat[13]) : createTalentScaling(stat[0], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1], stat[1])) : null;
+    const rows = props.stats.map(stat => createTalentScaling(stat[0], stat[1], stat[2], stat[3], stat[4], stat[5], stat[6], stat[7], stat[8], stat[9], stat[10], stat[11], stat[12], stat[13]));
 
     return (
         <React.Fragment>
-            {console.log(props.stats)}
             <TableContainer component={Paper}>
                 <Table className={classes.table} size="small">
                     <TableHead>
@@ -54,7 +53,7 @@ const TalentScalingTable = (props) => {
                         </StyledTableRows>
                     </TableHead>
                     <TableBody>
-                        {rows !== null ? rows.map(row => (
+                        {rows.map(row => (
                             <StyledTableRows key={row.level}>
                                 <StyledTableCell component="th" scope="row" align="center">
                                     {row.level}
@@ -77,7 +76,7 @@ const TalentScalingTable = (props) => {
                                     </React.Fragment>
                                 }
                             </StyledTableRows>
-                        )) : null}
+                        ))}
                     </TableBody>
                 </Table>
             </TableContainer>
