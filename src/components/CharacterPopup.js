@@ -23,6 +23,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "../css/characterCard.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -140,6 +144,24 @@ const useStyles = makeStyles((theme) => ({
         width: "64px",
         height: "64px",
         border: "2px solid gray",
+    },
+    bar: {
+        color: "white",
+        backgroundColor: "rgb(44, 49, 64)",
+        border: "2px solid gray",
+    },
+    subBar: {
+        color: "white",
+        backgroundColor: "rgb(36, 41, 56)",
+    },
+    accordion: {
+        color: "white",
+        backgroundColor: "rgb(36, 41, 56)",
+    },
+    summary: {
+        marginBottom: "-5px",
+        textAlign: "center",
+        fontFamily: "Genshin, sans-serif",
     },
 }));
 
@@ -344,7 +366,16 @@ const CharacterPopup = (props) => {
                                                 <br />
                                                 {parse(talents[key].description)}
                                                 <br /><br />
-                                                {["attack", "skill", "burst", "altsprint"].includes(key) && <TalentScalingTable attackType={key} stats={talents[key].scaling}/>}
+                                                <Paper className={classes.bar}>
+                                                    <Accordion className={classes.subBar}>
+                                                        <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
+                                                            <Typography>Talent Scaling</Typography>
+                                                        </AccordionSummary>
+                                                        <AccordionDetails>
+                                                            {["attack", "skill", "burst", "altsprint"].includes(key) && <TalentScalingTable attackType={key} stats={talents[key].scaling} />}
+                                                        </AccordionDetails>
+                                                    </Accordion>
+                                                </Paper>
                                             </TabPanelVertical>
                                         )
                                     })}
