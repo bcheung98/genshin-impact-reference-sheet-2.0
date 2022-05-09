@@ -33,8 +33,8 @@ const StyledTableCell = withStyles((theme) => ({
     },
 }))(TableCell);
 
-const createTalentScaling = (level, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen) => {
-    return { level, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen }
+const createTalentScaling = (level, a, b, c, d, e, f, g, h, i, j, k, l, m) => {
+    return { level, a, b, c, d, e, f, g, h, i, j, k, l, m }
 }
 
 const TalentScalingTable = (props) => {
@@ -43,44 +43,42 @@ const TalentScalingTable = (props) => {
     const rows = props.stats.map(stat => createTalentScaling(stat[0], stat[1], stat[2], stat[3], stat[4], stat[5], stat[6], stat[7], stat[8], stat[9], stat[10], stat[11], stat[12], stat[13]));
 
     return (
-        <React.Fragment>
-            <TableContainer component={Paper}>
-                <Table className={classes.table} size="small">
-                    <TableHead>
-                        <StyledTableRows>
-                            <StyledTableCell align="center">LVL</StyledTableCell>
-                            {[...Array(13).keys()].map(i => <StyledTableCell key={i} align="center">{i + 1}</StyledTableCell>)}
+        <TableContainer component={Paper}>
+            <Table className={classes.table} size="small">
+                <TableHead>
+                    <StyledTableRows>
+                        <StyledTableCell align="center">LVL</StyledTableCell>
+                        {[...Array(13).keys()].map(i => <StyledTableCell key={i} align="center">{i + 1}</StyledTableCell>)}
+                    </StyledTableRows>
+                </TableHead>
+                <TableBody>
+                    {rows.map(row => (
+                        <StyledTableRows key={row.level}>
+                            <StyledTableCell component="th" scope="row" align="center">
+                                {row.level}
+                            </StyledTableCell>
+                            <StyledTableCell align="center">{row.a}</StyledTableCell>
+                            {props.attackType !== "altsprint" &&
+                                <React.Fragment>
+                                    <StyledTableCell align="center">{row.b}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.c}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.d}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.e}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.f}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.g}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.h}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.i}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.j}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.k}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.l}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.m}</StyledTableCell>
+                                </React.Fragment>
+                            }
                         </StyledTableRows>
-                    </TableHead>
-                    <TableBody>
-                        {rows.map(row => (
-                            <StyledTableRows key={row.level}>
-                                <StyledTableCell component="th" scope="row" align="center">
-                                    {row.level}
-                                </StyledTableCell>
-                                <StyledTableCell align="center">{row.one}</StyledTableCell>
-                                {props.attackType !== "altsprint" &&
-                                    <React.Fragment>
-                                        <StyledTableCell align="center">{row.two}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.three}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.four}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.five}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.six}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.seven}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.eight}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.nine}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.ten}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.eleven}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.twelve}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.thirteen}</StyledTableCell>
-                                    </React.Fragment>
-                                }
-                            </StyledTableRows>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </React.Fragment>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
     )
 
 }
