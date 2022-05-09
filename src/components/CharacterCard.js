@@ -128,6 +128,10 @@ const CharacterCard = (props) => {
         setOpen(false);
     };
 
+    const characterIconBackground = {
+        backgroundImage: "url(" + require(`../assets/backgrounds/Background_${rarity}_Star.png`).default + ")"
+    }
+
     return (
         <React.Fragment>
             <Card className={classes.root} variant="outlined">
@@ -147,7 +151,7 @@ const CharacterCard = (props) => {
                     </div>
                     <Grid container spacing={2}>
                         <Grid item xs className={classes.leftColumn}>
-                            <img className={classes.characterIcon} src={require(`../assets/characters/thumbs/Character_${name.split(" ").join("_")}_Thumb.png`).default} alt={name} style={rarity === 4 ? { backgroundImage: `url("https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Background_Item_4_Star.png")` } : { backgroundImage: `url("https://static.wikia.nocookie.net/gensin-impact/images/7/76/Background_Item_5_Star.png")` }} />
+                            <img className={classes.characterIcon} src={require(`../assets/characters/thumbs/Character_${name.split(" ").join("_")}_Thumb.png`).default} alt={name} style={characterIconBackground} />
                             <img className={classes.stars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
                         </Grid>
                         <Grid item xs={12} sm container>
