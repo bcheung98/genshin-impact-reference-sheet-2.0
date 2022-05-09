@@ -129,7 +129,8 @@ const CharacterCard = (props) => {
     };
 
     const characterIconBackground = {
-        backgroundImage: "url(" + require(`../assets/backgrounds/Background_${rarity}_Star.png`).default + ")"
+        backgroundImage: "url(" + require(`../assets/backgrounds/Background_${rarity}_Star.png`).default + ")",
+        backgroundSize: "100%"
     }
 
     return (
