@@ -366,16 +366,16 @@ const CharacterPopup = (props) => {
                                                 <br />
                                                 {parse(talents[key].description)}
                                                 <br /><br />
-                                                <Paper className={classes.bar}>
+                                                {["attack", "skill", "burst", "altsprint"].includes(key) && <Paper className={classes.bar}>
                                                     <Accordion className={classes.subBar}>
                                                         <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
                                                             <Typography>Talent Scaling</Typography>
                                                         </AccordionSummary>
                                                         <AccordionDetails>
-                                                            {["attack", "skill", "burst", "altsprint"].includes(key) && <TalentScalingTable attackType={key} stats={talents[key].scaling} />}
+                                                            <TalentScalingTable attackType={key} stats={talents[key].scaling} />
                                                         </AccordionDetails>
                                                     </Accordion>
-                                                </Paper>
+                                                </Paper>}
                                             </TabPanelVertical>
                                         )
                                     })}
