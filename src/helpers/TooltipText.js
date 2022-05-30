@@ -136,7 +136,7 @@ export const formatAscensionMats = (material) => {
             material += " (Bathysmal Vishap Herd)";
             break;
         case "Runic Fang":
-            material += " (Ruin Serpent";
+            material += " (Ruin Serpent)";
             break;
         default:
             material += "";
