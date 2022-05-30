@@ -360,7 +360,9 @@ const CharacterPopup = (props) => {
                                                 <Typography className={classes.genshinFont} variant="body1" component="p"><i>{FormatTalentKey(key).toUpperCase()}</i></Typography>
                                                 <br />
                                                 <div className={classes.avatarHeader}>
-                                                    <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
+                                                    {
+                                                        key === "attack" ? <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/attack_${weapon.toLowerCase()}.png`).default} className={classes.avatar} /> : <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
+                                                    }
                                                     <Typography className={classes.genshinFont} variant="h5" component="p">{talents[key].name}</Typography>
                                                 </div>
                                                 <br />
