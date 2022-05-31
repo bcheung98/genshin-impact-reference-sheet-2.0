@@ -479,7 +479,7 @@ const CharacterPopup = (props) => {
                     <Typography variant="subtitle2" className={classes.genshinFont}><i>{description}</i></Typography>
                 </div>
                 <div className={classes.nationIconContainer}>
-                    {nation && <img className={classes.nationIcon} src={require(`../assets/nations/${nation}.png`).default} alt={nation} />}
+                    <img className={classes.nationIcon} src={require(`../assets/nations/${nation}.png`).default} alt={nation} />
                 </div>
             </DialogContent>
         </React.Fragment>

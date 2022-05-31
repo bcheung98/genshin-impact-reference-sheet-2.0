@@ -124,7 +124,7 @@ const CharacterRow = (props) => {
                 </StyledTableCell>
                 <StyledTableCell className={classes.genshinFont} align="left">
                     <div className={classes.avatarFlexRow}>
-                        {row.nation && <img className={classes.talentBookIcon} src={require(`../assets/nations/${row.nation}.png`).default} alt={row.nation} />}
+                        <img className={classes.talentBookIcon} src={require(`../assets/nations/${row.nation}.png`).default} alt={row.nation} />
                         <Typography variant="body1" className={classes.genshinFont}>{row.nation}</Typography>
                     </div>
                 </StyledTableCell>
