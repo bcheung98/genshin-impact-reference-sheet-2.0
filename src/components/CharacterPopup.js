@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     genshinFont: {
         fontFamily: "Genshin, sans-serif"
     },
+    dialogContentRoot: {
+        backgroundColor: "rgb(36, 41, 56)",
+    },
     materialRow: {
         marginLeft: "-30px",
     },
@@ -324,7 +327,7 @@ const CharacterPopup = (props) => {
                     </Grid>
                 </div>
             </DialogTitle>
-            <DialogContent>
+            <DialogContent className={classes.dialogContentRoot}>
                 <Grid container spacing={2} className={classes.dialogMain}>
                     <Grid item>
                         <img src={require(`../assets/characters/avatars/Character_${name.split(" ").join("_")}_Avatar.png`).default} alt={name} className={classes.characterCard} />
@@ -474,7 +477,7 @@ const CharacterPopup = (props) => {
                     </Grid>
                 </Grid>
             </DialogContent>
-            <DialogContent>
+            <DialogContent className={classes.dialogContentRoot}>
                 <div className={classes.dialogDescription}>
                     <Typography variant="subtitle2" className={classes.genshinFont}><i>{description}</i></Typography>
                 </div>

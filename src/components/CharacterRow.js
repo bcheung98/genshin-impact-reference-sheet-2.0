@@ -48,13 +48,15 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
     },
     dialogRoot: {
-        margin: "auto",
+        backgroundColor: "rgb(36, 41, 56)",
     },
     dialogContent: {
         backgroundColor: "rgb(36, 41, 56)",
-        border: "2px solid gray",
-        borderRadius: "5px",
         color: "white",
+        height: "100vh",
+    },
+    dialogActions: {
+        backgroundColor: "rgb(36, 41, 56)",
     },
     closeButton: {
         position: "absolute",
@@ -146,11 +148,10 @@ const CharacterRow = (props) => {
                 TransitionComponent={Transition}
                 className={classes.dialogRoot}
                 maxWidth={false}
-                fullWidth
             >
                 <div className={classes.dialogContent}>
                     <CharacterPopup character={currentCharacter[0]} />
-                    <DialogActions>
+                    <DialogActions className={classes.dialogActions}>
                         <Button className={classes.closeButton} variant="contained" onClick={handleClose} color="secondary">
                             Close
                         </Button>
