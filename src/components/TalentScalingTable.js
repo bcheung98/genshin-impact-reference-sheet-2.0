@@ -24,6 +24,10 @@ const StyledTableRows = withStyles((theme) => ({
 }))(TableRow);
 
 const StyledTableCell = withStyles((theme) => ({
+    root: {
+        padding: "8px",
+        border: "2px solid gray",
+    },
     head: {
         backgroundColor: "rgb(24, 29, 44)",
         color: "white",
