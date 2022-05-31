@@ -49,13 +49,16 @@ const useStyles = makeStyles((theme) => ({
     },
     dialogRoot: {
         margin: "auto",
-        maxWidth: "98vw",
     },
     dialogContent: {
         backgroundColor: "rgb(36, 41, 56)",
         border: "2px solid gray",
         borderRadius: "5px",
         color: "white",
+    },
+    closeButton: {
+        position: "absolute",
+        bottom: "20px",
     },
 }));
 
@@ -137,6 +140,7 @@ const CharacterRow = (props) => {
                 </StyledTableCell>
             </StyledTableRow>
             <Dialog
+                fullScreen
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
@@ -147,7 +151,7 @@ const CharacterRow = (props) => {
                 <div className={classes.dialogContent}>
                     <CharacterPopup character={currentCharacter[0]} />
                     <DialogActions>
-                        <Button variant="contained" onClick={handleClose} color="secondary">
+                        <Button className={classes.closeButton} variant="contained" onClick={handleClose} color="secondary">
                             Close
                         </Button>
                     </DialogActions>
