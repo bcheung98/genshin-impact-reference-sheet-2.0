@@ -104,8 +104,8 @@ const useStyles = makeStyles((theme) => ({
     },
     verticalTabContent: {
         height: "550px",
-        minWidth: "300px",
-        width: "1265px",
+        minWidth: "100px",
+        width: "1450px",
         marginTop: "-15px",
         overflowX: "auto",
     },
