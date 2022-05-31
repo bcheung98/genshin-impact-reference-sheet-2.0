@@ -53,14 +53,13 @@ const useStyles = makeStyles((theme) => ({
     dialogContent: {
         backgroundColor: "rgb(36, 41, 56)",
         color: "white",
-        height: "100vh",
     },
     dialogActions: {
         backgroundColor: "rgb(36, 41, 56)",
     },
     closeButton: {
-        position: "absolute",
-        bottom: "20px",
+        position: "relative",
+        bottom: "50px",
     },
 }));
 
