@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.8992c616.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.7e8c845d.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.7e8c845d.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.1c01c767.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.1c01c767.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
-    "static/js/2.aad81bcc.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.aad81bcc.chunk.js",
-    "static/js/2.aad81bcc.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.aad81bcc.chunk.js.map",
+    "static/js/2.845cb462.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.845cb462.chunk.js",
+    "static/js/2.845cb462.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.845cb462.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
     "static/css/main.8992c616.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.8992c616.chunk.css.map",
-    "static/js/2.aad81bcc.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.aad81bcc.chunk.js.LICENSE.txt",
+    "static/js/2.845cb462.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.845cb462.chunk.js.LICENSE.txt",
     "static/media/Amakumo_Fruit.png": "/genshin-impact-reference-sheet-2.0/static/media/Amakumo_Fruit.1bc748f0.png",
     "static/media/Andrius_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Andrius_Icon.c57ce311.png",
     "static/media/Anemo_Gemstone.png": "/genshin-impact-reference-sheet-2.0/static/media/Anemo_Gemstone.8e700e70.png",
@@ -191,6 +191,7 @@
     "static/media/Nectar.png": "/genshin-impact-reference-sheet-2.0/static/media/Nectar.ed79ec9f.png",
     "static/media/Noctilucous_Jade.png": "/genshin-impact-reference-sheet-2.0/static/media/Noctilucous_Jade.e9b02f62.png",
     "static/media/Onikabuto.png": "/genshin-impact-reference-sheet-2.0/static/media/Onikabuto.153a4d97.png",
+    "static/media/Outlander.png": "/genshin-impact-reference-sheet-2.0/static/media/Outlander.191b2703.png",
     "static/media/Perpetual_Heart.png": "/genshin-impact-reference-sheet-2.0/static/media/Perpetual_Heart.6a1837bc.png",
     "static/media/Philanemo_Mushroom.png": "/genshin-impact-reference-sheet-2.0/static/media/Philanemo_Mushroom.7d237e0e.png",
     "static/media/Prosperity.png": "/genshin-impact-reference-sheet-2.0/static/media/Prosperity.1e521a4b.png",
@@ -233,8 +234,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
-    "static/js/2.aad81bcc.chunk.js",
+    "static/js/2.845cb462.chunk.js",
     "static/css/main.8992c616.chunk.css",
-    "static/js/main.7e8c845d.chunk.js"
+    "static/js/main.1c01c767.chunk.js"
   ]
 }
