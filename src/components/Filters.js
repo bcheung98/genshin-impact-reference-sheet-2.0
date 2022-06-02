@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     },
     rootSummary: {
         margin: "10px",
-        textAlign: "center",
         fontFamily: "Genshin, sans-serif",
     },
     summary: {
