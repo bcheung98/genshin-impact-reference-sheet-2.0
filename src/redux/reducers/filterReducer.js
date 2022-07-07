@@ -3,6 +3,7 @@ const initialState = {
     weapon: [],
     rarity: [],
     talent: [],
+    bossMat: [],
     weeklyBossMat: [],
     localMat: [],
     nation: []
@@ -56,6 +57,15 @@ const filterReducer = (state = initialState, action) => {
             return {
                 ...state,
                 talent: tempTalent
+            }
+        case "SET_BOSS_MAT_FILTERS":
+            let tempBossMat = [...state.bossMat];
+            !state.bossMat.includes(target) ? tempBossMat.push(target) : tempBossMat.splice(tempBossMat.indexOf(target), 1);
+            let bossText = document.getElementById(`${type.split("_")[1].toLowerCase()}-filter-text`);
+            bossText.className === "filter-text-on" && tempBossMat.length === 0 ? bossText.className = "filter-text-off" : bossText.className = "filter-text-on";
+            return {
+                ...state,
+                bossMat: tempBossMat
             }
         case "SET_WEEKLYBOSS_MAT_FILTERS":
             let tempWeeklyBossMat = [...state.weeklyBossMat];

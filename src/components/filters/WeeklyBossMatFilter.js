@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from "react-redux";
 import { FilterTooltip } from "../../helpers/FilterTooltip";
-import { formatBossMats } from "../../helpers/TooltipText";
+import { formatWeeklyBossMats } from "../../helpers/TooltipText";
 import Typography from '@material-ui/core/Typography';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -88,13 +88,13 @@ const BossMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <FilterTooltip title={formatBossMats("Dvalin's Claw")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Dvalin's Claw")} arrow placement="top">
                             <img className="filter-off" id="dvalin's claw-button" src={clawIcon} alt="Dvalin's Claw" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Dvalin's Plume")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Dvalin's Plume")} arrow placement="top">
                             <img className="filter-off" id="dvalin's plume-button" src={plumeIcon} alt="Dvalin's Plume" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Dvalin's Sigh")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Dvalin's Sigh")} arrow placement="top">
                             <img className="filter-off" id="dvalin's sigh-button" src={sighIcon} alt="Dvalin's Sigh" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
                     </div>
@@ -110,13 +110,13 @@ const BossMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <FilterTooltip title={formatBossMats("Ring of Boreas")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Ring of Boreas")} arrow placement="top">
                             <img className="filter-off" id="ring of boreas-button" src={ringIcon} alt="Ring of Boreas" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Spirit Locket of Boreas")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Spirit Locket of Boreas")} arrow placement="top">
                             <img className="filter-off" id="spirit locket of boreas-button" src={locketIcon} alt="Spirit Locket of Boreas" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Tail of Boreas")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Tail of Boreas")} arrow placement="top">
                             <img className="filter-off" id="tail of boreas-button" src={tailIcon} alt="Tail of Boreas" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
                     </div>
@@ -132,13 +132,13 @@ const BossMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <FilterTooltip title={formatBossMats("Shadow of the Warrior")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Shadow of the Warrior")} arrow placement="top">
                             <img className="filter-off" id="shadow of the warrior-button" src={shadowIcon} alt="Shadow of the Warrior" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Shard of a Foul Legacy")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Shard of a Foul Legacy")} arrow placement="top">
                             <img className="filter-off" id="shard of a foul legacy-button" src={shardIcon} alt="Shard of a Foul Legacy" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Tusk of Monoceros Caeli")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Tusk of Monoceros Caeli")} arrow placement="top">
                             <img className="filter-off" id="tusk of monoceros caeli-button" src={tuskIcon} alt="Tusk of Monoceros Caeli" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
                     </div>
@@ -154,13 +154,13 @@ const BossMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <FilterTooltip title={formatBossMats("Bloodjade Branch")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Bloodjade Branch")} arrow placement="top">
                             <img className="filter-off" id="bloodjade branch-button" src={branchIcon} alt="Bloodjade Branch" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Dragon Lord's Crown")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Dragon Lord's Crown")} arrow placement="top">
                             <img className="filter-off" id="dragon lord's crown-button" src={crownIcon} alt="Dragon Lord's Crown" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Gilded Scale")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Gilded Scale")} arrow placement="top">
                             <img className="filter-off" id="gilded scale-button" src={scaleIcon} alt="Gilded Scale" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
                     </div>
@@ -176,13 +176,13 @@ const BossMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <FilterTooltip title={formatBossMats("Ashen Heart")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Ashen Heart")} arrow placement="top">
                             <img className="filter-off" id="ashen heart-button" src={heartIcon} alt="Ashen Heart" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Hellfire Butterfly")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Hellfire Butterfly")} arrow placement="top">
                             <img className="filter-off" id="hellfire butterfly-button" src={butterflyIcon} alt="Hellfire Butterfly" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Molten Moment")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Molten Moment")} arrow placement="top">
                             <img className="filter-off" id="molten moment-button" src={momentIcon} alt="Molten Moment" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
 
@@ -199,13 +199,13 @@ const BossMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
-                        <FilterTooltip title={formatBossMats("Mudra of the Malefic General")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Mudra of the Malefic General")} arrow placement="top">
                             <img className="filter-off" id="mudra of the malefic general-button" src={mudraIcon} alt="Mudra of the Malefic General" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("Tears of the Calamitous God")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("Tears of the Calamitous God")} arrow placement="top">
                             <img className="filter-off" id="tears of the calamitous god-button" src={tearsIcon} alt="Tears of the Calamitous God" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title={formatBossMats("The Meaning of Aeons")} arrow placement="top">
+                        <FilterTooltip title={formatWeeklyBossMats("The Meaning of Aeons")} arrow placement="top">
                             <img className="filter-off" id="the meaning of aeons-button" src={aeonsIcon} alt="The Meaning of Aeons" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
                     </div>
