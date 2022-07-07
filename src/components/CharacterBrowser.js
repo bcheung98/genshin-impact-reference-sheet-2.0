@@ -63,8 +63,8 @@ const filterCharacters = (characters, filters, searchValue) => {
     if (filters.talent.length > 0) {
         chars = chars.filter(char => filters.talent.includes(char.materials.talentBook));
     }
-    if (filters.bossMat.length > 0) {
-        chars = chars.filter(char => filters.bossMat.includes(char.materials.bossMat));
+    if (filters.weeklyBossMat.length > 0) {
+        chars = chars.filter(char => filters.weeklyBossMat.includes(char.materials.weeklyBossMat));
     }
     if (filters.localMat.length > 0) {
         chars = chars.filter(char => filters.localMat.includes(char.materials.localMat));

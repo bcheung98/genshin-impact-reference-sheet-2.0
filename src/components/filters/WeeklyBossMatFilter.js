@@ -10,34 +10,34 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 let stormterrorIcon = require("../../assets/bosses/Stormterror_Icon.png").default;
-let clawIcon = require("../../assets/materials/boss_mats/Dvalin's_Claw.png").default;
-let plumeIcon = require("../../assets/materials/boss_mats/Dvalin's_Plume.png").default;
-let sighIcon = require("../../assets/materials/boss_mats/Dvalin's_Sigh.png").default;
+let clawIcon = require("../../assets/materials/weekly_boss_mats/Dvalin's_Claw.png").default;
+let plumeIcon = require("../../assets/materials/weekly_boss_mats/Dvalin's_Plume.png").default;
+let sighIcon = require("../../assets/materials/weekly_boss_mats/Dvalin's_Sigh.png").default;
 
 let andriusIcon = require("../../assets/bosses/Andrius_Icon.png").default;
-let ringIcon = require("../../assets/materials/boss_mats/Ring_of_Boreas.png").default;
-let locketIcon = require("../../assets/materials/boss_mats/Spirit_Locket_of_Boreas.png").default;
-let tailIcon = require("../../assets/materials/boss_mats/Tail_of_Boreas.png").default;
+let ringIcon = require("../../assets/materials/weekly_boss_mats/Ring_of_Boreas.png").default;
+let locketIcon = require("../../assets/materials/weekly_boss_mats/Spirit_Locket_of_Boreas.png").default;
+let tailIcon = require("../../assets/materials/weekly_boss_mats/Tail_of_Boreas.png").default;
 
 let childeIcon = require("../../assets/bosses/Childe_Icon.png").default;
-let shadowIcon = require("../../assets/materials/boss_mats/Shadow_of_the_Warrior.png").default;
-let shardIcon = require("../../assets/materials/boss_mats/Shard_of_a_Foul_Legacy.png").default;
-let tuskIcon = require("../../assets/materials/boss_mats/Tusk_of_Monoceros_Caeli.png").default;
+let shadowIcon = require("../../assets/materials/weekly_boss_mats/Shadow_of_the_Warrior.png").default;
+let shardIcon = require("../../assets/materials/weekly_boss_mats/Shard_of_a_Foul_Legacy.png").default;
+let tuskIcon = require("../../assets/materials/weekly_boss_mats/Tusk_of_Monoceros_Caeli.png").default;
 
 let azhdahaIcon = require("../../assets/bosses/Azhdaha_Icon.png").default;
-let branchIcon = require("../../assets/materials/boss_mats/Bloodjade_Branch.png").default;
-let crownIcon = require("../../assets/materials/boss_mats/Dragon_Lord's_Crown.png").default;
-let scaleIcon = require("../../assets/materials/boss_mats/Gilded_Scale.png").default;
+let branchIcon = require("../../assets/materials/weekly_boss_mats/Bloodjade_Branch.png").default;
+let crownIcon = require("../../assets/materials/weekly_boss_mats/Dragon_Lord's_Crown.png").default;
+let scaleIcon = require("../../assets/materials/weekly_boss_mats/Gilded_Scale.png").default;
 
 let signoraIcon = require("../../assets/bosses/La_Signora_Icon.png").default;
-let heartIcon = require("../../assets/materials/boss_mats/Ashen_Heart.png").default;
-let butterflyIcon = require("../../assets/materials/boss_mats/Hellfire_Butterfly.png").default;
-let momentIcon = require("../../assets/materials/boss_mats/Molten_Moment.png").default;
+let heartIcon = require("../../assets/materials/weekly_boss_mats/Ashen_Heart.png").default;
+let butterflyIcon = require("../../assets/materials/weekly_boss_mats/Hellfire_Butterfly.png").default;
+let momentIcon = require("../../assets/materials/weekly_boss_mats/Molten_Moment.png").default;
 
 let raidenIcon = require("../../assets/bosses/Narukami_no_Mikoto_Icon.png").default;
-let mudraIcon = require("../../assets/materials/boss_mats/Mudra_of_the_Malefic_General.png").default;
-let tearsIcon = require("../../assets/materials/boss_mats/Tears_of_the_Calamitous_God.png").default;
-let aeonsIcon = require("../../assets/materials/boss_mats/The_Meaning_of_Aeons.png").default;
+let mudraIcon = require("../../assets/materials/weekly_boss_mats/Mudra_of_the_Malefic_General.png").default;
+let tearsIcon = require("../../assets/materials/weekly_boss_mats/Tears_of_the_Calamitous_God.png").default;
+let aeonsIcon = require("../../assets/materials/weekly_boss_mats/The_Meaning_of_Aeons.png").default;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -217,7 +217,7 @@ const BossMatFilter = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setFilter: (target) => dispatch({ type: "SET_BOSS_MAT_FILTERS", target })
+        setFilter: (target) => dispatch({ type: "SET_WEEKLYBOSS_MAT_FILTERS", target })
     }
 }
 

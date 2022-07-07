@@ -1,6 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
-import { formatTalents, formatCommonMats, formatBossMats, formatAscensionMats, formatGemstone } from "../helpers/TooltipText";
+import { formatTalents, formatCommonMats, formatWeeklyBossMats, formatBossMats, formatGemstone } from "../helpers/TooltipText";
 import { FormatTalentKey } from "../helpers/FormatTalentKey";
 import TalentScalingTable from "./TalentScalingTable";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -260,7 +260,7 @@ const createCharacterStats = (level, hp, atk, def, critRate, critDMG, special) =
 const CharacterPopup = (props) => {
     const classes = useStyles();
     let { name, title, rarity, element, weapon, talents, constellation, stats, description, birthday, nation, voiceActors } = props.character;
-    let { talentBook, ascensionMat, localMat, commonMat, bossMat } = props.character.materials;
+    let { talentBook, bossMat, localMat, commonMat, weeklyBossMat } = props.character.materials;
 
     const [valueHorizontal, setValueHorizontal] = React.useState(0);
     const handleChangeHorizontal = (event, newValue) => {
@@ -303,16 +303,16 @@ const CharacterPopup = (props) => {
                                     <MaterialTooltip title={formatCommonMats(commonMat)} arrow placement="top">
                                         <img className={classes.materialImageLarge} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
                                     </MaterialTooltip>
-                                    <MaterialTooltip title={formatBossMats(bossMat)} arrow placement="top">
-                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
+                                    <MaterialTooltip title={formatWeeklyBossMats(weeklyBossMat)} arrow placement="top">
+                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/weekly_boss_mats/${weeklyBossMat.split(" ").join("_")}.png`).default} alt={weeklyBossMat} />
                                     </MaterialTooltip>
                                 </Grid>
                                 <Grid className={classes.materialRow}>
                                     <MaterialTooltip title={formatGemstone(element)} arrow placement="top">
                                         <img className={classes.materialImageLarge} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
                                     </MaterialTooltip>
-                                    <MaterialTooltip title={formatAscensionMats(ascensionMat)} arrow placement="top">
-                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/ascension_mats/${ascensionMat.split(" ").join("_")}.png`).default} alt={ascensionMat} />
+                                    <MaterialTooltip title={formatBossMats(bossMat)} arrow placement="top">
+                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
                                     </MaterialTooltip>
                                     <MaterialTooltip title={localMat} arrow placement="top">
                                         <img className={classes.materialImageLarge} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />

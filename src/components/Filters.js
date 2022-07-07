@@ -12,7 +12,7 @@ import ElementFilter from "./filters/ElementFilter";
 import WeaponFilter from "./filters/WeaponFilter";
 import RarityFilter from "./filters/RarityFilter";
 import TalentFilter from "./filters/TalentFilter";
-import BossMatFilter from "./filters/BossMatFilter";
+import WeeklyBossMatFilter from "./filters/WeeklyBossMatFilter";
 import NationFilter from "./filters/NationFilter";
 import LocalSpecialtyFilter from "./filters/LocalSpecialtyFilter";
 
@@ -96,10 +96,10 @@ const Filters = () => {
 
                 <Accordion className={classes.subBar}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                        <p className="filter-text-off" id="boss-filter-text" style={{ fontFamily: "Genshin" }}>Weekly Boss</p>
+                        <p className="filter-text-off" id="weeklyboss-filter-text" style={{ fontFamily: "Genshin" }}>Weekly Boss</p>
                     </AccordionSummary>
                     <AccordionDetails className={classes.filterRow}>
-                        <BossMatFilter />
+                        <WeeklyBossMatFilter />
                     </AccordionDetails>
                 </Accordion>
 

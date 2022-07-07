@@ -21,7 +21,7 @@ export const formatTalents = (talent) => {
     return talent;
 }
 
-export const formatBossMats = (material) => {
+export const formatWeeklyBossMats = (material) => {
     switch (material) {
         case "Dvalin's Claw":
         case "Dvalin's Plume":
@@ -88,7 +88,7 @@ export const formatCommonMats = (material) => {
     return material;
 }
 
-export const formatAscensionMats = (material) => {
+export const formatBossMats = (material) => {
     switch (material) {
         case "Basalt Pillar":
             material += " (Geo Hypostasis)";
