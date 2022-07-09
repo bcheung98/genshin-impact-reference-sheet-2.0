@@ -1,12 +1,12 @@
 import React from "react";
 import { formatTalents, formatCommonMats, formatBossMats, formatWeeklyBossMats, formatGemstone } from "../helpers/TooltipText";
+import { Grid } from "@material-ui/core";
 import { MaterialTooltip } from "../helpers/MaterialTooltip";
-import Grid from '@material-ui/core/Grid';
 
 const CharacterMaterialGrid = (props) => {
     let { element } = props.character;
     let { talentBook, bossMat, localMat, commonMat, weeklyBossMat } = props.character.materials;
-    
+
     const materialRow = {
         marginLeft: props.margin
     }

@@ -1,33 +1,13 @@
 import React from "react";
 import parse from "html-react-parser";
+import PropTypes from 'prop-types';
+import { makeStyles, withStyles, Grid, Typography, DialogContent, DialogTitle, Divider, Tabs, Tab, Box, AppBar, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Avatar, Accordion, AccordionSummary, AccordionDetails } from "@material-ui/core";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import "../css/characterCard.css";
+import CharacterMaterialGrid from "./CharacterMaterialGrid";
+import TalentScalingTable from "./TalentScalingTable";
 import { FormatTalentKey } from "../helpers/FormatTalentKey";
 import { MaterialTooltip } from "../helpers/MaterialTooltip";
-import TalentScalingTable from "./TalentScalingTable";
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Divider from '@material-ui/core/Divider';
-import PropTypes from 'prop-types';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Box from '@material-ui/core/Box';
-import AppBar from '@material-ui/core/AppBar';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Avatar from '@material-ui/core/Avatar';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import CharacterMaterialGrid from "./CharacterMaterialGrid";
-import "../css/characterCard.css";
 
 const useStyles = makeStyles((theme) => ({
     genshinFont: {

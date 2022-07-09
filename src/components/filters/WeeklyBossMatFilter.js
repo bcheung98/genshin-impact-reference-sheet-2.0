@@ -1,13 +1,10 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from "react-redux";
+import { Typography, Accordion, AccordionSummary, AccordionDetails } from "@material-ui/core";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { FilterTooltip } from "../../helpers/FilterTooltip";
 import { formatWeeklyBossMats } from "../../helpers/TooltipText";
-import Typography from '@material-ui/core/Typography';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 let stormterrorIcon = require("../../assets/bosses/Stormterror_Icon.png").default;
 let clawIcon = require("../../assets/materials/weekly_boss_mats/Dvalin's_Claw.png").default;

@@ -1,12 +1,9 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from "react-redux";
-import { FilterTooltip } from "../../helpers/FilterTooltip";
-import Typography from '@material-ui/core/Typography';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
+import { Typography, Accordion, AccordionSummary, AccordionDetails } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { FilterTooltip } from "../../helpers/FilterTooltip";
 
 let mondstadtIcon = require("../../assets/nations/Mondstadt.png").default;
 let callaLilyIcon = require("../../assets/materials/local_specialties/Calla_Lily.png").default;

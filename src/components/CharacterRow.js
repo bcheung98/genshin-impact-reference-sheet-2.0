@@ -1,12 +1,6 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import TableCell from "@material-ui/core/TableCell";
-import TableRow from "@material-ui/core/TableRow";
-import Typography from '@material-ui/core/Typography';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import Slide from '@material-ui/core/Slide';
-import Button from '@material-ui/core/Button';
+import { TableCell, TableRow, Typography, Dialog, DialogActions, Slide, Button } from "@material-ui/core";
 import CharacterPopup from "./CharacterPopup";
 
 const useStyles = makeStyles((theme) => ({

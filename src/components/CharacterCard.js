@@ -1,17 +1,9 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import { MaterialTooltip } from "../helpers/MaterialTooltip";
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import Slide from '@material-ui/core/Slide';
+import { makeStyles, Grid, Card, CardContent, Typography, Button, Dialog, DialogActions, Slide } from "@material-ui/core";
 import "../css/characterCard.css";
 import CharacterMaterialGrid from "./CharacterMaterialGrid";
 import CharacterPopup from "./CharacterPopup";
+import { MaterialTooltip } from "../helpers/MaterialTooltip";
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -1,15 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchCharacters } from "../redux/actions/fetchCharacters";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import { makeStyles, Grid, FormControlLabel, Switch, Paper, InputBase } from "@material-ui/core";
 import ViewComfyIcon from "@material-ui/icons/ViewComfy";
 import ListIcon from "@material-ui/icons/List";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
-import Paper from "@material-ui/core/Paper";
-import InputBase from "@material-ui/core/InputBase";
-
 import Filters from "./Filters";
 import CharacterCard from "./CharacterCard";
 import CharacterList from "./CharacterList";
