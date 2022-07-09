@@ -63,6 +63,9 @@ const filterCharacters = (characters, filters, searchValue) => {
     if (filters.talent.length > 0) {
         chars = chars.filter(char => filters.talent.includes(char.materials.talentBook));
     }
+    if (filters.commonMat.length > 0) {
+        chars = chars.filter(char => filters.commonMat.includes(char.materials.commonMat));
+    }
     if (filters.bossMat.length > 0) {
         chars = chars.filter(char => filters.bossMat.includes(char.materials.bossMat));
     }
