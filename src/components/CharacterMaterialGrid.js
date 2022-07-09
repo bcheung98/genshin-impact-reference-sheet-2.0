@@ -1,18 +1,7 @@
 import React from "react";
 import { formatTalents, formatCommonMats, formatBossMats, formatWeeklyBossMats, formatGemstone } from "../helpers/TooltipText";
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { MaterialTooltip } from "../helpers/MaterialTooltip";
 import Grid from '@material-ui/core/Grid';
-import Tooltip from '@material-ui/core/Tooltip';
-
-const MaterialTooltip = withStyles((theme) => ({
-    arrow: {
-        color: theme.palette.common.black,
-    },
-    tooltip: {
-        backgroundColor: theme.palette.common.black,
-        fontSize: theme.typography.pxToRem(14),
-    },
-}))(Tooltip);
 
 const CharacterMaterialGrid = (props) => {
     let { element } = props.character;

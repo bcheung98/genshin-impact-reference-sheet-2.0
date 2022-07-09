@@ -1,11 +1,11 @@
 import React from "react";
 import parse from "html-react-parser";
 import { FormatTalentKey } from "../helpers/FormatTalentKey";
+import { MaterialTooltip } from "../helpers/MaterialTooltip";
 import TalentScalingTable from "./TalentScalingTable";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Tooltip from '@material-ui/core/Tooltip';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Divider from '@material-ui/core/Divider';
@@ -161,16 +161,6 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Genshin, sans-serif",
     },
 }));
-
-const MaterialTooltip = withStyles((theme) => ({
-    arrow: {
-        color: theme.palette.common.black,
-    },
-    tooltip: {
-        backgroundColor: theme.palette.common.black,
-        fontSize: theme.typography.pxToRem(14),
-    },
-}))(Tooltip);
 
 function TabPanelHorizontal(props) {
     const { children, value, index, ...other } = props;
