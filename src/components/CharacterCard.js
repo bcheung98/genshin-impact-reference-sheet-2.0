@@ -1,5 +1,4 @@
 import React from "react";
-import { formatTalents, formatCommonMats, formatBossMats, formatWeeklyBossMats, formatGemstone } from "../helpers/TooltipText";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -11,6 +10,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import Slide from '@material-ui/core/Slide';
 import "../css/characterCard.css";
+import CharacterMaterialGrid from "./CharacterMaterialGrid";
 import CharacterPopup from "./CharacterPopup";
 
 const useStyles = makeStyles((theme) => ({
@@ -122,7 +122,6 @@ const MaterialTooltip = withStyles((theme) => ({
 const CharacterCard = (props) => {
     const classes = useStyles();
     let { name, rarity, element, weapon } = props.character;
-    let { talentBook, bossMat, localMat, commonMat, weeklyBossMat } = props.character.materials;
 
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
@@ -159,30 +158,7 @@ const CharacterCard = (props) => {
                             <img className={classes.characterIcon} src={require(`../assets/characters/thumbs/Character_${name.split(" ").join("_")}_Thumb.png`).default} alt={name} style={characterIconBackground} />
                             <img className={classes.stars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
                         </Grid>
-                        <Grid item xs={12} sm container>
-                            <Grid className={classes.materialRow}>
-                                <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
-                                    <img className={classes.materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
-                                </MaterialTooltip>
-                                <MaterialTooltip title={formatCommonMats(commonMat)} arrow placement="top">
-                                    <img className={classes.materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
-                                </MaterialTooltip>
-                                <MaterialTooltip title={formatWeeklyBossMats(weeklyBossMat)} arrow placement="top">
-                                    <img className={classes.materialImage} src={require(`../assets/materials/weekly_boss_mats/${weeklyBossMat.split(" ").join("_")}.png`).default} alt={weeklyBossMat} />
-                                </MaterialTooltip>
-                            </Grid>
-                            <Grid className={classes.materialRow}>
-                                <MaterialTooltip title={formatGemstone(element)} arrow placement="top">
-                                    <img className={classes.materialImage} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
-                                </MaterialTooltip>
-                                <MaterialTooltip title={formatBossMats(bossMat)} arrow placement="top">
-                                    <img className={classes.materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
-                                </MaterialTooltip>
-                                <MaterialTooltip title={localMat} arrow placement="top">
-                                    <img className={classes.materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
-                                </MaterialTooltip>
-                            </Grid>
-                        </Grid>
+                        <CharacterMaterialGrid character={props.character} imageSize="48px" margin="-30px" />
                     </Grid>
                     <Button size="small" className={classes.moreInfoButton} onClick={() => handleClickOpen()}>
                         More Info

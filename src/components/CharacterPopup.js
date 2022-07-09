@@ -1,6 +1,5 @@
 import React from "react";
 import parse from "html-react-parser";
-import { formatTalents, formatCommonMats, formatWeeklyBossMats, formatBossMats, formatGemstone } from "../helpers/TooltipText";
 import { FormatTalentKey } from "../helpers/FormatTalentKey";
 import TalentScalingTable from "./TalentScalingTable";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -27,6 +26,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import CharacterMaterialGrid from "./CharacterMaterialGrid";
 import "../css/characterCard.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,15 +35,6 @@ const useStyles = makeStyles((theme) => ({
     },
     dialogContentRoot: {
         backgroundColor: "rgb(36, 41, 56)",
-    },
-    materialRow: {
-        marginLeft: "-30px",
-    },
-    materialImageLarge: {
-        height: "56px",
-        border: "2px solid gray",
-        borderRadius: "5px",
-        margin: "5px",
     },
     divider: {
         backgroundColor: "gray",
@@ -61,10 +52,13 @@ const useStyles = makeStyles((theme) => ({
         border: "1px solid rgb(36, 41, 56)",
         borderRadius: "64px",
     },
-    dialogTitleMiddleColumn: {
+    dialogTitleLeftColumn: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+    },
+    dialogTitleMiddleColumn: {
+        textAlign: "center",
     },
     dialogTitleRightColumn: {
         textAlign: "center",
@@ -260,7 +254,6 @@ const createCharacterStats = (level, hp, atk, def, critRate, critDMG, special) =
 const CharacterPopup = (props) => {
     const classes = useStyles();
     let { name, title, rarity, element, weapon, talents, constellation, stats, description, birthday, nation, voiceActors } = props.character;
-    let { talentBook, bossMat, localMat, commonMat, weeklyBossMat } = props.character.materials;
 
     const [valueHorizontal, setValueHorizontal] = React.useState(0);
     const handleChangeHorizontal = (event, newValue) => {
@@ -282,6 +275,9 @@ const CharacterPopup = (props) => {
                 <div className={classes.dialogGrid}>
                     <Grid container spacing={3}>
                         <Grid item xs className={classes.dialogTitleLeftColumn}>
+                            <CharacterMaterialGrid character={props.character} imageSize="56px" margin="-5px" />
+                        </Grid>
+                        <Grid item xs className={classes.dialogTitleMiddleColumn}>
                             {props.character.fullname ? <Typography className={classes.genshinFont} variant="h4">{props.character.fullname}</Typography> : <Typography style={{ fontFamily: "Genshin" }} variant="h4">{name}</Typography>}
                             <Typography variant="body1" className={classes.genshinFont}><i>{title}</i></Typography>
                             <img className={classes.dialogStars} src={require(`../assets/stars/Icon_${rarity}_Stars.png`).default} alt={rarity} />
@@ -293,32 +289,6 @@ const CharacterPopup = (props) => {
                                     <img src={require(`../assets/weapons/Weapon-class-${weapon.toLowerCase()}-icon.png`).default} className={classes.dialogCircleIcon} alt={weapon} />
                                 </MaterialTooltip>
                             </div>
-                        </Grid>
-                        <Grid item xs className={classes.dialogTitleMiddleColumn}>
-                            <Grid className={classes.dialogMaterialRow}>
-                                <Grid className={classes.materialRow}>
-                                    <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
-                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
-                                    </MaterialTooltip>
-                                    <MaterialTooltip title={formatCommonMats(commonMat)} arrow placement="top">
-                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
-                                    </MaterialTooltip>
-                                    <MaterialTooltip title={formatWeeklyBossMats(weeklyBossMat)} arrow placement="top">
-                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/weekly_boss_mats/${weeklyBossMat.split(" ").join("_")}.png`).default} alt={weeklyBossMat} />
-                                    </MaterialTooltip>
-                                </Grid>
-                                <Grid className={classes.materialRow}>
-                                    <MaterialTooltip title={formatGemstone(element)} arrow placement="top">
-                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/ascension_gems/${element}_Gemstone.png`).default} alt={element} />
-                                    </MaterialTooltip>
-                                    <MaterialTooltip title={formatBossMats(bossMat)} arrow placement="top">
-                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
-                                    </MaterialTooltip>
-                                    <MaterialTooltip title={localMat} arrow placement="top">
-                                        <img className={classes.materialImageLarge} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
-                                    </MaterialTooltip>
-                                </Grid>
-                            </Grid>
                         </Grid>
                         <Grid item xs className={classes.dialogTitleRightColumn}>
                             <Typography className={classes.genshinFont}><b>Constellation:</b> {constellation.name}</Typography>
