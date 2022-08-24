@@ -29,7 +29,7 @@ const CharacterMaterialGrid = (props) => {
                     <img style={materialImage} src={require(`../assets/materials/weekly_boss_mats/${weeklyBossMat.split(" ").join("_")}.png`).default} alt={weeklyBossMat} />
                 </MaterialTooltip>
                 <MaterialTooltip title={formatCommonMats(commonMat)} arrow placement="top">
-                    <img style={materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}.png`).default} alt={commonMat} />
+                    <img style={materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}3.png`).default} alt={commonMat} />
                 </MaterialTooltip>
             </Grid>
             <Grid style={materialRow}>

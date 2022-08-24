@@ -7,6 +7,6 @@ export const MaterialTooltip = withStyles((theme) => ({
     },
     tooltip: {
         backgroundColor: theme.palette.common.black,
-        fontSize: theme.typography.pxToRem(14),
+        fontSize: theme.typography.pxToRem(13),
     },
 }))(Tooltip);

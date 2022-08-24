@@ -6,12 +6,17 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "../css/characterCard.css";
 import CharacterMaterialGrid from "./CharacterMaterialGrid";
 import TalentScalingTable from "./TalentScalingTable";
+import { formatCommonMats, formatBossMats, formatGemstone } from "../helpers/TooltipText";
 import { FormatTalentKey } from "../helpers/FormatTalentKey";
 import { MaterialTooltip } from "../helpers/MaterialTooltip";
 
 const useStyles = makeStyles((theme) => ({
     genshinFont: {
         fontFamily: "Genshin, sans-serif"
+    },
+    splashText: {
+        fontSize: "11.5pt",
+        color: "rgb(225, 225, 225)",
     },
     dialogContentRoot: {
         backgroundColor: "rgb(36, 41, 56)",
@@ -217,13 +222,47 @@ const StyledTableAlternatingRows = withStyles((theme) => ({
     },
 }))(TableRow);
 
+const materialImage = {
+    height: "40px",
+    border: "2px solid gray",
+    borderRadius: "5px",
+    margin: "5px",
+    backgroundColor: "rgb(36, 41, 56)",
+}
+
+const ascensionLegend = {
+    gemstone: {
+        "1-20": "Sliver",
+        "20-40": "Sliver",
+        "40-50": "Fragment",
+        "50-60": "Fragment",
+        "60-70": "Chunk",
+        "70-80": "Chunk",
+        "80-90": "Gemstone"
+    },
+    commonMat: {
+        "1-20": "1",
+        "20-40": "1",
+        "40-50": "1",
+        "50-60": "2",
+        "60-70": "2",
+        "70-80": "3",
+        "80-90": "3"
+    }
+}
+
 const createCharacterStats = (level, hp, atk, def, critRate, critDMG, special) => {
     return { level, hp, atk, def, critRate, critDMG, special }
+}
+
+const createAscStats = (phase, ascLevel, quantity) => {
+    return { phase, ascLevel, quantity }
 }
 
 const CharacterPopup = (props) => {
     const classes = useStyles();
     let { name, title, rarity, element, weapon, talents, constellation, stats, description, birthday, nation, voiceActors } = props.character;
+    let { bossMat, localMat, commonMat } = props.character.materials;
 
     const [valueHorizontal, setValueHorizontal] = React.useState(0);
     const handleChangeHorizontal = (event, newValue) => {
@@ -236,8 +275,12 @@ const CharacterPopup = (props) => {
     };
 
     const levels = ["1", "20", "20+", "40", "40+", "50", "50+", "60", "60+", "70", "70+", "80", "80+", "90"]
+    const ascLevels = ["1-20", "20-40", "40-50", "50-60", "60-70", "70-80", "80-90"]
+    const materialQuantity = [["0", "0", "0", "0"], ["1", "0", "3", "3"], ["3", "2", "10", "15"], ["6", "4", "20", "12"], ["3", "8", "30", "18"], ["6", "12", "45", "12"], ["6", "20", "60", "24"]]
 
     const characterStatRows = levels.map((level, index) => stats.special ? createCharacterStats(level, stats.hp[index], stats.atk[index], stats.def[index], stats.critRate[index], stats.critDMG[index], stats.special[index]) : createCharacterStats(level, stats.hp[index], stats.atk[index], stats.def[index], stats.critRate[index], stats.critDMG[index]))
+
+    const characterAscStatRows = ascLevels.map((level, index) => createAscStats(index, level, materialQuantity[index]))
 
     return (
         <React.Fragment>
@@ -287,6 +330,7 @@ const CharacterPopup = (props) => {
                                     <Tab className={classes.horizontalTabSelector} label="Talents" />
                                     <Tab className={classes.horizontalTabSelector} label="Constellation" />
                                     <Tab className={classes.horizontalTabSelector} label="Stats" />
+                                    <Tab className={classes.horizontalTabSelector} label="Ascension" />
                                 </Tabs>
                             </AppBar>
                             <TabPanelHorizontal value={valueHorizontal} index={0}>
@@ -308,23 +352,33 @@ const CharacterPopup = (props) => {
                                                 <br />
                                                 <div className={classes.avatarHeader}>
                                                     {
-                                                        key === "attack" ? <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/attack_${weapon.toLowerCase()}.png`).default} className={classes.avatar} /> : <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
+                                                        key === "attack" ? <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/_${weapon.toLowerCase()}.png`).default} className={classes.avatar} /> : <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
                                                     }
                                                     <Typography className={classes.genshinFont} variant="h5" component="p">{talents[key].name}</Typography>
                                                 </div>
                                                 <br />
                                                 {parse(talents[key].description)}
+                                                {
+                                                    talents[key].splash &&
+                                                    <React.Fragment>
+                                                        <br /><br />
+                                                        <i className={classes.splashText}>{parse(talents[key].splash)}</i>
+                                                    </React.Fragment>
+                                                }
                                                 <br /><br />
-                                                {["attack", "skill", "burst", "altsprint"].includes(key) && <Paper className={classes.bar}>
-                                                    <Accordion className={classes.subBar}>
-                                                        <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
-                                                            <Typography>Talent Scaling</Typography>
-                                                        </AccordionSummary>
-                                                        <AccordionDetails>
-                                                            <TalentScalingTable attackType={key} stats={talents[key].scaling} />
-                                                        </AccordionDetails>
-                                                    </Accordion>
-                                                </Paper>}
+                                                {
+                                                    ["attack", "skill", "burst", "altsprint"].includes(key) &&
+                                                    <Paper className={classes.bar}>
+                                                        <Accordion className={classes.subBar}>
+                                                            <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
+                                                                <Typography>Talent Scaling</Typography>
+                                                            </AccordionSummary>
+                                                            <AccordionDetails>
+                                                                <TalentScalingTable attackType={key} stats={talents[key].scaling} />
+                                                            </AccordionDetails>
+                                                        </Accordion>
+                                                    </Paper>
+                                                }
                                             </TabPanelVertical>
                                         )
                                     })}
@@ -417,6 +471,57 @@ const CharacterPopup = (props) => {
                                     </Table>
                                 </TableContainer>
                             </TabPanelHorizontal>
+                            <TabPanelHorizontal value={valueHorizontal} index={3}>
+                                <TableContainer component={Paper}>
+                                    <Table className={classes.table} size="small">
+                                        <TableHead>
+                                            <StyledTableAlternatingRows>
+                                                <StyledTableCell className={classes.genshinFont} align="center">Phase</StyledTableCell>
+                                                <StyledTableCell className={classes.genshinFont} align="center">Level</StyledTableCell>
+                                                <StyledTableCell className={classes.genshinFont} align="center">Ascension Materials</StyledTableCell>
+                                            </StyledTableAlternatingRows>
+                                        </TableHead>
+                                        <TableBody>
+                                            {characterAscStatRows.map((row) => (
+                                                <StyledTableAlternatingRows key={row.ascLevel}>
+                                                    <StyledTableCell component="th" scope="row" align="center">
+                                                        {row.phase}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell component="th" scope="row" align="center">
+                                                        {row.ascLevel}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {row.ascLevel !== "1-20" ?
+                                                            <React.Fragment>
+                                                                <MaterialTooltip title={formatGemstone(`${element}_${ascensionLegend.gemstone[row.ascLevel]}`)} arrow placement="top">
+                                                                    <img style={materialImage} src={require(`../assets/materials/ascension_gems/${element}_${ascensionLegend.gemstone[row.ascLevel]}.png`).default} alt={element} />
+                                                                </MaterialTooltip>
+                                                                {row.quantity[0]}
+                                                                {row.quantity[1] !== "0" &&
+                                                                    <React.Fragment>
+                                                                        <MaterialTooltip title={formatBossMats(bossMat)} arrow placement="top">
+                                                                            <img style={materialImage} src={require(`../assets/materials/boss_mats/${bossMat.split(" ").join("_")}.png`).default} alt={bossMat} />
+                                                                        </MaterialTooltip>
+                                                                        {row.quantity[1]}
+                                                                    </React.Fragment>
+                                                                }
+                                                                <MaterialTooltip title={localMat} arrow placement="top">
+                                                                    <img style={materialImage} src={require(`../assets/materials/local_specialties/${localMat.split(" ").join("_")}.png`).default} alt={localMat} />
+                                                                </MaterialTooltip>
+                                                                {row.quantity[2]}
+                                                                <MaterialTooltip title={formatCommonMats(`${commonMat}${ascensionLegend.commonMat[row.ascLevel]}`)} arrow placement="top">
+                                                                    <img style={materialImage} src={require(`../assets/materials/common_mats/${commonMat.split(" ").join("_")}${ascensionLegend.commonMat[row.ascLevel]}.png`).default} alt={commonMat} />
+                                                                </MaterialTooltip>
+                                                                {row.quantity[3]}
+                                                            </React.Fragment> : <Typography>———</Typography>}
+
+                                                    </StyledTableCell>
+                                                </StyledTableAlternatingRows>
+                                            ))}
+                                        </TableBody>
+                                    </Table>
+                                </TableContainer>
+                            </TabPanelHorizontal>
                         </div>
                     </Grid>
                 </Grid>
@@ -429,7 +534,7 @@ const CharacterPopup = (props) => {
                     <img className={classes.nationIcon} src={require(`../assets/nations/${nation}.png`).default} alt={nation} />
                 </div>
             </DialogContent>
-        </React.Fragment>
+        </React.Fragment >
     )
 }
 

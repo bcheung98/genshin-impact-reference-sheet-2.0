@@ -3,15 +3,17 @@ import { connect } from "react-redux";
 import { FilterTooltip } from "../../helpers/FilterTooltip";
 import { formatCommonMats } from "../../helpers/TooltipText";
 
-let arrowIcon = require("../../assets/materials/common_mats/Arrow.png").default;
-let fatuiIcon = require("../../assets/materials/common_mats/Fatui_Insignia.png").default;
-let handguardIcon = require("../../assets/materials/common_mats/Handguard.png").default;
-let maskIcon = require("../../assets/materials/common_mats/Mask.png").default;
-let nectarIcon = require("../../assets/materials/common_mats/Nectar.png").default;
-let scrollIcon = require("../../assets/materials/common_mats/Scroll.png").default;
-let slimeIcon = require("../../assets/materials/common_mats/Slime.png").default;
-let specterIcon = require("../../assets/materials/common_mats/Specter.png").default;
-let thIcon = require("../../assets/materials/common_mats/Treasure_Hoarder_Insignia.png").default;
+let arrowIcon = require("../../assets/materials/common_mats/Arrow3.png").default;
+let fatuiIcon = require("../../assets/materials/common_mats/Fatui_Insignia3.png").default;
+let fungiIcon = require("../../assets/materials/common_mats/Fungi3.png").default;
+let handguardIcon = require("../../assets/materials/common_mats/Handguard3.png").default;
+let headbandIcon = require("../../assets/materials/common_mats/Headband3.png").default;
+let maskIcon = require("../../assets/materials/common_mats/Mask3.png").default;
+let nectarIcon = require("../../assets/materials/common_mats/Nectar3.png").default;
+let scrollIcon = require("../../assets/materials/common_mats/Scroll3.png").default;
+let slimeIcon = require("../../assets/materials/common_mats/Slime3.png").default;
+let specterIcon = require("../../assets/materials/common_mats/Specter3.png").default;
+let thIcon = require("../../assets/materials/common_mats/Treasure_Hoarder_Insignia3.png").default;
 
 const CommonMatFilter = (props) => {
     return (
@@ -22,8 +24,14 @@ const CommonMatFilter = (props) => {
             <FilterTooltip title={formatCommonMats("Fatui Insignia")} arrow placement="top">
                 <img className="filter-off" id="fatui insignia-button" src={fatuiIcon} alt="Fatui Insignia" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
+            <FilterTooltip title={formatCommonMats("Fungi")} arrow placement="top">
+                <img className="filter-off" id="fungi-button" src={fungiIcon} alt="Fungi" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
             <FilterTooltip title={formatCommonMats("Handguard")} arrow placement="top">
                 <img className="filter-off" id="handguard-button" src={handguardIcon} alt="Handguard" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatCommonMats("Headband")} arrow placement="top">
+                <img className="filter-off" id="headband-button" src={headbandIcon} alt="Headband" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
             <FilterTooltip title={formatCommonMats("Mask")} arrow placement="top">
                 <img className="filter-off" id="mask-button" src={maskIcon} alt="Mask" onClick={(e) => props.setFilter(e.target.alt)} />
