@@ -5,6 +5,7 @@ import { FilterTooltip } from "../../helpers/FilterTooltip";
 let mondstadtIcon = require("../../assets/nations/Mondstadt.png").default;
 let liyueIcon = require("../../assets/nations/Liyue.png").default;
 let inazumaIcon = require("../../assets/nations/Inazuma.png").default;
+let sumeruIcon = require("../../assets/nations/Sumeru.png").default;
 
 const NationFilter = (props) => {
     return (
@@ -17,6 +18,9 @@ const NationFilter = (props) => {
             </FilterTooltip>
             <FilterTooltip title="Inazuma" arrow placement="top">
                 <img className="filter-off" id="inazuma-button" src={inazumaIcon} alt="Inazuma" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title="Sumeru" arrow placement="top">
+                <img className="filter-off" id="sumeru-button" src={sumeruIcon} alt="Sumeru" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
         </React.Fragment>
     )

@@ -36,6 +36,16 @@ let sakuraIcon = require("../../assets/materials/local_specialties/Sakura_Bloom.
 let pearlIcon = require("../../assets/materials/local_specialties/Sango_Pearl.png").default;
 let ganodermaIcon = require("../../assets/materials/local_specialties/Sea_Ganoderma.png").default;
 
+let sumeruIcon = require("../../assets/nations/Sumeru.png").default;
+let harraIcon = require("../../assets/materials/local_specialties/Harra_Fruit.png").default;
+let kalpalataLotusIcon = require("../../assets/materials/local_specialties/Kalpalata_Lotus.png").default;
+let nilotpalaLotusIcon = require("../../assets/materials/local_specialties/Nilotpala_Lotus.png").default;
+let padisarahIcon = require("../../assets/materials/local_specialties/Padisarah.png").default;
+let rukkhashavaIcon = require("../../assets/materials/local_specialties/Rukkhashava_Mushrooms.png").default;
+let sumeruRoseIcon = require("../../assets/materials/local_specialties/Sumeru_Rose.png").default;
+let viparyasIcon = require("../../assets/materials/local_specialties/Viparyas.png").default;
+let zaytunIcon = require("../../assets/materials/local_specialties/Zaytun_Peach.png").default;
+
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: "auto",
@@ -69,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
         height: "32px",
     },
 }));
+
 
 const LocalMatFilter = (props) => {
     const classes = useStyles();
@@ -183,6 +194,43 @@ const LocalMatFilter = (props) => {
                         </FilterTooltip>
                         <FilterTooltip title="Sea Ganoderma" arrow placement="top">
                             <img className="filter-off" id="sea ganoderma-button" src={ganodermaIcon} alt="Sea Ganoderma" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                    </div>
+                </AccordionDetails>
+            </Accordion>
+
+            <Accordion className={classes.subBar}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
+                    <div className={classes.filter}>
+                        <img className={classes.nationIcon} src={sumeruIcon} alt="Sumeru" />
+                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Sumeru</Typography>
+                    </div>
+                </AccordionSummary>
+                <AccordionDetails className={classes.filterRow}>
+                    <div>
+                        <FilterTooltip title="Harra Fruit" arrow placement="top">
+                            <img className="filter-off" id="harra fruit-button" src={harraIcon} alt="Harra Fruit" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Kalpalata Lotus" arrow placement="top">
+                            <img className="filter-off" id="kalpalata lotus-button" src={kalpalataLotusIcon} alt="Kalpalata Lotus" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Nilotpala Lotus" arrow placement="top">
+                            <img className="filter-off" id="nilotpala lotus-button" src={nilotpalaLotusIcon} alt="Nilotpala Lotus" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Padisarah" arrow placement="top">
+                            <img className="filter-off" id="padisarah-button" src={padisarahIcon} alt="Padisarah" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Rukkhashava Mushrooms" arrow placement="top">
+                            <img className="filter-off" id="rukkhashava mushrooms-button" src={rukkhashavaIcon} alt="Rukkhashava Mushrooms" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Sumeru Rose" arrow placement="top">
+                            <img className="filter-off" id="sumeru rose-button" src={sumeruRoseIcon} alt="Sumeru Rose" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Viparyas" arrow placement="top">
+                            <img className="filter-off" id="viparyas-button" src={viparyasIcon} alt="Viparyas" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Zaytun Peach" arrow placement="top">
+                            <img className="filter-off" id="zaytun peach-button" src={zaytunIcon} alt="Zaytun Peach" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
                     </div>
                 </AccordionDetails>

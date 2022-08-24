@@ -6,12 +6,18 @@ import { formatTalents } from "../../helpers/TooltipText";
 let freedomIcon = require("../../assets/materials/talent_mats/Freedom.png").default;
 let resistanceIcon = require("../../assets/materials/talent_mats/Resistance.png").default;
 let balladIcon = require("../../assets/materials/talent_mats/Ballad.png").default;
+
 let prosperityIcon = require("../../assets/materials/talent_mats/Prosperity.png").default;
 let diligenceIcon = require("../../assets/materials/talent_mats/Diligence.png").default;
 let goldIcon = require("../../assets/materials/talent_mats/Gold.png").default;
+
 let transienceIcon = require("../../assets/materials/talent_mats/Transience.png").default;
 let eleganceIcon = require("../../assets/materials/talent_mats/Elegance.png").default;
 let lightIcon = require("../../assets/materials/talent_mats/Light.png").default;
+
+let admonitionIcon = require("../../assets/materials/talent_mats/Admonition.png").default;
+let ingenuityIcon = require("../../assets/materials/talent_mats/Ingenuity.png").default;
+let praxisIcon = require("../../assets/materials/talent_mats/Praxis.png").default;
 
 const TalentFilter = (props) => {
     return (
@@ -47,6 +53,17 @@ const TalentFilter = (props) => {
                 </FilterTooltip>
                 <FilterTooltip title={formatTalents("Light")} arrow placement="top">
                     <img className="filter-off" id="light-button" src={lightIcon} alt="Light" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+            </div>
+            <div>
+                <FilterTooltip title={formatTalents("Admonition")} arrow placement="top">
+                    <img className="filter-off" id="admonition-button" src={admonitionIcon} alt="Admonition" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+                <FilterTooltip title={formatTalents("Ingenuity")} arrow placement="top">
+                    <img className="filter-off" id="ingenuity-button" src={ingenuityIcon} alt="Ingenuity" onClick={(e) => props.setFilter(e.target.alt)} />
+                </FilterTooltip>
+                <FilterTooltip title={formatTalents("Praxis")} arrow placement="top">
+                    <img className="filter-off" id="praxis-button" src={praxisIcon} alt="Praxis" onClick={(e) => props.setFilter(e.target.alt)} />
                 </FilterTooltip>
             </div>
         </div>

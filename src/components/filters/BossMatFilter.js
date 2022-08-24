@@ -13,12 +13,14 @@ let hoarfrostCoreIcon = require("../../assets/materials/boss_mats/Hoarfrost_Core
 let hurricaneSeedIcon = require("../../assets/materials/boss_mats/Hurricane_Seed.png").default;
 let juvenileJadeIcon = require("../../assets/materials/boss_mats/Juvenile_Jade.png").default;
 let lightningPrismIcon = require("../../assets/materials/boss_mats/Lightning_Prism.png").default;
+let majesticBeakIcon = require("../../assets/materials/boss_mats/Majestic_Hooked_Beak.png").default;
 let marionetteCoreIcon = require("../../assets/materials/boss_mats/Marionette_Core.png").default;
 let perpetualHeartIcon = require("../../assets/materials/boss_mats/Perpetual_Heart.png").default;
 let riftbornRegaliaIcon = require("../../assets/materials/boss_mats/Riftborn_Regalia.png").default;
 let runicFangIcon = require("../../assets/materials/boss_mats/Runic_Fang.png").default;
 let smolderingPearlIcon = require("../../assets/materials/boss_mats/Smoldering_Pearl.png").default;
 let stormBeadIcon = require("../../assets/materials/boss_mats/Storm_Beads.png").default;
+let thunderclapCoreIcon = require("../../assets/materials/boss_mats/Thunderclap_Fruitcore.png").default;
 
 const BossMatFilter = (props) => {
     return (
@@ -50,6 +52,9 @@ const BossMatFilter = (props) => {
             <FilterTooltip title={formatBossMats("Juvenile Jade")} arrow placement="top">
                 <img className="filter-off" id="juvenile jade-button" src={juvenileJadeIcon} alt="Juvenile Jade" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
+            <FilterTooltip title={formatBossMats("Majestic Hooked Beak")} arrow placement="top">
+                <img className="filter-off" id="majestic hooked beak-button" src={majesticBeakIcon} alt="Majestic Hooked Beak" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
             <FilterTooltip title={formatBossMats("Lightning Prism")} arrow placement="top">
                 <img className="filter-off" id="lightning prism-button" src={lightningPrismIcon} alt="Lightning Prism" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
@@ -70,6 +75,9 @@ const BossMatFilter = (props) => {
             </FilterTooltip>
             <FilterTooltip title={formatBossMats("Storm Beads")} arrow placement="top">
                 <img className="filter-off" id="storm beads-button" src={stormBeadIcon} alt="Storm Beads" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatBossMats("Thunderclap Fruitcore")} arrow placement="top">
+                <img className="filter-off" id="thunderclap fruitcore-button" src={thunderclapCoreIcon} alt="Thunderclap Fruitcore" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
         </div>
     )

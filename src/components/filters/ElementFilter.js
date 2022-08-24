@@ -8,6 +8,7 @@ let electroIcon = require("../../assets/elements/Element_Electro.png").default;
 let cryoIcon = require("../../assets/elements/Element_Cryo.png").default;
 let anemoIcon = require("../../assets/elements/Element_Anemo.png").default;
 let geoIcon = require("../../assets/elements/Element_Geo.png").default;
+let dendroIcon = require("../../assets/elements/Element_Dendro.png").default;
 
 const ElementFilter = (props) => {
     return (
@@ -29,6 +30,9 @@ const ElementFilter = (props) => {
             </FilterTooltip>
             <FilterTooltip title="Geo" arrow placement="top">
                 <img className="filter-off" id="geo-button" src={geoIcon} alt="Geo" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title="Dendro" arrow placement="top">
+                <img className="filter-off" id="dendro-button" src={dendroIcon} alt="Dendro" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
         </div>
     )
