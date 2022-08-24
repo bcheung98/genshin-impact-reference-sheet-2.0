@@ -352,7 +352,7 @@ const CharacterPopup = (props) => {
                                                 <br />
                                                 <div className={classes.avatarHeader}>
                                                     {
-                                                        key === "attack" ? <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/_${weapon.toLowerCase()}.png`).default} className={classes.avatar} /> : <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
+                                                        key === "attack" ? <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/attack_${weapon.toLowerCase()}.png`).default} className={classes.avatar} /> : <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
                                                     }
                                                     <Typography className={classes.genshinFont} variant="h5" component="p">{talents[key].name}</Typography>
                                                 </div>
