@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.afbe06ae.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.7e302591.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.7e302591.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.34d940e6.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.34d940e6.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
-    "static/js/2.b1490a3e.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.b1490a3e.chunk.js",
-    "static/js/2.b1490a3e.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.b1490a3e.chunk.js.map",
+    "static/js/2.9e18d2bf.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.9e18d2bf.chunk.js",
+    "static/js/2.9e18d2bf.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.9e18d2bf.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
     "static/css/main.afbe06ae.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.afbe06ae.chunk.css.map",
-    "static/js/2.b1490a3e.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.b1490a3e.chunk.js.LICENSE.txt",
+    "static/js/2.9e18d2bf.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.9e18d2bf.chunk.js.LICENSE.txt",
     "static/media/Admonition.png": "/genshin-impact-reference-sheet-2.0/static/media/Admonition.4e44ee51.png",
     "static/media/Amakumo_Fruit.png": "/genshin-impact-reference-sheet-2.0/static/media/Amakumo_Fruit.1bc748f0.png",
     "static/media/Andrius_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Andrius_Icon.c57ce311.png",
@@ -207,7 +207,6 @@
     "static/media/Handguard1.png": "/genshin-impact-reference-sheet-2.0/static/media/Handguard1.b2c660d5.png",
     "static/media/Handguard2.png": "/genshin-impact-reference-sheet-2.0/static/media/Handguard2.5e875695.png",
     "static/media/Handguard3.png": "/genshin-impact-reference-sheet-2.0/static/media/Handguard3.ca8e6e14.png",
-    "static/media/Harra_Fruit.png": "/genshin-impact-reference-sheet-2.0/static/media/Harra_Fruit.b43ec465.png",
     "static/media/Headband1.png": "/genshin-impact-reference-sheet-2.0/static/media/Headband1.8753e991.png",
     "static/media/Headband2.png": "/genshin-impact-reference-sheet-2.0/static/media/Headband2.4c799c20.png",
     "static/media/Headband3.png": "/genshin-impact-reference-sheet-2.0/static/media/Headband3.3beb8e61.png",
@@ -281,7 +280,6 @@
     "static/media/Storm_Beads.png": "/genshin-impact-reference-sheet-2.0/static/media/Storm_Beads.ec892bb0.png",
     "static/media/Stormterror_Icon.png": "/genshin-impact-reference-sheet-2.0/static/media/Stormterror_Icon.9a804dfc.png",
     "static/media/Sumeru.png": "/genshin-impact-reference-sheet-2.0/static/media/Sumeru.19b868db.png",
-    "static/media/Sumeru_Rose.png": "/genshin-impact-reference-sheet-2.0/static/media/Sumeru_Rose.cb8648a1.png",
     "static/media/Tail_of_Boreas.png": "/genshin-impact-reference-sheet-2.0/static/media/Tail_of_Boreas.be8b7679.png",
     "static/media/Tears_of_the_Calamitous_God.png": "/genshin-impact-reference-sheet-2.0/static/media/Tears_of_the_Calamitous_God.3c0f11ab.png",
     "static/media/The_Meaning_of_Aeons.png": "/genshin-impact-reference-sheet-2.0/static/media/The_Meaning_of_Aeons.d998e7e0.png",
@@ -293,10 +291,8 @@
     "static/media/Tusk_of_Monoceros_Caeli.png": "/genshin-impact-reference-sheet-2.0/static/media/Tusk_of_Monoceros_Caeli.e69f7bed.png",
     "static/media/Valberry.png": "/genshin-impact-reference-sheet-2.0/static/media/Valberry.4057ec8e.png",
     "static/media/Violetgrass.png": "/genshin-impact-reference-sheet-2.0/static/media/Violetgrass.ecbc1e05.png",
-    "static/media/Viparyas.png": "/genshin-impact-reference-sheet-2.0/static/media/Viparyas.4325d9bc.png",
     "static/media/Windwheel_Aster.png": "/genshin-impact-reference-sheet-2.0/static/media/Windwheel_Aster.67a44b95.png",
     "static/media/Wolfhook.png": "/genshin-impact-reference-sheet-2.0/static/media/Wolfhook.06b07f95.png",
-    "static/media/Zaytun_Peach.png": "/genshin-impact-reference-sheet-2.0/static/media/Zaytun_Peach.63955d64.png",
     "static/media/attack_polearm.png": "/genshin-impact-reference-sheet-2.0/static/media/attack_polearm.e5f4a2a1.png",
     "static/media/attack_sword.png": "/genshin-impact-reference-sheet-2.0/static/media/attack_sword.619c9c2d.png",
     "static/media/collei_a4passive.png": "/genshin-impact-reference-sheet-2.0/static/media/collei_a4passive.52cfe0c7.png",
@@ -306,8 +302,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
-    "static/js/2.b1490a3e.chunk.js",
+    "static/js/2.9e18d2bf.chunk.js",
     "static/css/main.afbe06ae.chunk.css",
-    "static/js/main.7e302591.chunk.js"
+    "static/js/main.34d940e6.chunk.js"
   ]
 }
