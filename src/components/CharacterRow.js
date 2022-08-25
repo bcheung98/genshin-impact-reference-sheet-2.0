@@ -96,7 +96,7 @@ const CharacterRow = (props) => {
             <StyledTableRow key={index} className={classes.root}>
                 <StyledTableCell className={classes.genshinFont}>
                     <div className={classes.avatarFlexRow}>
-                        <img className={classes.characterIcon} src={require(`../assets/characters/icons/Character_${row.name.split(" ").join("_")}_Icon.png`).default} alt={row.name} onClick={() => handleClickOpen()} />
+                        <img className={classes.characterIcon} src={require(`../assets/characters/thumbs/Character_${row.name.split(" ").join("_")}_Thumb.png`).default} alt={row.name} onClick={() => handleClickOpen()} />
                         <Typography variant="body1" className={classes.characterName} onClick={() => handleClickOpen()}>{row.name}</Typography>
                     </div>
                 </StyledTableCell>
