@@ -40,7 +40,9 @@ let sumeruIcon = require("../../assets/nations/Sumeru.png").default;
 let kalpalataLotusIcon = require("../../assets/materials/local_specialties/Kalpalata_Lotus.png").default;
 let nilotpalaLotusIcon = require("../../assets/materials/local_specialties/Nilotpala_Lotus.png").default;
 let padisarahIcon = require("../../assets/materials/local_specialties/Padisarah.png").default;
+let redcrestIcon = require("../../assets/materials/local_specialties/Redcrest.png").default;
 let rukkhashavaIcon = require("../../assets/materials/local_specialties/Rukkhashava_Mushrooms.png").default;
+let scarabIcon = require("../../assets/materials/local_specialties/Scarab.png").default;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -213,8 +215,14 @@ const LocalMatFilter = (props) => {
                         <FilterTooltip title="Padisarah" arrow placement="top">
                             <img className="filter-off" id="padisarah-button" src={padisarahIcon} alt="Padisarah" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
+                        <FilterTooltip title="Redcrest" arrow placement="top">
+                            <img className="filter-off" id="redcrest-button" src={redcrestIcon} alt="Redcrest" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
                         <FilterTooltip title="Rukkhashava Mushrooms" arrow placement="top">
                             <img className="filter-off" id="rukkhashava mushrooms-button" src={rukkhashavaIcon} alt="Rukkhashava Mushrooms" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Scarab" arrow placement="top">
+                            <img className="filter-off" id="scarab-button" src={scarabIcon} alt="Scarab" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
                     </div>
                 </AccordionDetails>

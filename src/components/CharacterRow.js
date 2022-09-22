@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { TableCell, TableRow, Typography, Dialog, DialogActions, Slide, Button } from "@material-ui/core";
-import CharacterPopup from "./CharacterPopup";
+import CharacterPopup from "./popup/CharacterPopup";
 
 const useStyles = makeStyles((theme) => ({
     genshinFont: {

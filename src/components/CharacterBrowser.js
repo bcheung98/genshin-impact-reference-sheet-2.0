@@ -4,7 +4,7 @@ import { fetchCharacters } from "../redux/actions/fetchCharacters";
 import { makeStyles, Grid, FormControlLabel, Switch, Paper, InputBase } from "@material-ui/core";
 import ViewComfyIcon from "@material-ui/icons/ViewComfy";
 import ListIcon from "@material-ui/icons/List";
-import Filters from "./Filters";
+import Filters from "./filters/Filters";
 import CharacterCard from "./CharacterCard";
 import CharacterList from "./CharacterList";
 
