@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles, Grid, Card, CardContent, Typography, Button, Dialog, DialogActions, Slide } from "@material-ui/core";
 import "../css/characterCard.css";
 import CharacterMaterialGrid from "./CharacterMaterialGrid";
-import CharacterPopup from "./CharacterPopup";
+import CharacterPopup from "./popup/CharacterPopup";
 import { MaterialTooltip } from "../helpers/MaterialTooltip";
 
 const useStyles = makeStyles((theme) => ({

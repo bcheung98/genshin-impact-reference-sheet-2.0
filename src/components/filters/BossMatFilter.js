@@ -13,8 +13,10 @@ let hoarfrostCoreIcon = require("../../assets/materials/boss_mats/Hoarfrost_Core
 let hurricaneSeedIcon = require("../../assets/materials/boss_mats/Hurricane_Seed.png").default;
 let juvenileJadeIcon = require("../../assets/materials/boss_mats/Juvenile_Jade.png").default;
 let lightningPrismIcon = require("../../assets/materials/boss_mats/Lightning_Prism.png").default;
+let lgtIcon = require("../../assets/materials/boss_mats/Light_Guiding_Tetrahedron.png").default;
 let majesticBeakIcon = require("../../assets/materials/boss_mats/Majestic_Hooked_Beak.png").default;
 let marionetteCoreIcon = require("../../assets/materials/boss_mats/Marionette_Core.png").default;
+let perpetualCaliberIcon = require("../../assets/materials/boss_mats/Perpetual_Caliber.png").default;
 let perpetualHeartIcon = require("../../assets/materials/boss_mats/Perpetual_Heart.png").default;
 let riftbornRegaliaIcon = require("../../assets/materials/boss_mats/Riftborn_Regalia.png").default;
 let runicFangIcon = require("../../assets/materials/boss_mats/Runic_Fang.png").default;
@@ -58,8 +60,14 @@ const BossMatFilter = (props) => {
             <FilterTooltip title={formatBossMats("Lightning Prism")} arrow placement="top">
                 <img className="filter-off" id="lightning prism-button" src={lightningPrismIcon} alt="Lightning Prism" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
+            <FilterTooltip title={formatBossMats("Light Guiding Tetrahedron")} arrow placement="top">
+                <img className="filter-off" id="light guiding tetrahedron-button" src={lgtIcon} alt="Light Guiding Tetrahedron" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
             <FilterTooltip title={formatBossMats("Marionette Core")} arrow placement="top">
                 <img className="filter-off" id="marionette core-button" src={marionetteCoreIcon} alt="Marionette Core" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatBossMats("Perpetual Caliber")} arrow placement="top">
+                <img className="filter-off" id="perpetual caliber-button" src={perpetualCaliberIcon} alt="Perpetual Caliber" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
             <FilterTooltip title={formatBossMats("Perpetual Heart")} arrow placement="top">
                 <img className="filter-off" id="perpetual heart-button" src={perpetualHeartIcon} alt="Perpetual Heart" onClick={(e) => props.setFilter(e.target.alt)} />

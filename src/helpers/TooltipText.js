@@ -247,6 +247,12 @@ export const formatBossMats = (material) => {
         case "Thunderclap Fruitcore":
             material += " (Electro Regisvine)";
             break;
+        case "Light Guiding Tetrahedron":
+            material += " (Semi-Intransient Matrix)";
+            break;
+        case "Perpetual Caliber":
+            material += " (Aeonblight Drake)";
+            break;
         default:
             material += "";
     }

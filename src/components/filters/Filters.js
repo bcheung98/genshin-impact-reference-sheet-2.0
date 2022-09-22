@@ -1,16 +1,16 @@
 import React from "react";
 import { makeStyles, Paper, Accordion, AccordionSummary, AccordionDetails, Typography } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import "../css/filters.css";
-import ElementFilter from "./filters/ElementFilter";
-import WeaponFilter from "./filters/WeaponFilter";
-import RarityFilter from "./filters/RarityFilter";
-import TalentFilter from "./filters/TalentFilter";
-import CommonMatFilter from "./filters/CommonMatFilter";
-import BossMatFilter from "./filters/BossMatFilter";
-import WeeklyBossMatFilter from "./filters/WeeklyBossMatFilter";
-import LocalSpecialtyFilter from "./filters/LocalSpecialtyFilter";
-import NationFilter from "./filters/NationFilter";
+import "../../css/filters.css";
+import ElementFilter from "./ElementFilter";
+import WeaponFilter from "./WeaponFilter";
+import RarityFilter from "./RarityFilter";
+import TalentFilter from "./TalentFilter";
+import CommonMatFilter from "./CommonMatFilter";
+import BossMatFilter from "./BossMatFilter";
+import WeeklyBossMatFilter from "./WeeklyBossMatFilter";
+import LocalSpecialtyFilter from "./LocalSpecialtyFilter";
+import NationFilter from "./NationFilter";
 
 const useStyles = makeStyles((theme) => ({
     root: {
