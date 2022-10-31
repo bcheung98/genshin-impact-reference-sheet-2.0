@@ -5,13 +5,10 @@ import { makeStyles, Grid, FormControlLabel, Switch, Paper, InputBase } from "@m
 import ViewComfyIcon from "@material-ui/icons/ViewComfy";
 import ListIcon from "@material-ui/icons/List";
 import Filters from "./filters/Filters";
-import CharacterCard from "./CharacterCard";
-import CharacterList from "./CharacterList";
+import CharacterBrowserDisplay from "./CharacterBrowserDisplay";
+import CharacterLoading from "../helpers/CharacterLoading";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        marginLeft: "-40px",
-    },
     buttonGroup: {
         display: "flex",
         justifyContent: "center",
@@ -42,42 +39,6 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Genshin, sans-serif",
     },
 }));
-
-const filterCharacters = (characters, filters, searchValue) => {
-    let chars = [...characters];
-    if (filters.element.length > 0) {
-        chars = chars.filter(char => filters.element.includes(char.element));
-    }
-    if (filters.weapon.length > 0) {
-        chars = chars.filter(char => filters.weapon.includes(char.weapon));
-    }
-    if (filters.rarity.length > 0) {
-        chars = chars.filter(char => filters.rarity.includes(char.rarity));
-    }
-    if (filters.talent.length > 0) {
-        chars = chars.filter(char => filters.talent.includes(char.materials.talentBook));
-    }
-    if (filters.commonMat.length > 0) {
-        chars = chars.filter(char => filters.commonMat.includes(char.materials.commonMat));
-    }
-    if (filters.bossMat.length > 0) {
-        chars = chars.filter(char => filters.bossMat.includes(char.materials.bossMat));
-    }
-    if (filters.weeklyBossMat.length > 0) {
-        chars = chars.filter(char => filters.weeklyBossMat.includes(char.materials.weeklyBossMat));
-    }
-    if (filters.localMat.length > 0) {
-        chars = chars.filter(char => filters.localMat.includes(char.materials.localMat));
-    }
-    if (filters.nation.length > 0) {
-        chars = chars.filter(char => filters.nation.includes(char.nation));
-    }
-    if (searchValue !== "") {
-        chars = chars.filter(char => char.name.toLowerCase().includes(searchValue.toLowerCase()))
-    }
-
-    return chars
-}
 
 const CharacterBrowser = (props) => {
     const classes = useStyles();
@@ -127,12 +88,8 @@ const CharacterBrowser = (props) => {
                     <Filters />
                 </Grid>
                 <Grid item xs={9}>
-                    {!checked ?
-                        (<Grid container className={classes.root}>
-                            {characters.characters.length > 0 ? filterCharacters(characters.characters, filters, searchValue).map(char => <CharacterCard key={char.id} character={char} />) : null}
-                        </Grid>)
-                        :
-                        <CharacterList characters={filterCharacters(characters.characters, filters, searchValue)} />
+                    {characters.characters.length > 0 ?
+                        <CharacterBrowserDisplay characters={characters.characters} filters={filters} searchValue={searchValue} checked={checked} /> : <CharacterLoading />
                     }
                 </Grid>
             </Grid>

@@ -61,3 +61,7 @@
 .appbar-indicator {
     background-color: white !important;
 }
+
+.MuiPaper-root.MuiDialog-paper {
+    background-color: rgb(36, 41, 56) !important;
+}

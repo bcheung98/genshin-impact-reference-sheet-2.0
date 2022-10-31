@@ -1,5 +1,16 @@
 export const formatTalents = (talent) => {
-    switch (talent) {
+    if (talent.endsWith("1")) {
+        talent = "Teachings of " + talent.slice(0, talent.length - 1); 
+    }
+    if (talent.endsWith("2")) {
+        talent = "Guide to " + talent.slice(0, talent.length - 1); 
+    }
+    if (talent.endsWith("3")) {
+        talent = "Philosophies of " + talent.slice(0, talent.length - 1); 
+    }
+    let talentSplit = talent.split(" ");
+    let talentKey = talentSplit[talentSplit.length - 1];
+    switch (talentKey) {
         case "Freedom":
         case "Prosperity":
         case "Transience":
@@ -56,6 +67,11 @@ export const formatWeeklyBossMats = (material) => {
         case "The Meaning of Aeons":
             material += " (Narukami no Mikoto)";
             break;
+        case "Daka's Bell":
+        case "Mirror of Mushin":
+        case "Puppet Strings":
+            material += " (Shouki no Kami)";
+            break;
         default:
             material += "";
     }
@@ -101,7 +117,7 @@ export const formatCommonMats = (material) => {
             material = "Shimmering Nectar";
             break;
         case "Nectar3":
-            material = "Energy Nector";
+            material = "Energy Nectar";
             break;
         case "Nectar1":
         case "Nectar":
@@ -252,6 +268,9 @@ export const formatBossMats = (material) => {
             break;
         case "Perpetual Caliber":
             material += " (Aeonblight Drake)";
+            break;
+        case "Quelled Creeper":
+            material += " (Dendro Hypostasis)";
             break;
         default:
             material += "";

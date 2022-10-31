@@ -148,8 +148,8 @@ const CharacterList = (props) => {
     return (
         <div className={classes.root}>
             <Paper className={classes.paper}>
-                <TableContainer>
-                    <Typography variant="h5" className={classes.charCount}>{props.characters.length} Characters</Typography>
+                <TableContainer>     
+                    <Typography variant="h5" className={classes.charCount}>{props.characters.length} {props.characters.length === 1 ? "Character" : "Characters"}</Typography>
                     <Divider className={classes.divider} />
                     <Table className={classes.table} size="small">
                         <CharacterListHead

@@ -35,6 +35,11 @@ let mudraIcon = require("../../assets/materials/weekly_boss_mats/Mudra_of_the_Ma
 let tearsIcon = require("../../assets/materials/weekly_boss_mats/Tears_of_the_Calamitous_God.png").default;
 let aeonsIcon = require("../../assets/materials/weekly_boss_mats/The_Meaning_of_Aeons.png").default;
 
+let balladeerIcon = require("../../assets/bosses/Shouki_no_Kami.png").default;
+let dakaIcon = require("../../assets/materials/weekly_boss_mats/Daka's_Bell.png").default;
+let mirrorMushinIcon = require("../../assets/materials/weekly_boss_mats/Mirror_of_Mushin.png").default;
+let puppetStringsIcon = require("../../assets/materials/weekly_boss_mats/Puppet_Strings.png").default;
+
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: "auto",
@@ -181,7 +186,6 @@ const BossMatFilter = (props) => {
                         <FilterTooltip title="Molten Moment" arrow placement="top">
                             <img className="filter-off" id="molten moment-button" src={momentIcon} alt="Molten Moment" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-
                     </div>
                 </AccordionDetails>
             </Accordion>
@@ -203,6 +207,28 @@ const BossMatFilter = (props) => {
                         </FilterTooltip>
                         <FilterTooltip title="The Meaning of Aeons" arrow placement="top">
                             <img className="filter-off" id="the meaning of aeons-button" src={aeonsIcon} alt="The Meaning of Aeons" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                    </div>
+                </AccordionDetails>
+            </Accordion>
+
+            <Accordion className={classes.subBar}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
+                    <div className={classes.filter}>
+                        <img className={classes.bossIcon} src={balladeerIcon} alt="Shouki no Kami" />
+                        <Typography variant="h6" style={{ fontFamily: "Genshin" }}>Shouki no Kami</Typography>
+                    </div>
+                </AccordionSummary>
+                <AccordionDetails className={classes.filterRow}>
+                    <div>
+                        <FilterTooltip title="Daka's Bell" arrow placement="top">
+                            <img className="filter-off" id="daka's bell-button" src={dakaIcon} alt="Daka's Bell" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Mirror of Mushin" arrow placement="top">
+                            <img className="filter-off" id="mirror of mushin-button" src={mirrorMushinIcon} alt="Mirror of Mushin" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
+                        <FilterTooltip title="Puppet Strings" arrow placement="top">
+                            <img className="filter-off" id="puppet strings-button" src={puppetStringsIcon} alt="Puppet Strings" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
                     </div>
                 </AccordionDetails>
