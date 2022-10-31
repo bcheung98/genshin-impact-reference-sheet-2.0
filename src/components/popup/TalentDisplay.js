@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 import { makeStyles, Typography, Tabs, Tab, Box, Paper, Avatar, Accordion, AccordionSummary, AccordionDetails } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import TalentScalingTable from "./TalentScalingTable";
+import TalentLevellingTable from "./TalentLevellingTable";
 import { FormatTalentKey } from "../../helpers/FormatTalentKey";
+import { ElementalBorderColor } from "../../helpers/ElementalColors";
+
 
 const useStyles = makeStyles((theme) => ({
     genshinFont: {
@@ -120,7 +123,7 @@ const TalentDisplay = (props) => {
                         <br />
                         <div className={classes.avatarHeader}>
                             {
-                                key === "attack" ? <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../../assets/characters/talents/attack_${weapon.toLowerCase()}.png`).default} className={classes.avatar} /> : <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} />
+                                key === "attack" ? <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../../assets/characters/talents/attack_${weapon.toLowerCase()}.png`).default} className={classes.avatar} style={ElementalBorderColor(element)} /> : <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={require(`../../assets/characters/talents/${name.split(" ").join("_").toLowerCase()}_${key}.png`).default} className={classes.avatar} style={ElementalBorderColor(element)} />
                             }
                             <Typography className={classes.genshinFont} variant="h5" component="p">{talents[key].name}</Typography>
                         </div>
@@ -136,13 +139,27 @@ const TalentDisplay = (props) => {
                         <br /><br />
                         {
                             ["attack", "skill", "burst", "altsprint"].includes(key) &&
-                            <Paper className={classes.bar}>
+                            <Paper className={classes.bar} style={ElementalBorderColor(element)}>
                                 <Accordion className={classes.subBar}>
                                     <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
                                         <Typography>Talent Scaling</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <TalentScalingTable attackType={key} stats={talents[key].scaling} />
+                                    </AccordionDetails>
+                                </Accordion>
+                            </Paper>
+                        }
+                        <br />
+                        {
+                            ["attack", "skill", "burst"].includes(key) &&
+                            <Paper className={classes.bar} style={ElementalBorderColor(element)}>
+                                <Accordion className={classes.subBar}>
+                                    <AccordionSummary expandIcon={<ExpandMoreIcon color="secondary" />} className={classes.summary} >
+                                        <Typography>Talent Levelling</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <TalentLevellingTable character={props.character}/>
                                     </AccordionDetails>
                                 </Accordion>
                             </Paper>

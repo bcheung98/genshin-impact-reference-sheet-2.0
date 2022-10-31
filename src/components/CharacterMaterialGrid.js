@@ -23,7 +23,7 @@ const CharacterMaterialGrid = (props) => {
         <Grid item sm>
             <Grid style={materialRow}>
                 <MaterialTooltip title={formatTalents(talentBook)} arrow placement="top">
-                    <img style={materialImage} src={require(`../assets/materials/talent_mats/${talentBook}.png`).default} alt={talentBook} />
+                    <img style={materialImage} src={require(`../assets/materials/talent_mats/${talentBook}3.png`).default} alt={talentBook} />
                 </MaterialTooltip>
                 <MaterialTooltip title={formatWeeklyBossMats(weeklyBossMat)} arrow placement="top">
                     <img style={materialImage} src={require(`../assets/materials/weekly_boss_mats/${weeklyBossMat.split(" ").join("_")}.png`).default} alt={weeklyBossMat} />

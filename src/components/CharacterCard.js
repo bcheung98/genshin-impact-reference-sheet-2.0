@@ -37,12 +37,12 @@ const useStyles = makeStyles((theme) => ({
     },
     elementIcon: {
         height: "35px",
-        border: "1px solid rgb(44, 49, 64)",
+        border: "1px solid rgba(44, 49, 64, 0)",
         borderRadius: "64px",
     },
     weaponIcon: {
         height: "35px",
-        border: "1px solid rgb(44, 49, 64)",
+        border: "1px solid rgba(44, 49, 64, 0)",
         borderRadius: "64px",
     },
     leftColumn: {

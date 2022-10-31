@@ -3,21 +3,21 @@ import { connect } from "react-redux";
 import { FilterTooltip } from "../../helpers/FilterTooltip";
 import { formatTalents } from "../../helpers/TooltipText";
 
-let freedomIcon = require("../../assets/materials/talent_mats/Freedom.png").default;
-let resistanceIcon = require("../../assets/materials/talent_mats/Resistance.png").default;
-let balladIcon = require("../../assets/materials/talent_mats/Ballad.png").default;
+let freedomIcon = require("../../assets/materials/talent_mats/Freedom3.png").default;
+let resistanceIcon = require("../../assets/materials/talent_mats/Resistance3.png").default;
+let balladIcon = require("../../assets/materials/talent_mats/Ballad3.png").default;
 
-let prosperityIcon = require("../../assets/materials/talent_mats/Prosperity.png").default;
-let diligenceIcon = require("../../assets/materials/talent_mats/Diligence.png").default;
-let goldIcon = require("../../assets/materials/talent_mats/Gold.png").default;
+let prosperityIcon = require("../../assets/materials/talent_mats/Prosperity3.png").default;
+let diligenceIcon = require("../../assets/materials/talent_mats/Diligence3.png").default;
+let goldIcon = require("../../assets/materials/talent_mats/Gold3.png").default;
 
-let transienceIcon = require("../../assets/materials/talent_mats/Transience.png").default;
-let eleganceIcon = require("../../assets/materials/talent_mats/Elegance.png").default;
-let lightIcon = require("../../assets/materials/talent_mats/Light.png").default;
+let transienceIcon = require("../../assets/materials/talent_mats/Transience3.png").default;
+let eleganceIcon = require("../../assets/materials/talent_mats/Elegance3.png").default;
+let lightIcon = require("../../assets/materials/talent_mats/Light3.png").default;
 
-let admonitionIcon = require("../../assets/materials/talent_mats/Admonition.png").default;
-let ingenuityIcon = require("../../assets/materials/talent_mats/Ingenuity.png").default;
-let praxisIcon = require("../../assets/materials/talent_mats/Praxis.png").default;
+let admonitionIcon = require("../../assets/materials/talent_mats/Admonition3.png").default;
+let ingenuityIcon = require("../../assets/materials/talent_mats/Ingenuity3.png").default;
+let praxisIcon = require("../../assets/materials/talent_mats/Praxis3.png").default;
 
 const TalentFilter = (props) => {
     return (

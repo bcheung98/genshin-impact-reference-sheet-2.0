@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "-7px",
     },
     dialogCircleIcon: {
-        border: "1px solid rgb(36, 41, 56)",
+        border: "1px solid rgba(36, 41, 56, 0)",
         borderRadius: "64px",
     },
     dialogTitleLeftColumn: {
