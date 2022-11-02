@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.44f0eb91.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.fc11ab63.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.fc11ab63.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.802f6282.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.802f6282.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
     "static/js/2.3ee308d1.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.3ee308d1.chunk.js",
@@ -212,6 +212,7 @@
     "static/media/Headband2.png": "/genshin-impact-reference-sheet-2.0/static/media/Headband2.4c799c20.png",
     "static/media/Headband3.png": "/genshin-impact-reference-sheet-2.0/static/media/Headband3.3beb8e61.png",
     "static/media/Hellfire_Butterfly.png": "/genshin-impact-reference-sheet-2.0/static/media/Hellfire_Butterfly.bcdabe9f.png",
+    "static/media/Henna_Berry.png": "/genshin-impact-reference-sheet-2.0/static/media/Henna_Berry.290db253.png",
     "static/media/Hoarfrost_Core.png": "/genshin-impact-reference-sheet-2.0/static/media/Hoarfrost_Core.979fa1c9.png",
     "static/media/Hurricane_Seed.png": "/genshin-impact-reference-sheet-2.0/static/media/Hurricane_Seed.8142f23f.png",
     "static/media/Hydro_Chunk.png": "/genshin-impact-reference-sheet-2.0/static/media/Hydro_Chunk.8e01d18b.png",
@@ -267,7 +268,6 @@
     "static/media/Pyro_Sliver.png": "/genshin-impact-reference-sheet-2.0/static/media/Pyro_Sliver.ebc11490.png",
     "static/media/Qingxin.png": "/genshin-impact-reference-sheet-2.0/static/media/Qingxin.0635d349.png",
     "static/media/Quelled_Creeper.png": "/genshin-impact-reference-sheet-2.0/static/media/Quelled_Creeper.bee6f13d.png",
-    "static/media/Redcrest.png": "/genshin-impact-reference-sheet-2.0/static/media/Redcrest.290db253.png",
     "static/media/Resistance1.png": "/genshin-impact-reference-sheet-2.0/static/media/Resistance1.b8757322.png",
     "static/media/Resistance2.png": "/genshin-impact-reference-sheet-2.0/static/media/Resistance2.1f3a090d.png",
     "static/media/Resistance3.png": "/genshin-impact-reference-sheet-2.0/static/media/Resistance3.97ac8c79.png",
@@ -336,6 +336,6 @@
     "static/js/runtime-main.d1c32acd.js",
     "static/js/2.3ee308d1.chunk.js",
     "static/css/main.44f0eb91.chunk.css",
-    "static/js/main.fc11ab63.chunk.js"
+    "static/js/main.802f6282.chunk.js"
   ]
 }
