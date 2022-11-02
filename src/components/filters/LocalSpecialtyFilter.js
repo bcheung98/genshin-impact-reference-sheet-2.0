@@ -37,10 +37,10 @@ let pearlIcon = require("../../assets/materials/local_specialties/Sango_Pearl.pn
 let ganodermaIcon = require("../../assets/materials/local_specialties/Sea_Ganoderma.png").default;
 
 let sumeruIcon = require("../../assets/nations/Sumeru.png").default;
+let hennaBerryIcon = require("../../assets/materials/local_specialties/Henna_Berry.png").default;
 let kalpalataLotusIcon = require("../../assets/materials/local_specialties/Kalpalata_Lotus.png").default;
 let nilotpalaLotusIcon = require("../../assets/materials/local_specialties/Nilotpala_Lotus.png").default;
 let padisarahIcon = require("../../assets/materials/local_specialties/Padisarah.png").default;
-let redcrestIcon = require("../../assets/materials/local_specialties/Redcrest.png").default;
 let rukkhashavaIcon = require("../../assets/materials/local_specialties/Rukkhashava_Mushrooms.png").default;
 let scarabIcon = require("../../assets/materials/local_specialties/Scarab.png").default;
 
@@ -206,6 +206,9 @@ const LocalMatFilter = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.filterRow}>
                     <div>
+                        <FilterTooltip title="Henna Berry" arrow placement="top">
+                            <img className="filter-off" id="henna berry-button" src={hennaBerryIcon} alt="Henna Berry" onClick={(e) => props.setFilter(e.target.alt)} />
+                        </FilterTooltip>
                         <FilterTooltip title="Kalpalata Lotus" arrow placement="top">
                             <img className="filter-off" id="kalpalata lotus-button" src={kalpalataLotusIcon} alt="Kalpalata Lotus" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
@@ -215,9 +218,7 @@ const LocalMatFilter = (props) => {
                         <FilterTooltip title="Padisarah" arrow placement="top">
                             <img className="filter-off" id="padisarah-button" src={padisarahIcon} alt="Padisarah" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
-                        <FilterTooltip title="Redcrest" arrow placement="top">
-                            <img className="filter-off" id="redcrest-button" src={redcrestIcon} alt="Redcrest" onClick={(e) => props.setFilter(e.target.alt)} />
-                        </FilterTooltip>
+
                         <FilterTooltip title="Rukkhashava Mushrooms" arrow placement="top">
                             <img className="filter-off" id="rukkhashava mushrooms-button" src={rukkhashavaIcon} alt="Rukkhashava Mushrooms" onClick={(e) => props.setFilter(e.target.alt)} />
                         </FilterTooltip>
