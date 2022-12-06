@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.44f0eb91.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.802f6282.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.802f6282.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.58aa2a04.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.58aa2a04.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
-    "static/js/2.3ee308d1.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.3ee308d1.chunk.js",
-    "static/js/2.3ee308d1.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.3ee308d1.chunk.js.map",
+    "static/js/2.14685f4b.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.14685f4b.chunk.js",
+    "static/js/2.14685f4b.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.14685f4b.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
     "static/css/main.44f0eb91.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.44f0eb91.chunk.css.map",
-    "static/js/2.3ee308d1.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.3ee308d1.chunk.js.LICENSE.txt",
+    "static/js/2.14685f4b.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.14685f4b.chunk.js.LICENSE.txt",
     "static/media/Admonition1.png": "/genshin-impact-reference-sheet-2.0/static/media/Admonition1.9c0f650b.png",
     "static/media/Admonition2.png": "/genshin-impact-reference-sheet-2.0/static/media/Admonition2.a0ecb4cc.png",
     "static/media/Admonition3.png": "/genshin-impact-reference-sheet-2.0/static/media/Admonition3.4e44ee51.png",
@@ -68,6 +68,8 @@
     "static/media/Character_Dori_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Dori_Thumb.e2074861.png",
     "static/media/Character_Eula_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Eula_Avatar.7b325613.png",
     "static/media/Character_Eula_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Eula_Thumb.1e184179.png",
+    "static/media/Character_Faruzan_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Faruzan_Avatar.e667297e.png",
+    "static/media/Character_Faruzan_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Faruzan_Thumb.2870731e.png",
     "static/media/Character_Fischl_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Fischl_Avatar.1e15258c.png",
     "static/media/Character_Fischl_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Fischl_Thumb.df935226.png",
     "static/media/Character_Ganyu_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Ganyu_Avatar.8f7ec028.png",
@@ -134,6 +136,8 @@
     "static/media/Character_Tighnari_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Tighnari_Thumb.2be6b57b.png",
     "static/media/Character_Venti_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Venti_Avatar.ebfd2de9.png",
     "static/media/Character_Venti_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Venti_Thumb.ca046fc1.png",
+    "static/media/Character_Wanderer_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Wanderer_Avatar.241cb12e.png",
+    "static/media/Character_Wanderer_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Wanderer_Thumb.b9aaf69d.png",
     "static/media/Character_Xiangling_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Xiangling_Avatar.e66b544b.png",
     "static/media/Character_Xiangling_Thumb.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Xiangling_Thumb.575aa2da.png",
     "static/media/Character_Xiao_Avatar.png": "/genshin-impact-reference-sheet-2.0/static/media/Character_Xiao_Avatar.4fa212a8.png",
@@ -334,8 +338,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
-    "static/js/2.3ee308d1.chunk.js",
+    "static/js/2.14685f4b.chunk.js",
     "static/css/main.44f0eb91.chunk.css",
-    "static/js/main.802f6282.chunk.js"
+    "static/js/main.58aa2a04.chunk.js"
   ]
 }
