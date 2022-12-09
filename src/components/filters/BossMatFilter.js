@@ -18,6 +18,7 @@ let majesticBeakIcon = require("../../assets/materials/boss_mats/Majestic_Hooked
 let marionetteCoreIcon = require("../../assets/materials/boss_mats/Marionette_Core.png").default;
 let perpetualCaliberIcon = require("../../assets/materials/boss_mats/Perpetual_Caliber.png").default;
 let perpetualHeartIcon = require("../../assets/materials/boss_mats/Perpetual_Heart.png").default;
+let quelledCreeperIcon = require("../../assets/materials/boss_mats/Quelled_Creeper.png").default;
 let riftbornRegaliaIcon = require("../../assets/materials/boss_mats/Riftborn_Regalia.png").default;
 let runicFangIcon = require("../../assets/materials/boss_mats/Runic_Fang.png").default;
 let smolderingPearlIcon = require("../../assets/materials/boss_mats/Smoldering_Pearl.png").default;
@@ -71,6 +72,9 @@ const BossMatFilter = (props) => {
             </FilterTooltip>
             <FilterTooltip title={formatBossMats("Perpetual Heart")} arrow placement="top">
                 <img className="filter-off" id="perpetual heart-button" src={perpetualHeartIcon} alt="Perpetual Heart" onClick={(e) => props.setFilter(e.target.alt)} />
+            </FilterTooltip>
+            <FilterTooltip title={formatBossMats("Quelled Creeper")} arrow placement="top">
+                <img className="filter-off" id="quelled creeper-button" src={quelledCreeperIcon} alt="Quelled Creeper" onClick={(e) => props.setFilter(e.target.alt)} />
             </FilterTooltip>
             <FilterTooltip title={formatBossMats("Riftborn Regalia")} arrow placement="top">
                 <img className="filter-off" id="riftborn regalia-button" src={riftbornRegaliaIcon} alt="Riftborn Regalia" onClick={(e) => props.setFilter(e.target.alt)} />
