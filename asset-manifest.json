@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/genshin-impact-reference-sheet-2.0/static/css/main.44f0eb91.chunk.css",
-    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.58aa2a04.chunk.js",
-    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.58aa2a04.chunk.js.map",
+    "main.js": "/genshin-impact-reference-sheet-2.0/static/js/main.f5f24940.chunk.js",
+    "main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/main.f5f24940.chunk.js.map",
     "runtime-main.js": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js",
     "runtime-main.js.map": "/genshin-impact-reference-sheet-2.0/static/js/runtime-main.d1c32acd.js.map",
-    "static/js/2.14685f4b.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.14685f4b.chunk.js",
-    "static/js/2.14685f4b.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.14685f4b.chunk.js.map",
+    "static/js/2.ddb84233.chunk.js": "/genshin-impact-reference-sheet-2.0/static/js/2.ddb84233.chunk.js",
+    "static/js/2.ddb84233.chunk.js.map": "/genshin-impact-reference-sheet-2.0/static/js/2.ddb84233.chunk.js.map",
     "index.html": "/genshin-impact-reference-sheet-2.0/index.html",
     "static/css/main.44f0eb91.chunk.css.map": "/genshin-impact-reference-sheet-2.0/static/css/main.44f0eb91.chunk.css.map",
-    "static/js/2.14685f4b.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.14685f4b.chunk.js.LICENSE.txt",
+    "static/js/2.ddb84233.chunk.js.LICENSE.txt": "/genshin-impact-reference-sheet-2.0/static/js/2.ddb84233.chunk.js.LICENSE.txt",
     "static/media/Admonition1.png": "/genshin-impact-reference-sheet-2.0/static/media/Admonition1.9c0f650b.png",
     "static/media/Admonition2.png": "/genshin-impact-reference-sheet-2.0/static/media/Admonition2.a0ecb4cc.png",
     "static/media/Admonition3.png": "/genshin-impact-reference-sheet-2.0/static/media/Admonition3.4e44ee51.png",
@@ -338,8 +338,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1c32acd.js",
-    "static/js/2.14685f4b.chunk.js",
+    "static/js/2.ddb84233.chunk.js",
     "static/css/main.44f0eb91.chunk.css",
-    "static/js/main.58aa2a04.chunk.js"
+    "static/js/main.f5f24940.chunk.js"
   ]
 }
