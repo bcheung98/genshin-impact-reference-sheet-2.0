@@ -1,12 +1,12 @@
 export const formatTalents = (talent) => {
     if (talent.endsWith("1")) {
-        talent = "Teachings of " + talent.slice(0, talent.length - 1); 
+        talent = "Teachings of " + talent.slice(0, talent.length - 1);
     }
     if (talent.endsWith("2")) {
-        talent = "Guide to " + talent.slice(0, talent.length - 1); 
+        talent = "Guide to " + talent.slice(0, talent.length - 1);
     }
     if (talent.endsWith("3")) {
-        talent = "Philosophies of " + talent.slice(0, talent.length - 1); 
+        talent = "Philosophies of " + talent.slice(0, talent.length - 1);
     }
     let talentSplit = talent.split(" ");
     let talentKey = talentSplit[talentSplit.length - 1];
@@ -271,6 +271,9 @@ export const formatBossMats = (material) => {
             break;
         case "Quelled Creeper":
             material += " (Dendro Hypostasis)";
+            break;
+        case "Pseudo-Stamens":
+            material += " (Setekh Wenut)";
             break;
         default:
             material += "";

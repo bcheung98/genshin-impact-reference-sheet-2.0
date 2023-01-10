@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Typography, TableContainer, Table, TableHead, TableBody } from "@material-ui/core";
+import { makeStyles, Paper, Typography, TableContainer, Table, TableHead, TableBody } from "@material-ui/core";
 import { StyledTableCell, StyledTableAlternatingRows } from "../../helpers/StyledTable";
 import { formatCommonMats, formatTalents, formatWeeklyBossMats } from "../../helpers/TooltipText";
 import { MaterialTooltip } from "../../helpers/MaterialTooltip";
@@ -118,7 +118,7 @@ const TalentLevellingTable = (props) => {
 
     return (
         <div className={classes.talentLevelTableDisplay}>
-            <TableContainer>
+            <TableContainer component={Paper}>
                 <Table className={classes.table} size="small">
                     <TableHead>
                         <StyledTableAlternatingRows>
